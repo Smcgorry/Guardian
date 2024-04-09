@@ -59,3 +59,4 @@ service_context = ServiceContext.from_defaults(embed_model=embed_model,llm=None,
 index = VectorStoreIndex.from_documents(
     docs, storage_context=storage_context, service_context=service_context
 )
+'''
