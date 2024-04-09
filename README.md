@@ -1,5 +1,5 @@
 # Guardian
-Offline RAG Chatbot with updateable Database. Used for querying and storing local documents. Has Customizable GUI with interchangeable LLM and Embedding Model. Built over ChromaDB and LLamaIndex.
+Offline RAG Chatbot with updateable Database. Used for querying and storing local documents. Has Customizable GUI with interchangeable LLM and Embedding Model. Built over ChromaDB, LLamaIndex, and LM Studio.
 
 # Conda Environment SetUp:
 1. conda create -n (venv name) python=3.10
@@ -7,6 +7,38 @@ Offline RAG Chatbot with updateable Database. Used for querying and storing loca
 2. conda activate (venv name)
    
 3. pip install -r requirements.txt
+
+# LM Studio Instance SetUP:
+LM Studio Instances: 
+
+## For Windows 10/11: 
+-Download LM studio from the link:  https://lmstudio.ai/	 
+
+-To download the models search them up and download any model you want.
+
+-After downloading the model head to the Local Inference Server
+
+-The model you downloaded you can load and then start the server. 
+
+## For Ubuntu:  
+-Install the AppImage from https://lmstudio.ai/ and then run it through the terminal to spin up the LM studio UI. 
+  
+-To download the models search them up and download any model you want.
+
+-After downloading the model head to the Local Inference Server
+
+-The model you downloaded you can load and then start the server.
+
+## LM Studio GPU SetUp:
+
+-In the Local Inference Server select 'Cuda' under the 'GPU Offload' located right side Panel.
+
+-Depending on hardware choose how many layers you want to load selecting '-1' will load max layers. Layers equate to VRAM on your card. 
+
+### Debugging:
+-Instance will crash if VRAM is higher than your hardware can handle.
+
+-Reload Model to set 'GPU Offload' if changed after stopping server.  
 
 # GUI QuickStart:
 1. Change Directory to where ‘GuardianGUI.py’ is stored 
@@ -34,6 +66,7 @@ input_dir = input("Enter the directory path to load documents from: ")
 collection_name = input("Enter the name of the collection to create: ")
 
 # Define Embedding Model
+#'Cuda' is selected to run Embedding Model on GPU, default is CPU
 embed_model = InstructorEmbedding(model_name="hkunlp/instructor-base", device='cuda')
 
 documents = SimpleDirectoryReader(
@@ -84,6 +117,7 @@ llm = OpenAILike(
     is_chat_model=True
 )
 # Choice of Embedding Model
+#'Cuda' is selected to run Embedding Model on GPU, default is CPU
 embed_model = InstructorEmbedding(model_name="hkunlp/instructor-large", device='cuda')
 
 def process_query(collection_name, question):
