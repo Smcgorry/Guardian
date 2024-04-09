@@ -9,7 +9,7 @@ Offline RAG Chatbot with updateable Database. Used for querying and storing loca
 3. pip install -r requirements.txt
 
 # GUI QuickStart:
-1. Change Directory to where ‘Guardian.py’ is stored 
+1. Change Directory to where ‘GuardianGUI.py’ is stored 
 
 2. Run Command: 
 
@@ -20,6 +20,7 @@ Offline RAG Chatbot with updateable Database. Used for querying and storing loca
 # DevScript:
 The Dev Script is used to upload documents to your local database with ChromaDB in a folder of your choosing. Storage used later to load documents off of with GUI. Choose Vectorstore name for storage and Directory path for folder with Documents to import into database.
 
+'GuardianDev.py'
 ```python
 # Dependencies
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
@@ -62,6 +63,8 @@ index = VectorStoreIndex.from_documents(
 ```
 # GUI Script SetUp:
 The GUI script is customizable via what LLM you can use off LM Studio, where your database is stored locally to pull from, and type of vectorstore you want to pull.
+
+'GuardianGUI.py'
 ```python
 # Dependencies
 import streamlit as st
