@@ -10,8 +10,10 @@ Offline RAG Chatbot with updateable Database. Used for querying and storing loca
 
 4. Run Command: 
 
-  streamlit run Guardian.py 
+    <streamlit run Guardian.py> 
 
 4. Navigate to the http://localhost:8501 to pull up the UI
 
 # DevScript:
+
+
