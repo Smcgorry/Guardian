@@ -1,8 +1,8 @@
 # Guardian
-Offline RAG Chatbot with updateable Database. Used for querying and storing local documents. Has Customizable GUI with interchangeable LLM and Embedding Model. Built over ChromaDB, LLamaIndex, and LM Studio.
+Offline CRAG Chatbot with updateable Database and user prompt evaluator. Used for querying and storing local documents. Has Customizable GUI with interchangeable LLM and Embedding Model. Built over ChromaDB, LLamaIndex, and LM Studio.
 
 # Conda Environment SetUp:
-1. conda create -n (venv name) python=3.10
+1. conda create -n (venv name) python=>3.10
 
 2. conda activate (venv name)
    
