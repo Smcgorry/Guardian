@@ -41,7 +41,7 @@ LM Studio Instances:
 -Reload Model to set 'GPU Offload' if changed after stopping server.  
 
 # GUI QuickStart:
-1. Change Directory to where ‘GuardianGUI.py’ is stored 
+1. Change Directory to where ‘Guardian.py’ is stored 
 
 2. Run Command: 
 
@@ -50,105 +50,219 @@ LM Studio Instances:
 3. Navigate to the http://localhost:8501 to pull up the GUI
 
 # DevScript:
-The Dev Script is used to upload documents to your local database with ChromaDB in a folder of your choosing. Storage used later to load documents off of with GUI. Choose Vectorstore name for storage and Directory path for folder with Documents to import into database.
+- The Dev Script is used to upload documents to your local database with ChromaDB in a folder of your choosing. Storage used later to load documents off of with GUI. Choose Vectorstore name for storage and Directory path for folder with Documents to import into database. 
+## Key Functions:
+-Load: Can load documents of choosing to the data in the directory '/FunctionRecs/UploadData/' to a new VectorStore also labeling the MetaData ID of the group of Documents.
+-Add: You can add data of choice in the directory '/FunctionRecs/AddData/' to an already existing VectorStore labeling MetaData ID of the document group. 
 
-'GuardianDev.py'
+### Script:
+'DevChrom.py'
 ```python
-# Dependencies
-from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, ServiceContext
-from llama_index.vector_stores.chroma import ChromaVectorStore
-from llama_index.core import StorageContext
-from llama_index.embeddings.instructor import InstructorEmbedding
+import os
+#VectorStore Packages:
 import chromadb
-
-# Prompt user for input directory and vectorstore name
-input_dir = input("Enter the directory path to load documents from: ")
-collection_name = input("Enter the name of the collection to create: ")
-
-# Define Embedding Model
-#'Cuda' is selected to run Embedding Model on GPU, default is CPU
-embed_model = InstructorEmbedding(model_name="hkunlp/instructor-base", device='cuda')
-
-documents = SimpleDirectoryReader(
-    input_dir=input_dir
-)
-
-docs = documents.load_data()
-print(f"Loaded {len(docs)} docs")
-
-# Save to Database
-# Pick folder for Storage
-db = chromadb.PersistentClient(path="Where-your-database-is-located")
-#VectorStore to Create
-chroma_collection = db.get_or_create_collection(collection_name)
-
-vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
-
-storage_context = StorageContext.from_defaults(vector_store=vector_store)
-
-service_context = ServiceContext.from_defaults(embed_model=embed_model,llm=None,
-                                               chunk_size=800,
-                                               chunk_overlap=20)
-
-index = VectorStoreIndex.from_documents(
-    docs, storage_context=storage_context, service_context=service_context
-)
-```
-# GUI Script SetUp:
-The GUI script is customizable via what LLM you can use off LM Studio, where your database is stored locally to pull from, and type of vectorstore you want to pull.
-
-'GuardianGUI.py'
-```python
-# Dependencies
-import streamlit as st
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings, StorageContext, Document
+from llama_index.vector_stores.chroma import ChromaVectorStore
+#Required Model(AI & Embedding) Packages:
+#from llama_index.embeddings.instructor import InstructorEmbedding
+from Packages.customclass import LlamaIndexEmbeddingAdapter
 from llama_index.llms.openai_like import OpenAILike
-from llama_index.embeddings.instructor import InstructorEmbedding
-import chromadb
-from llama_index.vector_stores.chroma import ChromaVectorStore
-from llama_index.core import ServiceContext, VectorStoreIndex, get_response_synthesizer
-from llama_index.core.retrievers import VectorIndexRetriever
-from llama_index.core.query_engine import RetrieverQueryEngine
+from langchain_community.embeddings import GPT4AllEmbeddings
+from llama_index.embeddings.langchain import LangchainEmbedding
 
-# Choice of LLM via LM Studio Instance
-llm = OpenAILike(
-    model="mistral-7b-instruct-v0.2.Q6_K.gguf",
+#Node Parsing Packages:
+from llama_index.core.node_parser import SentenceSplitter
+from llama_index.core.schema import MetadataMode
+from llama_index.core.node_parser import SimpleFileNodeParser
+
+#LM Studio Model
+Settings.llm = OpenAILike(
+    model="model-id",
     api_key="fake",
     api_base="http://localhost:1234/v1",
     is_chat_model=True
 )
-# Choice of Embedding Model
-#'Cuda' is selected to run Embedding Model on GPU, default is CPU
-embed_model = InstructorEmbedding(model_name="hkunlp/instructor-large", device='cuda')
 
-def process_query(collection_name, question):
+#Define embedding function
+Settings.embed_model = LangchainEmbedding(GPT4AllEmbeddings(model='http://localhost:1234/v1/embeddings'))
+
+#Path for Database Store
+db = chromadb.PersistentClient(path="../VectorDatabase/")
+
+#Function for Loading new info into Database
+def loaddata(collection_name, nodes):
+    chroma_collection = db.get_or_create_collection(collection_name)
+    vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+    storage_context = StorageContext.from_defaults(vector_store=vector_store)
+    nodes = [node for node in nodes if node.get_content(metadata_mode=MetadataMode.EMBED) != ""]
+    index = VectorStoreIndex(nodes, storage_context=storage_context, embed_model=Settings.embed_model)
+    print(f"Data loaded into collection '{collection_name}'.")
+
+#Function for Adding into Database
+def add_data(collection_name, nodes, input_directory):
+    chroma_collection = db.get_collection(collection_name,embedding_function=LlamaIndexEmbeddingAdapter(Settings.embed_model))
+    vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+    for node in nodes:
+        node_embedding = Settings.embed_model.get_text_embedding(node.get_content(metadata_mode="all"))
+        node.embedding = node_embedding
+    nodes = [node for node in nodes if node.get_content(metadata_mode=MetadataMode.EMBED) != "" and node.get_embedding() is not None]
+    vector_store.add(nodes=nodes)
+
+def list_directories(base_path):
+    # List all directories in the base path
+    directories = [d for d in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, d))]
+    # Display the available directories
+    if directories:
+        print("Available directories:")
+        for directory in directories:
+            print(directory)
+    else:
+        print("No directories found in the base path.")
+    return directories
+
+if __name__ == '__main__':
+    #User Inputs:
+    choice = input("Do you want to 'load' new data or 'add' to an existing collection? (load/add): ").strip().lower()
+    collection_name = input("Enter the name of the collection: ")
+    #Node Parser:
+    Settings.node_parser = SentenceSplitter(chunk_size=500, chunk_overlap=20)
+
+    #Document Loader
+    if choice == 'load':
+        input_dir = '../FunctionRecs/DataUpload/'
+        metadata_name = str(input('Please provide a title for this group of documents to help you easily identify and recall them later: '))
+        filename_fn = lambda filename: {"file_name": metadata_name}
+        documents = SimpleDirectoryReader(input_dir=input_dir,file_metadata=filename_fn)
+        docs = documents.load_data()
+        print(f"Loaded {len(docs)} docs")
+    #Text to Node
+        nodes = Settings.node_parser.get_nodes_from_documents(docs)
+        loaddata(collection_name, nodes)
+    #Document Add to Store
+    elif choice == 'add':
+        basepath = '../FunctionRecs/AddData/'
+        available_directories = list_directories(basepath)
+        if available_directories:
+            while True:
+                input_directory = input(f'Please enter the directory name from the above list: ').strip()
+                if input_directory in available_directories:
+                    break
+                else:
+                    print(f'Invalid directory name. Please choose a directory from the list.')
+        else:
+            print("No directories available to choose from.")
+        input_dir = f'{basepath}{input_directory}'
+        print(input_dir)
+        metadata = lambda filename: {"file_name": input_directory}
+        documents = SimpleDirectoryReader(input_dir=input_dir,file_metadata=metadata)
+        docs = documents.load_data()
+        for doc in docs:
+            if "page_label" in doc.metadata:
+                del doc.metadata["page_label"]
+        for doc in docs:
+            print(doc.metadata)
+        print(f"Loaded {len(docs)} docs")
+        nodes = Settings.node_parser.get_nodes_from_documents(docs)
+        # Here you need to ensure docs is a list of (document, embedding) tuples
+        # This is a placeholder; you need to generate embeddings for each doc
+        add_data(collection_name, nodes, input_directory)
+    else:
+        print("Invalid choice. Please enter 'load' or 'add'")
+```
+# GUI Script SetUp:
+The GUI script is customizable via what LLM you can use off LM Studio, where your database is stored locally to pull from, and type of vectorstore you want to pull. 
+
+## Key Features:
+- QuestionEvaluator: When the question is too broad it will reprompt the user to pick a topic based on the context of the question. If question matches a topic it won't reprompt and follow through the rest of the code. 
+- If question is too broad pick type of data your question is related too. If question doesn't relate to data in vectorestore reponse 'Context not provided in Database'.
+
+### Script: 
+
+'Guardian.py'
+```python
+import os
+import streamlit as st
+from llama_index.llms.openai_like import OpenAILike
+#from llama_index.embeddings.instructor import InstructorEmbedding
+from langchain_community.embeddings import GPT4AllEmbeddings
+from llama_index.embeddings.langchain import LangchainEmbedding
+import chromadb
+from llama_index.vector_stores.chroma import ChromaVectorStore
+from llama_index.core import VectorStoreIndex, get_response_synthesizer, Settings
+from llama_index.core.query_engine import RetrieverQueryEngine
+from llama_index.packs.corrective_rag import CorrectiveRAGPack
+from Packages.QuestionEval import QuestionEvaluator
+import re
+Settings.llm = OpenAILike(
+    model="Meta-Llama-3-8B-Instruct.Q8_0.gguf",
+    api_key="fake",
+    api_base="http://localhost:1234/v1",
+    is_chat_model=True
+)
+Settings.embed_model = LangchainEmbedding(GPT4AllEmbeddings(model='http://localhost:1234/v1/embeddings'))
+whoosh = "/home/headquarters/Documents/Guardian/WebIndex/"
+
+def QuestionCheck(collection_name, question):
 
     # Load from disk
-    db2 = chromadb.PersistentClient(path="/home/headquarters/Documents/Guardian/VectorDatabase/")
+    db2 = chromadb.PersistentClient(path="/home/headquarters/Documents/Guardian/TestDB/")
     chroma_collection = db2.get_or_create_collection(collection_name)
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
-    service_context = ServiceContext.from_defaults(llm=llm, embed_model=embed_model)
-    index = VectorStoreIndex.from_vector_store(vector_store, service_context=service_context)
-    # Retrieve Embeddings from Loaded Store, pick size of similarity search('similarity_top_k=')
-    retriever = VectorIndexRetriever(index=index, similarity_top_k=3)
-    response_synthesizer = get_response_synthesizer(service_context=service_context)
-    query_engine = RetrieverQueryEngine(retriever=retriever, response_synthesizer=response_synthesizer)
 
-    # Queries Embeddings Retrieved
-    response = query_engine.query(question)
+    evaluator = QuestionEvaluator(vector_store)
+    result = evaluator.evaluate_response(question)
+    if result == True:
+        response = handpicked_query(vector_store, question)
+        response_content = response.response  # Accessing the actual response content
+        return response_content
+    else:
+        return {
+            "response" : result,
+            "match" : False,
+        }
+    # Query
+
+def handpicked_query(vector_store, question):
+    corrective_rag= CorrectiveRAGPack(vector_store,Settings.llm,whoosh)
+    response = corrective_rag.run(question, similarity_top_k=5)
     return response
 
 def main():
-    # GUI StandUp
     st.title("Guardian")
-
     collection_name = st.text_input("Enter the name of the collection to pull:")
     question = st.text_area("Write a query for the chatbot:")
-
     if st.button("Submit"):
         with st.spinner("Processing..."):
-            response = process_query(collection_name, question)
-            st.success(response)
+            check = QuestionCheck(collection_name, question)
+            if isinstance(check, dict) and check.get("match") is False:
+                check = check["response"]
+                st.error("Question is too broad. Pick an operating system of choice to increase accuracy.")
+                st.warning("Please re-enter your question with a specific operating system.")
+                st.subheader("Metadata IDs:")
+                seen_file_names = set()
+                st.success(check['metadata_ids'])
+                for idx, metadata in enumerate(check["metadata_ids"], start=1):
+                    file_name = metadata.get('file_name', 'Unknown')
+                    cleaned_file_name = re.sub(r'[^\w\s]', '', file_name)
+                    if cleaned_file_name not in seen_file_names:
+                        st.success(f"{idx}. {cleaned_file_name}")
+                        seen_file_names.add(cleaned_file_name)
+            elif isinstance(check, str) and check.strip() == 'Empty Response':
+                st.success('Context Not Provided in Database')
+            else:
+                st.success(check)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 ```
+
+# Offline Web Index:
+Run 'Scraper.py' to add websites relating to Data in the Vectorstore with a keyword for the topic. Apart of CRAG(Corrective Retrieval Augmented Generation) which when an answer is incorrect or ambiguous(Data may or may not be related to content in the Database so it parses through offline index for context)
+## Files Relating to Index:
+-URls.json: All the URLs pulled from the OpenAI.
+-AccessibleURLs.json: Akk the URLs that were successfully connected too. 
+-HTML.json: All the html code parsed from the urls.
+
+
+
+
