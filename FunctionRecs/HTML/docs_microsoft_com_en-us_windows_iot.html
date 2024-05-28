@@ -1,0 +1,746 @@
+<!DOCTYPE html><html
+	class=" is-full hub has-default-focus theme-light"
+	lang="en-us"
+	dir="ltr"
+	data-authenticated="false"
+	data-auth-status-determined="false"
+	data-target="docs"
+	x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="Windows for IoT Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/windows/iot/" /><meta property="og:description" content="The Windows for IoT platform has multiple editions, each optimized for specific scenarios. They all share the security, manageability, support, and cloud connectivity you expect from Windows." /><meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+
+	<meta property="og:image:alt" content="Microsoft Learn" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<meta name="twitter:site" content="@MicrosoftLearn" />
+
+	<meta name="color-scheme" content="light dark"><meta name="author" content="TerryWarwick" />
+<meta name="breadcrumb_path" content="/windows/iot/breadcrumb/toc.json" />
+<meta name="depot_name" content="MSDN.windows-iot-docset" />
+<meta name="description" content="The Windows for IoT platform has multiple editions, each optimized for specific scenarios. They all share the security, manageability, support, and cloud connectivity you expect from Windows." />
+<meta name="document_id" content="45cc0095-31ba-5b50-3196-10bae0a693a4" />
+<meta name="document_version_independent_id" content="6067074d-4384-3e3b-8ac9-372535122b6d" />
+<meta name="feedback_help_link_type" content="" />
+<meta name="feedback_help_link_url" content="" />
+<meta name="feedback_product_url" content="" />
+<meta name="feedback_system" content="None" />
+<meta name="git_commit_id" content="8b99a9aa180cea049d1760b60b2a74319fc5d35d" />
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/windows-iot-pr/blob/8b99a9aa180cea049d1760b60b2a74319fc5d35d/windows-iot/index.yml" />
+<meta name="locale" content="en-us" />
+<meta name="ms.author" content="TWarwick" />
+<meta name="ms.date" content="10/31/2023" />
+<meta name="ms.service" content="windows-iot" />
+<meta name="ms.subservice" content="iot" />
+<meta name="ms.topic" content="hub-page" />
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/windows-iot-pr/blob/live/windows-iot/index.yml" />
+<meta name="page_type" content="hub" />
+<meta name="schema" content="Hub" />
+<meta name="site_name" content="Docs" />
+<meta name="summary" content="Windows for IoT, formerly Windows Embedded, is a family of operating systems from Microsoft designed for use in embedded systems." />
+<meta name="uhfHeaderId" content="MSDocsHeader-Windows-IoT" />
+<meta name="updated_at" content="2024-02-29 11:16 PM" />
+<meta name="persistent_id" content="514d8d03-d92a-1b6d-6b1d-0365f7ca4a90" />
+	
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/ffbd07f7-9210-4df5-8d53-23bfda298bc9" data-source="generated" />
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8" data-source="generated" />
+	
+	<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/660ba368-6350-428a-bf85-5ce82f92eed3" data-source="generated" />
+	<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/43b2e5aa-8a6d-4de2-a252-692232e5edc8" data-source="generated" />
+	
+	<meta name="2PlusCloud" content="Azure" data-source="generated" />
+	<meta name="2PlusCloud" content="Power" data-source="generated" />
+	<meta name="2PlusCloud" content="M365" data-source="generated" />
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/windows-iot-public/blob/main/windows-iot/index.yml" /><link href="https://learn.microsoft.com/en-us/windows/iot/" rel="canonical"><title>Windows for IoT Documentation | Microsoft Learn</title><link rel="stylesheet" href="/static/assets/0.4.026835136/styles/site-ltr.css">
+
+	<script id="msdocs-script">
+	var msDocs = {environment: {
+			supportLevel: 'production',
+			accessLevel: 'online',
+			reviewFeatures: false,
+			systemContent: true,
+			azurePortalHostname: 'portal.azure.com',
+			legacyHosting: false,
+			siteName: 'learn',
+		},data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Hub',
+			brand: 'windows',
+			context: {},
+			hasBinaryRating: false,
+			hasGithubIssues: false,
+			feedbackHelpLinkType:'',
+			feedbackHelpLinkUrl:'',
+			standardFeedback: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',extendBreadcrumb: false,isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: false,
+			hasPrintButton: false,
+			hasBookmark: false,
+			hasShare: true,
+			isPermissioned: false,
+			isPrivateUnauthorized: false,hasRecommendations: false,contributors: [{ name: "asergaz", url: "https://github.com/asergaz" },{ name: "rsameser", url: "https://github.com/rsameser" },{ name: "alexbuckgit", url: "https://github.com/alexbuckgit" }],},
+		functions:{}
+	};
+	</script><script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script><script src="/static/assets/0.4.026835136/global/deprecation.js"></script><link rel="preconnect" href="//mscom.demdex.net" crossorigin>
+		<link rel="dns-prefetch" href="//target.microsoft.com">
+		<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net">
+		<link
+			rel="preload"
+			as="script"
+			href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+			integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+			crossorigin="anonymous"
+			id="adobe-target-script"
+			type="application/javascript"
+		/><script src="/static/assets/0.4.026835136/scripts/en-us/index-docs.js"></script></head>
+
+<body lang="en-us" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a>
+
+		<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">This browser is no longer supported.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">Download Microsoft Edge</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">More info about Internet Explorer and Microsoft Edge</a>
+				</div>
+			</div>
+		</div>
+		<!-- liquid-tag banners global -->
+
+		<!-- site header -->
+		<header id="ms--site-header" data-test-id="site-header-wrapper" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+			<div id="ms--mobile-nav" class="site-header display-none-tablet padding-inline-none gap-none" data-bi-name="mobile-header" data-test-id="mobile-header"></div>
+			<div id="ms--primary-nav" class="site-header display-none display-flex-tablet" data-bi-name="L1-header" data-test-id="primary-header"></div>
+			<div id="ms--secondary-nav" class="site-header display-none display-flex-tablet" data-bi-name="L2-header" data-test-id="secondary-header"></div>
+		</header><div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container is-full  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile  is-gapless"><!-- .primary-holder -->
+			<section class="primary-holder column ">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps  is-gapless"><div id="main-column" class="column ">
+
+						<main id="main" class="" role="main" data-bi-name="content" lang="en-us" dir="ltr"><div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span><span class="contents-expand-title">Table of contents</span></button>
+							</div><!-- end mobile-contents button  -->
+
+							<div class="content "><!-- <content> --><section id="hero" class="hero  has-background-windows has-text-windows-invert background-image-pattern-plus hero-xs background-image-pattern background-size-200">
+	<div class="hero-content">
+		<h1 id="hero-title" class="title">Windows for IoT Documentation</h1>
+			<p id="hero-summary" class="margin-none padding-top-xs">Windows for IoT, formerly Windows Embedded, is a family of operating systems from Microsoft designed for use in embedded systems.</p>
+	</div>
+</section>
+
+	<section id="highlighted-content">
+		<div class="uhf-container padding-block-sm">
+<div class="columns is-multiline">
+		<div class="column is-6-tablet is-3-desktop">
+			<article class="card is-full-height position-relative">
+				<div class="card-content display-flex">
+					<div class="media align-items-stretch">
+						<div class="media-left display-none display-block-tablet">
+							<div class="image image-64x64 has-text-windows" aria-hidden="true">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" preserveAspectRatio="xMidYMin meet">			<g data-name="Layer 1">				<path fill="none" d="M.04 0h64v64h-64z"></path>				<path fill="none" d="M-.04 0h64v64h-64z"></path>				<path d="M54.16 16v35a1.86 1.86 0 0 1-2.64 1.69 74.73 74.73 0 0 0-8.72-3.39C29.1 45 12 42.54 6.57 41.85A1.87 1.87 0 0 1 5 40V26.89A1.87 1.87 0 0 1 6.57 25c5.43-.7 22.53-3.1 36.23-7.46a76.6 76.6 0 0 0 8.72-3.3A1.85 1.85 0 0 1 54.16 16z" fill="#e3e3e3" fill-opacity=".3"></path>				<path d="M32.16 46.19v1.47a6.28 6.28 0 0 1-6.28 6.28h-.81A7 7 0 0 1 18.12 47v-3.7" stroke="#c8c8c8" stroke-miterlimit="10" stroke-width="2" fill="none"></path>				<path d="M59.05 33.44A7 7 0 0 1 49.56 40c-.18-2.07-.28-4.27-.28-6.54s.1-4.51.28-6.6a7 7 0 0 1 9.49 6.57z" fill="#919191"></path>				<path fill="#c8c8c8" d="M52.3 15.44a.52.52 0 0 1 .52.53v35a.52.52 0 0 1-.52.52.59.59 0 0 1-.22 0A76.54 76.54 0 0 0 43.21 48c-13.88-4.41-31.42-6.86-36.47-7.5a.52.52 0 0 1-.44-.5V26.89a.53.53 0 0 1 .45-.52c6.47-.83 23-3.22 36.46-7.51a76.64 76.64 0 0 0 8.87-3.36.46.46 0 0 1 .22-.06m0-1.34a1.85 1.85 0 0 0-.78.18 76.6 76.6 0 0 1-8.72 3.3C29.1 21.94 12 24.34 6.57 25A1.87 1.87 0 0 0 5 26.89V40a1.87 1.87 0 0 0 1.62 1.85C12 42.54 29.1 45 42.8 49.3a74.73 74.73 0 0 1 8.72 3.31 1.83 1.83 0 0 0 .78.17 1.86 1.86 0 0 0 1.86-1.86V16a1.86 1.86 0 0 0-1.86-1.9z"></path>				<path fill="#c8c8c8" d="M54.16 16v35a1.86 1.86 0 0 1-2.64 1.69 74.73 74.73 0 0 0-8.72-3.39V17.58a76.6 76.6 0 0 0 8.72-3.3A1.85 1.85 0 0 1 54.16 16z"></path>				<circle cx="26.29" cy="21.3" r="9.8" class="fill-current-color" fill="#0079d6"></circle>				<path fill="#fff" d="M26.3 15.36l1.47 4.54h4.77l-3.86 2.8 1.47 4.54-3.85-2.81-3.86 2.81 1.47-4.54-3.86-2.8h4.77l1.48-4.54z"></path>			</g>		</svg>		
+							</div>
+						</div>
+						<div class="media-content">
+							<p class="card-supertitle margin-top-none margin-top-xs-tablet">What's new</p>
+							<a id="whats-new-in-windows-iot-enterprise-long-term-servicing-channel-(ltsc)-0" href="iot-enterprise/whats-new/windows-iot-enterprise-ltsc" class="card-title stretched-link has-external-link-indicator" data-linktype="relative-path">What's new in Windows IoT Enterprise Long-term Servicing Channel (LTSC)</a>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div class="column is-6-tablet is-3-desktop">
+			<article class="card is-full-height position-relative">
+				<div class="card-content display-flex">
+					<div class="media align-items-stretch">
+						<div class="media-left display-none display-block-tablet">
+							<div class="image image-64x64 has-text-windows" aria-hidden="true">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" preserveAspectRatio="xMidYMin meet">			<g data-name="Layer 1">				<path fill="none" d="M.04 0h64v64h-64z"></path>				<path fill="none" d="M-.04 0h64v64h-64z"></path>				<path d="M54.16 16v35a1.86 1.86 0 0 1-2.64 1.69 74.73 74.73 0 0 0-8.72-3.39C29.1 45 12 42.54 6.57 41.85A1.87 1.87 0 0 1 5 40V26.89A1.87 1.87 0 0 1 6.57 25c5.43-.7 22.53-3.1 36.23-7.46a76.6 76.6 0 0 0 8.72-3.3A1.85 1.85 0 0 1 54.16 16z" fill="#e3e3e3" fill-opacity=".3"></path>				<path d="M32.16 46.19v1.47a6.28 6.28 0 0 1-6.28 6.28h-.81A7 7 0 0 1 18.12 47v-3.7" stroke="#c8c8c8" stroke-miterlimit="10" stroke-width="2" fill="none"></path>				<path d="M59.05 33.44A7 7 0 0 1 49.56 40c-.18-2.07-.28-4.27-.28-6.54s.1-4.51.28-6.6a7 7 0 0 1 9.49 6.57z" fill="#919191"></path>				<path fill="#c8c8c8" d="M52.3 15.44a.52.52 0 0 1 .52.53v35a.52.52 0 0 1-.52.52.59.59 0 0 1-.22 0A76.54 76.54 0 0 0 43.21 48c-13.88-4.41-31.42-6.86-36.47-7.5a.52.52 0 0 1-.44-.5V26.89a.53.53 0 0 1 .45-.52c6.47-.83 23-3.22 36.46-7.51a76.64 76.64 0 0 0 8.87-3.36.46.46 0 0 1 .22-.06m0-1.34a1.85 1.85 0 0 0-.78.18 76.6 76.6 0 0 1-8.72 3.3C29.1 21.94 12 24.34 6.57 25A1.87 1.87 0 0 0 5 26.89V40a1.87 1.87 0 0 0 1.62 1.85C12 42.54 29.1 45 42.8 49.3a74.73 74.73 0 0 1 8.72 3.31 1.83 1.83 0 0 0 .78.17 1.86 1.86 0 0 0 1.86-1.86V16a1.86 1.86 0 0 0-1.86-1.9z"></path>				<path fill="#c8c8c8" d="M54.16 16v35a1.86 1.86 0 0 1-2.64 1.69 74.73 74.73 0 0 0-8.72-3.39V17.58a76.6 76.6 0 0 0 8.72-3.3A1.85 1.85 0 0 1 54.16 16z"></path>				<circle cx="26.29" cy="21.3" r="9.8" class="fill-current-color" fill="#0079d6"></circle>				<path fill="#fff" d="M26.3 15.36l1.47 4.54h4.77l-3.86 2.8 1.47 4.54-3.85-2.81-3.86 2.81 1.47-4.54-3.86-2.8h4.77l1.48-4.54z"></path>			</g>		</svg>		
+							</div>
+						</div>
+						<div class="media-content">
+							<p class="card-supertitle margin-top-none margin-top-xs-tablet">What's new</p>
+							<a id="whats-new-in-windows-10-iot-enterprise-version-22h2-1" href="iot-enterprise/whats-new/windows-10-iot-enterprise-22h2" class="card-title stretched-link has-external-link-indicator" data-linktype="relative-path">What's new in Windows 10 IoT Enterprise, version 22H2</a>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div class="column is-6-tablet is-3-desktop">
+			<article class="card is-full-height position-relative">
+				<div class="card-content display-flex">
+					<div class="media align-items-stretch">
+						<div class="media-left display-none display-block-tablet">
+							<div class="image image-64x64 has-text-windows" aria-hidden="true">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" preserveAspectRatio="xMidYMin meet">			<g data-name="Layer 1">				<path fill="none" d="M.04 0h64v64h-64z"></path>				<path fill="none" d="M-.04 0h64v64h-64z"></path>				<path d="M54.16 16v35a1.86 1.86 0 0 1-2.64 1.69 74.73 74.73 0 0 0-8.72-3.39C29.1 45 12 42.54 6.57 41.85A1.87 1.87 0 0 1 5 40V26.89A1.87 1.87 0 0 1 6.57 25c5.43-.7 22.53-3.1 36.23-7.46a76.6 76.6 0 0 0 8.72-3.3A1.85 1.85 0 0 1 54.16 16z" fill="#e3e3e3" fill-opacity=".3"></path>				<path d="M32.16 46.19v1.47a6.28 6.28 0 0 1-6.28 6.28h-.81A7 7 0 0 1 18.12 47v-3.7" stroke="#c8c8c8" stroke-miterlimit="10" stroke-width="2" fill="none"></path>				<path d="M59.05 33.44A7 7 0 0 1 49.56 40c-.18-2.07-.28-4.27-.28-6.54s.1-4.51.28-6.6a7 7 0 0 1 9.49 6.57z" fill="#919191"></path>				<path fill="#c8c8c8" d="M52.3 15.44a.52.52 0 0 1 .52.53v35a.52.52 0 0 1-.52.52.59.59 0 0 1-.22 0A76.54 76.54 0 0 0 43.21 48c-13.88-4.41-31.42-6.86-36.47-7.5a.52.52 0 0 1-.44-.5V26.89a.53.53 0 0 1 .45-.52c6.47-.83 23-3.22 36.46-7.51a76.64 76.64 0 0 0 8.87-3.36.46.46 0 0 1 .22-.06m0-1.34a1.85 1.85 0 0 0-.78.18 76.6 76.6 0 0 1-8.72 3.3C29.1 21.94 12 24.34 6.57 25A1.87 1.87 0 0 0 5 26.89V40a1.87 1.87 0 0 0 1.62 1.85C12 42.54 29.1 45 42.8 49.3a74.73 74.73 0 0 1 8.72 3.31 1.83 1.83 0 0 0 .78.17 1.86 1.86 0 0 0 1.86-1.86V16a1.86 1.86 0 0 0-1.86-1.9z"></path>				<path fill="#c8c8c8" d="M54.16 16v35a1.86 1.86 0 0 1-2.64 1.69 74.73 74.73 0 0 0-8.72-3.39V17.58a76.6 76.6 0 0 0 8.72-3.3A1.85 1.85 0 0 1 54.16 16z"></path>				<circle cx="26.29" cy="21.3" r="9.8" class="fill-current-color" fill="#0079d6"></circle>				<path fill="#fff" d="M26.3 15.36l1.47 4.54h4.77l-3.86 2.8 1.47 4.54-3.85-2.81-3.86 2.81 1.47-4.54-3.86-2.8h4.77l1.48-4.54z"></path>			</g>		</svg>		
+							</div>
+						</div>
+						<div class="media-content">
+							<p class="card-supertitle margin-top-none margin-top-xs-tablet">What's new</p>
+							<a id="whats-new-in-windows-11-iot-enterprise-version-23h2-2" href="iot-enterprise/whats-new/windows-11-iot-enterprise-23h2" class="card-title stretched-link has-external-link-indicator" data-linktype="relative-path">What's new in Windows 11 IoT Enterprise, version 23H2</a>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div class="column is-6-tablet is-3-desktop">
+			<article class="card is-full-height position-relative">
+				<div class="card-content display-flex">
+					<div class="media align-items-stretch">
+						<div class="media-left display-none display-block-tablet">
+							<div class="image image-64x64 has-text-windows" aria-hidden="true">
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" preserveAspectRatio="xMidYMin meet">			<g data-name="Layer 1">				<path fill="none" d="M.04 0h64v64h-64z"></path>				<path fill="none" d="M-.04 0h64v64h-64z"></path>				<path d="M54.16 16v35a1.86 1.86 0 0 1-2.64 1.69 74.73 74.73 0 0 0-8.72-3.39C29.1 45 12 42.54 6.57 41.85A1.87 1.87 0 0 1 5 40V26.89A1.87 1.87 0 0 1 6.57 25c5.43-.7 22.53-3.1 36.23-7.46a76.6 76.6 0 0 0 8.72-3.3A1.85 1.85 0 0 1 54.16 16z" fill="#e3e3e3" fill-opacity=".3"></path>				<path d="M32.16 46.19v1.47a6.28 6.28 0 0 1-6.28 6.28h-.81A7 7 0 0 1 18.12 47v-3.7" stroke="#c8c8c8" stroke-miterlimit="10" stroke-width="2" fill="none"></path>				<path d="M59.05 33.44A7 7 0 0 1 49.56 40c-.18-2.07-.28-4.27-.28-6.54s.1-4.51.28-6.6a7 7 0 0 1 9.49 6.57z" fill="#919191"></path>				<path fill="#c8c8c8" d="M52.3 15.44a.52.52 0 0 1 .52.53v35a.52.52 0 0 1-.52.52.59.59 0 0 1-.22 0A76.54 76.54 0 0 0 43.21 48c-13.88-4.41-31.42-6.86-36.47-7.5a.52.52 0 0 1-.44-.5V26.89a.53.53 0 0 1 .45-.52c6.47-.83 23-3.22 36.46-7.51a76.64 76.64 0 0 0 8.87-3.36.46.46 0 0 1 .22-.06m0-1.34a1.85 1.85 0 0 0-.78.18 76.6 76.6 0 0 1-8.72 3.3C29.1 21.94 12 24.34 6.57 25A1.87 1.87 0 0 0 5 26.89V40a1.87 1.87 0 0 0 1.62 1.85C12 42.54 29.1 45 42.8 49.3a74.73 74.73 0 0 1 8.72 3.31 1.83 1.83 0 0 0 .78.17 1.86 1.86 0 0 0 1.86-1.86V16a1.86 1.86 0 0 0-1.86-1.9z"></path>				<path fill="#c8c8c8" d="M54.16 16v35a1.86 1.86 0 0 1-2.64 1.69 74.73 74.73 0 0 0-8.72-3.39V17.58a76.6 76.6 0 0 0 8.72-3.3A1.85 1.85 0 0 1 54.16 16z"></path>				<circle cx="26.29" cy="21.3" r="9.8" class="fill-current-color" fill="#0079d6"></circle>				<path fill="#fff" d="M26.3 15.36l1.47 4.54h4.77l-3.86 2.8 1.47 4.54-3.85-2.81-3.86 2.81 1.47-4.54-3.86-2.8h4.77l1.48-4.54z"></path>			</g>		</svg>		
+							</div>
+						</div>
+						<div class="media-content">
+							<p class="card-supertitle margin-top-none margin-top-xs-tablet">What's new</p>
+							<a id="windows-for-iot-news-3" href="iot-enterprise/whats-new/news-blogs" class="card-title stretched-link has-external-link-indicator" data-linktype="relative-path">Windows for IoT News</a>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+</div>
+		</div>
+	</section>
+
+	<section id="product-directory">
+		<div class="uhf-container anchor-headings padding-block-lg">
+<div class="columns">
+	<div id="tabpanel" role="tabpanel" class="column">
+		<div id="product-cards" class="columns is-multiline " data-bi-name="hub-product-card">
+				<div class="column is-4-tablet is-4-desktop item-column" data-categories="">
+						<div class="box margin-none is-full-height padding-sm">
+								<img src="/en-us/media/logos/logo_Windows.svg" alt="" loading="lazy" width="48" height="48" class="image is-48x48 margin-bottom-xxs" data-linktype="absolute-path">
+							<h3 id="windows-iot-enterprise-0" class="font-size-h6 margin-none">Windows IoT Enterprise</h3>
+							<ul class="has-line-height-reset margin-left-none margin-bottom-none margin-top-xxs">
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="iot-enterprise/whats-new/release-history" class="has-external-link-indicator display-block font-size-sm" data-linktype="relative-path">Overview</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="iot-enterprise/hardware/hardware_requirements" class="has-external-link-indicator display-block font-size-sm" data-linktype="relative-path">Hardware Requirements</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="iot-enterprise/deployment/" class="has-external-link-indicator display-block font-size-sm" data-linktype="relative-path">Deployment</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="iot-enterprise/customize/customize-overview" class="has-external-link-indicator display-block font-size-sm" data-linktype="relative-path">Customization</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="iot-enterprise/optimize/overview" class="has-external-link-indicator display-block font-size-sm" data-linktype="relative-path">Optimization</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="iot-enterprise/commercialization/manufacturing-guide" class="has-external-link-indicator display-block font-size-sm" data-linktype="relative-path">Manufacturing Guide</a>
+									</li>
+							</ul>
+						</div>
+				</div>
+				<div class="column is-4-tablet is-4-desktop item-column" data-categories="">
+						<div class="box margin-none is-full-height padding-sm">
+								<img src="/en-us/media/common/i_server.svg" alt="" loading="lazy" width="48" height="48" class="image is-48x48 margin-bottom-xxs" data-linktype="absolute-path">
+							<h3 id="windows-server-iot-1" class="font-size-h6 margin-none">Windows Server IoT</h3>
+							<ul class="has-line-height-reset margin-left-none margin-bottom-none margin-top-xxs">
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="server/windows-server" class="has-external-link-indicator display-block font-size-sm" data-linktype="relative-path">Overview</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/windows-server/get-started/whats-new-in-windows-server-2022" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">What's new in Windows Server 2022?</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/windows-server/get-started/get-started-with-windows-server" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Get Started with Windows Server</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/windows-server/get-started/windows-server-release-info" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Release Information</a>
+									</li>
+							</ul>
+						</div>
+				</div>
+				<div class="column is-4-tablet is-4-desktop item-column" data-categories="">
+						<div class="box margin-none is-full-height padding-sm">
+								<img src="/en-us/media/logos/logo_SQL.svg" alt="" loading="lazy" width="48" height="48" class="image is-48x48 margin-bottom-xxs" data-linktype="absolute-path">
+							<h3 id="sql-server-iot-2" class="font-size-h6 margin-none">SQL Server IoT</h3>
+							<ul class="has-line-height-reset margin-left-none margin-bottom-none margin-top-xxs">
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="https://techcommunity.microsoft.com/t5/internet-of-things-blog/announcing-sql-server-iot-2022/ba-p/3672116" class="has-external-link-indicator display-block font-size-sm" data-linktype="external">SQL Server IoT 2022</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/sql/sql-server/what-s-new-in-sql-server-2022?view=sql-server-ver16" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">What's new in SQL Server 2022?</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/sql/sql-server/editions-and-components-of-sql-server-2022?view=sql-server-ver16" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Editions and Features</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/sql/sql-server/sql-server-2022-release-notes?view=sql-server-ver16" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Release Notes</a>
+									</li>
+							</ul>
+						</div>
+				</div>
+				<div class="column is-4-tablet is-4-desktop item-column" data-categories="">
+						<div class="box margin-none is-full-height padding-sm">
+								<img src="/en-us/media/common/i_multi-connect.svg" alt="" loading="lazy" width="48" height="48" class="image is-48x48 margin-bottom-xxs" data-linktype="absolute-path">
+							<h3 id="azure-kubernetes-service-(aks)-edge-essentials-3" class="font-size-h6 margin-none">Azure Kubernetes Service (AKS) Edge Essentials</h3>
+							<ul class="has-line-height-reset margin-left-none margin-bottom-none margin-top-xxs">
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/azure/aks/hybrid/aks-edge-overview" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Overview</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/azure/aks/hybrid/aks-edge-quickstart" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Quickstart</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/azure/aks/hybrid/aks-edge-howto-setup-machine" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">How-to Guide</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/training/paths/get-started-aks-edge-essentials/" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Get started with AKS Edge Essentials - Training</a>
+									</li>
+							</ul>
+						</div>
+				</div>
+				<div class="column is-4-tablet is-4-desktop item-column" data-categories="">
+						<div class="box margin-none is-full-height padding-sm">
+								<img src="/en-us/media/common/i_multi-connect.svg" alt="" loading="lazy" width="48" height="48" class="image is-48x48 margin-bottom-xxs" data-linktype="absolute-path">
+							<h3 id="azure-iot-edge-for-linux-on-windows-4" class="font-size-h6 margin-none">Azure IoT Edge for Linux on Windows</h3>
+							<ul class="has-line-height-reset margin-left-none margin-bottom-none margin-top-xxs">
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/azure/iot-edge/iot-edge-for-linux-on-windows?view=iotedge-2018-06" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Overview</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/azure/iot-edge/quickstart?view=iotedge-2018-06" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Quickstart</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/azure/iot-edge/how-to-install-iot-edge-on-windows?view=iotedge-2018-06&amp;tabs=powershell" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">How-to Guide</a>
+									</li>
+							</ul>
+						</div>
+				</div>
+				<div class="column is-4-tablet is-4-desktop item-column" data-categories="">
+						<div class="box margin-none is-full-height padding-sm">
+								<img src="media/windows.png" alt="" loading="lazy" width="48" height="48" class="image is-48x48 margin-bottom-xxs" data-linktype="relative-path">
+							<h3 id="previous-versions-5" class="font-size-h6 margin-none">Previous Versions</h3>
+							<ul class="has-line-height-reset margin-left-none margin-bottom-none margin-top-xxs">
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/windows/iot-core/windows-iot-core" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Windows IoT Core</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/windows-hardware/manufacture/iot/iotcoreservicesoverview" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Windows 10 IoT Core Services</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/windows/iot/windows_ce/windows-ce-app-container-overview" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Windows CE Migration</a>
+									</li>
+									<li class="is-unstyled margin-bottom-xxs">
+										<a href="/en-us/previous-versions/windows/embedded/ee504814(v=winembedded.70)" class="has-external-link-indicator display-block font-size-sm" data-linktype="absolute-path">Windows Embedded Family</a>
+									</li>
+							</ul>
+						</div>
+				</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</section>
+
+	<section id="conceptual-content" class="padding-block-lg">
+		<div class="uhf-container anchor-headings">
+<div class="columns is-multiline">
+		<div class="column is-6-tablet">
+			<article class="card is-full-height">
+				<div class="card-content">
+					<p class="card-title color-text font-size-lg">Get Started</p>
+					<ul class="has-line-height-reset margin-left-none margin-bottom-none margin-top-xs">
+							<li class="is-unstyled margin-bottom-xxs font-size-sm">
+								<div class="justify-content-flex-start display-flex is-fullwidth font-size-sm has-text-wrap">
+									<span class="icon font-size-md has-text-primary margin-right-xxs" aria-hidden="true">
+										<span class="docon docon-topic-overview"></span>
+									</span>
+									<a href="iot-enterprise/commercialization/licensing" class="has-external-link-indicator" data-linktype="relative-path">OEMs &amp; Licensing</a>
+								</div>
+							</li>
+							<li class="is-unstyled margin-bottom-xxs font-size-sm">
+								<div class="justify-content-flex-start display-flex is-fullwidth font-size-sm has-text-wrap">
+									<span class="icon font-size-md has-text-primary margin-right-xxs" aria-hidden="true">
+										<span class="docon docon-topic-how-to-guide"></span>
+									</span>
+									<a href="https://aka.ms/IoTDistributorList" class="has-external-link-indicator" data-linktype="external">Distributor Information</a>
+								</div>
+							</li>
+							<li class="is-unstyled margin-bottom-xxs font-size-sm">
+								<div class="justify-content-flex-start display-flex is-fullwidth font-size-sm has-text-wrap">
+									<span class="icon font-size-md has-text-primary margin-right-xxs" aria-hidden="true">
+										<span class="docon docon-topic-reference"></span>
+									</span>
+									<a href="iot-enterprise/hardware-guidance/hardware_requirements" class="has-external-link-indicator" data-linktype="relative-path">Hardware Requirements</a>
+								</div>
+							</li>
+					</ul>
+				</div>
+			</article>
+		</div>
+		<div class="column is-6-tablet">
+			<article class="card is-full-height">
+				<div class="card-content">
+					<p class="card-title color-text font-size-lg">Resources</p>
+					<ul class="has-line-height-reset margin-left-none margin-bottom-none margin-top-xs">
+							<li class="is-unstyled margin-bottom-xxs font-size-sm">
+								<div class="justify-content-flex-start display-flex is-fullwidth font-size-sm has-text-wrap">
+									<span class="icon font-size-md has-text-primary margin-right-xxs" aria-hidden="true">
+										<span class="docon docon-topic-reference"></span>
+									</span>
+									<a href="https://www.youtube.com/channel/UCL7wy-iy_V76xxPnrIzGOZQ" class="has-external-link-indicator" data-linktype="external">Microsoft IoT Developer</a>
+								</div>
+							</li>
+							<li class="is-unstyled margin-bottom-xxs font-size-sm">
+								<div class="justify-content-flex-start display-flex is-fullwidth font-size-sm has-text-wrap">
+									<span class="icon font-size-md has-text-primary margin-right-xxs" aria-hidden="true">
+										<span class="docon docon-topic-reference"></span>
+									</span>
+									<a href="https://channel9.msdn.com/" class="has-external-link-indicator" data-linktype="external">Channel 9</a>
+								</div>
+							</li>
+					</ul>
+				</div>
+			</article>
+		</div>
+</div>
+		</div>
+	</section>
+
+
+</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main><!-- recommendations section --><!-- end recommendations section -->
+
+						<!-- feedback section --><!-- end feedback section -->
+
+						<!-- feedback report section --><!-- end feedback report section --><div class="border-top is-visible-interactive has-default-focus margin-top-sm  margin-top-none"><footer id="footer-interactive" data-bi-name="footer" class="footer-layout"><div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop"><a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a><div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+<a
+	href="https://aka.ms/yourcaliforniaprivacychoices"
+	class="button button-sm button-clear flex-shrink-0"
+	data-mscc-ic="false"
+	data-bi-name="your-privacy-choices"
+>
+	<svg
+		role="img"
+		aria-label="California Consumer Privacy Act (CCPA) Opt-Out Icon"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 30 14"
+		xml:space="preserve"
+		height="16"
+		width="43"
+		focusable="false"
+	>
+		<title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title>
+		<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+		<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+		<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+		<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+	</svg>
+	<span>Your Privacy Choices</span>
+</a>
+
+		</div>
+		<div class="flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>Light</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>Dark</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>High contrast</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li><li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks">Trademarks</a></li><li>&copy; Microsoft 2024</li>
+	</ul>
+</footer></div></div></div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm  margin-top-none"><footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo"><div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop"><a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a><div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+<a
+	href="https://aka.ms/yourcaliforniaprivacychoices"
+	class="button button-sm button-clear flex-shrink-0"
+	data-mscc-ic="false"
+	data-bi-name="your-privacy-choices"
+>
+	<svg
+		role="img"
+		aria-label="California Consumer Privacy Act (CCPA) Opt-Out Icon"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 30 14"
+		xml:space="preserve"
+		height="16"
+		width="43"
+		focusable="false"
+	>
+		<title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title>
+		<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+		<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+		<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+		<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+	</svg>
+	<span>Your Privacy Choices</span>
+</a>
+
+		</div>
+		<div class="flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>Light</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>Dark</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>High contrast</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li><li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks">Trademarks</a></li><li>&copy; Microsoft 2024</li>
+	</ul>
+</footer>
+
+	</section><div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>
+

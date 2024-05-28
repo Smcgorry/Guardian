@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Charmhub | The Open Operator Collection</title>
+
+    <meta name="description" content="Universal operators for application lifecycle management on Linux, Windows and Kubernetes" />
+
+    <meta name="msvalidate.01" content="F922865A678BADA5E7209E29B2656AA6" />
+
+   
+     <meta property="og:title" content="The Open Operator Collection"/>
+     <meta property="og:site_name" content="Charmhub"/>
+     <meta property="og:type" content="website"/>
+     <meta property="og:description" content="Universal operators for application lifecycle management on Linux, Windows and Kubernetes"/>
+     <meta property="og:image" content="https://assets.ubuntu.com/v1/5e6fb404-charmhub.svg" />
+     <meta property="og:image:width" content="3188" />
+     <meta property="og:image:height" content="1000" />
+     <meta property="og:image:alt" content="Canonical Charmhub banner" />
+     <meta property="og:url" content="https://charmhub.io" />
+     <meta property="twitter:card" content="summary_large_image" />
+     <meta property="twitter:site" content="@juju_devops" />
+     <meta property="twitter:creator" content="@juju_devops" />
+     <meta property="twitter:image" content="https://assets.ubuntu.com/v1/5e6fb404-charmhub.svg" />
+     <meta property="twitter:url" content="https://charmhum.io" />
+  
+
+    <meta name="copydoc" content="https://docs.google.com/document/d/1mps4SOa8_DA25fccYor3wxwV3ulQiD-uaocDHmaGmhw">
+    
+    <link rel="canonical" href="https://charmhub.io/" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NNT2XX6');</script>
+    <!-- End Google Tag Manager -->
+
+    <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js" defer></script>
+
+    <link rel="preconnect" href="https://res.cloudinary.com">
+
+    <link rel="preconnect" href="https://assets.ubuntu.com">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css?v=6ab4810" />
+
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/e8c07df6-Ubuntu-L_W.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/7f100985-Ubuntu-Th_W.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/f8097dea-Ubuntu-LI_W.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/fff37993-Ubuntu-R_W.woff2" crossorigin>
+    <link rel="search" type="application/opensearchdescription+xml" title="Charmhub" href="/static/opensearch.xml" />
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNT2XX6"
+    height="0" width="0" style="display: none; visibility: hidden;"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header id="navigation" class="p-navigation is-dark">
+  <div class="p-navigation__row">
+    <div class="p-navigation__banner">
+      <div class="p-navigation__tagged-logo">
+        <a class="p-navigation__link" href="https://juju.is">
+          <div class="p-navigation__logo-tag">
+            <img class="p-navigation__logo-icon" src="https://assets.ubuntu.com/v1/a603c7c9-Favicon - Juju.svg" alt="Canonical Juju" />
+          </div>
+          <span class="p-navigation__logo-title">Canonical Juju</span>
+        </a>
+      </div>
+      <ul class="p-navigation__items">
+        <li class="p-navigation__item">
+          <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+          <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="p-navigation__nav">
+      <ul class="p-navigation__items">
+        <li class="p-navigation__item is-selected">
+          <a class="p-navigation__link" href="/">Charmhub</a>
+        </li>
+        <li class="p-navigation__item--dropdown-toggle" id="community-link">
+          <a class="p-navigation__link" href="#community-link-menu" aria-controls="community-link-menu">Community</a>
+          <ul class="p-navigation__dropdown" id="community-link-menu" aria-hidden="true">
+            <li>
+              <a href="https://discourse.charmhub.io" class="p-navigation__dropdown-item">
+                Discourse forum
+              </a>
+            </li>
+            <li>
+              <a href="https://matrix.to/#/#charmhub:ubuntu.com" class="p-navigation__dropdown-item">
+                Matrix chat
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="p-navigation__item--dropdown-toggle" id="docs-link">
+          <a class="p-navigation__link" href="#docs-link-menu" aria-controls="docs-link-menu">Docs</a>
+          <ul class="p-navigation__dropdown" id="docs-link-menu" aria-hidden="true">
+            <li>
+              <a class="p-navigation__dropdown-item" href="https://juju.is/docs/juju">Juju</a>
+            </li>
+            <li>
+              <a class="p-navigation__dropdown-item" href="https://juju.is/docs/sdk">Charm SDK</a>
+            </li>
+            <li>
+              <a class="p-navigation__dropdown-item" href="https://juju.is/docs/dev">Contribute to Juju</a>
+            </li>
+            <li>
+              <a class="p-navigation__dropdown-item" href="https://juju.is/operator-day">Operator Day</a>
+            </li>
+            <li>
+              <a class="p-navigation__dropdown-item" href="/topics">Topics</a>
+            </li>
+          </ul>
+        </li>
+        <li class="p-navigation__item">
+          <a class="p-navigation__link" href="https://ubuntu.com/blog/tag/juju">Blog</a>
+        </li>
+      </ul>
+      <ul class="p-navigation__items global-nav">
+        <li class="p-navigation__item js-nav-account" id="user-link">
+          
+          <a href="#user-link-menu" aria-controls="user-link-menu" class="p-navigation__link js-nav-account--authenticated u-hide js-account--name account-name">My account</a>
+          <ul class="p-navigation__dropdown--right" id="user-link-menu" aria-hidden="true">
+            <li>
+              <a href="/charms" class="p-navigation__dropdown-item">My charms and bundles</a>
+            </li>
+            <li>
+              <a href="/logout" class="p-navigation__dropdown-item">Sign out</a>
+            </li>
+          </ul>
+          
+          <a class="p-navigation__link js-nav-account--notauthenticated" href="/charms">
+            Sign in
+            <i class="p-icon--user is-light"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <main id="main-content">
+      
+<main id="root"></main>
+<script src="/static/js/dist/store.js?v=157625a" defer></script>
+
+    </main>
+
+    <hr />
+
+<footer class="p-strip">
+  <div class="row">
+    <div class="col-3">
+      <h2 class="p-heading--5">Juju</h2>
+
+      <ul class="p-list">
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/#what-is-juju"><small>What is Juju?</small></a>
+        </li>
+
+        <!--<li class="p-list__item">
+          <a class="p-link--soft" href="https://charmhub.io"><small>What is Charmhub?</small></a>
+        </li>-->
+
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/docs/juju/reference"><small>What are Charms?</small></a>
+        </li>
+
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/model-driven-operations-manifesto"><small>Charm Manifesto</small></a>
+        </li>
+
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/docs/sdk"><small>Charm SDK</small></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-3">
+      <h2 class="p-heading--5">Charms</h2>
+
+      <ul class="p-list">
+        <li class="p-list__item">
+          <a class="p-link--soft" href="/?base=all&filter=databases,big-data"><small>Data</small></a>
+        </li>
+
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://ubuntu.com/kubernetes"><small>Charmed Kubernetes</small></a>
+        </li>
+
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://ubuntu.com/openstack"><small>Charmed OpenStack</small></a>
+        </li>
+
+        <li class="p-list__item">
+          <a class="p-heading--5 p-link--soft" href="/"><small>All operators&nbsp;&rsaquo;</small></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-3">
+      <h2 class="p-heading--5">Compare</h2>
+      <ul class="p-list">
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/blog/operators-and-charmed-operators"><small>Operators & Charms</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/blog/beyond-helm-and-kustomize-the-future-of-kubernetes-apps"><small>Helm alternative</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/blog/beyond-helm-and-kustomize-the-future-of-kubernetes-apps"><small>Kustomize alternative</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/blog/ansible-vs-terraform-vs-juju-fight-or-cooperation"><small>Ansible alternative</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/blog/juju-vs-infrastructure-as-code-tools"><small>Terraform alternative</small></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-3">
+      <h2 class="p-heading--5">Blog</h2>
+      <ul class="p-list">
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/blog/ubuntu-and-canonical-at-kubecon-europe-2021"><small>Best Practices for creating charms</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/model-driven-operations-manifesto"><small>Model Driven Operations Manifesto</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/blog/beyond-helm-and-kustomize-the-future-of-kubernetes-apps"><small>Why Helm and Kustomize Aren’t Enough: the Future of Kubernetes Apps</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://juju.is/blog/operators-and-charmed-operators"><small>Comparing Operators to Charms</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-heading--5 p-link--soft" href="https://juju.is/blog"><small>Read all of our blogs&nbsp;&rsaquo;</small></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="u-sv2 u-fixed-width">
+      <hr>
+    </div>
+  </div>
+
+  <div class="p-strip is-shallow">
+    <div class="row u-vertically-center">
+      <div class="col-6">
+        <h2>Join the community</h2>
+      </div>
+
+      <div class="col-6">
+        <ul class="p-inline-list u-no-margin--bottom u-float-right--medium u-float-right--large">
+          <li class="p-inline-list__item">
+            <a href="https://chat.charmhub.io/charmhub/channels/juju" class="p-icon--chat">Chat</a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="http://discourse.charmhub.io/" class="p-icon--forum">Discourse</a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="https://juju.is/careers" class="p-icon--careers">Careers</a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="https://github.com/canonical/operator/" class="p-icon--github">GitHub</a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="http://www.twitter.com/juju_devops" class="p-icon--twitter">Twitter</a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="http://youtube.com/jujucharms" class="p-icon--youtube">YouTube</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="u-sv2 u-fixed-width">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <ul class="p-list">
+        <li class="p-list__item">
+          <a class="p-link--soft js-revoke-cookie-manager" href=""><small>Manage your tracker settings</small></a>
+        </li>
+        <li class="p-list__item">
+          <a class="p-link--soft" href="https://www.ubuntu.com/legal"><small>Legal Information</small></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    <!-- Set default Marketo information for contact form below-->
+    <div class="u-hide" id="contact-form-container" data-form-location="/get-in-touch" data-form-id="1337" data-lp-id="2313" data-return-url="http://charmhub.io/thank-you" data-lp-url=""></div>
+
+    <script src="/static/js/dist/base.js?v=56e0a36"></script>
+    <script src="/static/js/dist/navigation-events.js?v=c9038b8"></script>
+
+    <script src="/static/js/build/global-nav/global-nav.js"></script>
+    <script>
+      canonicalGlobalNav.createNav({ breakpoint: 1110 });
+    </script>
+
+    
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@id": "https://charmhub.io/#organization",
+        "@type": "Organization",
+        "name": "Charmhub",
+        "logo": "https://assets.ubuntu.com/v1/3c4a2ba6-Canonical-Charmhub-2022.svg",
+        "url": "https://charmhub.io",
+        "sameAs": [
+          "https://github.com/canonical/operator/",
+          "https://en.wikipedia.org/wiki/Juju_(software)",
+          "https://twitter.com/juju_devops",
+          "https://www.youtube.com/@jujucharms"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@id": "https://charmhub.ii/#website",
+        "@type": "WebPage",
+        "name": "Charmhub",
+        "url": "https://charmhub.io"
+      }
+    </script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,2121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snapcraft - Snaps are universal Linux packages</title>
+
+    <!-- Preconnect to establish early connections to important third-party origins -->
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://assets.ubuntu.com">
+    <link rel="preconnect" href="https://munchkin.marketo.net">
+
+    <link rel="preload" href="https://assets.ubuntu.com/v1/9689339a-snapcraft-hero-background--light.png" as="image">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KCGXHQS');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="/static/css/styles.css?v=5df11cc" />
+
+    
+    <script src="/static/js/modules/raven.min.js?v=daf037c" defer></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function() {
+        Raven.config('https://1e82fd54e08142c9978f623cb746b965@sentry.is.canonical.com//3', {
+          whitelistUrls: ['staging.snapcraft.io/static/js', 'snapcraft.io/static/js/'],
+          ignoreUrls: ['staging.snapcraft.io/static/js/modules', 'snapcraft.io/static/js/modules'],
+          ignoreErrors: ['AbortError'],
+          release: 'commit_id',
+          environment: 'production'
+        }).install();
+      });
+    </script>
+
+    <script src="/static/js/dist/base.js?v=a7c4131" defer></script>
+    
+<script src="/static/js/dist/homepage.js?v=30b0e45" defer></script>
+<script src="/static/js/dist/featured-snaps.js?v=24ab25c" defer></script>
+
+
+    <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js" defer></script>
+
+    <meta name="description" content="Snaps are containerised software packages that are simple to create and install. They auto-update and are safe to run. And because they bundle their dependencies, they work on all major Linux systems without modification.">
+    <meta name="copydoc" content="https://docs.google.com/document/d/1_uwPkHmAgV6_uE9ISqIgXjZGJxXPBD90vdeO95h7ikE/edit">
+    <meta name="google-site-verification" content="Y1JayrP2iS6jS6Rd7uGX3Kzgm0oD8rV5R6TkzteLbQg" />
+
+    
+      <meta property="og:title" content="Snapcraft - Snaps are universal Linux packages"/>
+      <meta property="og:site_name" content="Snapcraft"/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:description" content="Snaps are containerised software packages that are simple to create and install. They auto-update and are safe to run. And because they bundle their dependencies, they work on all major Linux systems without modification."/>
+      <meta property="og:image" content="https://assets.ubuntu.com/v1/4726d040-Snap+logo+white+bg.jpg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Snapcraft banner" />
+      <meta property="og:url" content="https://snapcraft.io/" />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:site" content="@snapcraftio" />
+      <meta property="twitter:creator" content="@snapcraftio" />
+      <meta property="twitter:image" content="https://assets.ubuntu.com/v1/4726d040-Snap+logo+white+bg.jpg" />
+      <meta property="twitter:url" content="https://snapcraft.io/" />
+    
+
+    
+    <link rel="canonical" href="https://snapcraft.io/" />
+
+    <link rel="icon" type="image/png" href="https://assets.ubuntu.com/v1/d4ca039f-favicon_16px.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="https://assets.ubuntu.com/v1/841d0bcf-favicon_32px.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/static/snapcraft-favicon.png?v=055e94b" sizes="144x144" />
+    <link rel="author" href="/humans.txt" />
+  </head>
+
+  <body class="has-sticky-footer">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCGXHQS"
+      height="0" width="0" style="display: none; visibility: hidden;"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+    <!-- JS that is needed right away -->
+    <script src="/static/js/dist/cookie-policy.js?v=12a1b93"></script>
+
+    
+      
+        
+        
+  
+    <header id="navigation" class="p-navigation is-dark">
+      
+        
+        <div class="p-navigation__row ">
+        
+          <div class="p-navigation__banner">
+            <div class="p-navigation__tagged-logo">
+              <a class="p-navigation__link" href="/">
+                <div class="p-navigation__logo-tag">
+                  <img class="p-navigation__logo-icon" src="https://assets.ubuntu.com/v1/11ff571b-snapcraft.svg" alt="">
+                </div>
+                <span class="p-navigation__logo-title" >Canonical Snapcraft</span>
+              </a>
+            </div>
+            <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+          </div>
+        
+        
+            <nav class="p-navigation__nav">
+              <ul class="p-navigation__items" role="menu">
+                <li
+                  class="p-navigation__item "
+                  role="menuitem"
+                >
+                  <a class="p-navigation__link" href="/store">
+                    Snap Store
+                  </a>
+                </li>
+                <li
+                  class="p-navigation__item- "
+                  role="menuitem"
+                >
+                  <a class="p-navigation__link" href="/about">
+                    About <span class="u-hide--large">Snapcraft</span>
+                  </a>
+                </li>
+                <li
+                class="p-navigation__item--dropdown-toggle "
+                id="learn-link"
+                role="menuitem"
+                >
+                  <a class="p-navigation__link" href="#learn-menu" aria-controls="learn-menu">
+                    Learn
+                  </a>
+                  <ul class="p-navigation__dropdown" id="learn-menu" aria-hidden="true">
+                    <li>
+                      <a class="p-navigation__dropdown-item" href="/blog">
+                        Blog
+                      </a>
+                    </li>
+                    <li>
+                      <a class="p-navigation__dropdown-item" href="/build">
+                        Build
+                      </a>
+                    </li>
+                    <li>
+                      <a class="p-navigation__dropdown-item" href="/docs/">
+                        Docs
+                      </a>
+                    </li>
+                    <li>
+                      <a class="p-navigation__dropdown-item" href="/docs/snap-tutorials">
+                        Tutorials
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="p-navigation__item "
+                  role="menuitem"
+                >
+                  <a class="p-navigation__link" href="/iot">
+                    IoT
+                  </a>
+                </li>
+                <li class="p-navigation__item" role="menuitem">
+                  <a class="p-navigation__link " href="https://forum.snapcraft.io/">Forum</a>
+                </li>
+              </ul>
+              <ul class="p-navigation__items js-nav-account global-nav" role="menu">  <li class="p-navigation__item--dropdown-toggle js-nav-account--authenticated u-hide" role="menuitem" id="link-1">
+                  <a class="p-subnav__toggle p-navigation__link js-account--name" aria-controls="account-menu" aria-expanded="false"> My account </a>
+                  <ul class="p-navigation__dropdown--right" id="account-menu" aria-hidden="true">
+                    <li>
+                      <a href="/account/snaps" class="p-navigation__dropdown-item">My published snaps</a>
+                    </li>
+                    <li class="js-nav-account--stores u-hide">
+                      <a href="/admin" class="p-navigation__dropdown-item">My stores</a>
+                    </li>
+                    <li>
+                      <a href="/admin/account" class="p-navigation__dropdown-item">Account details</a>
+                    </li>
+                    <li>
+                      <a href="/logout" class="p-navigation__dropdown-item">Sign out</a>
+                    </li>
+                  </ul>
+                </li>  <li class="p-navigation__item js-nav-account--notauthenticated u-hide" role="menuitem">
+                  <a class="p-navigation__link" href="/snaps"> Sign in <i class="p-icon--user is-light"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        
+        
+        </div>
+        
+    </header>
+
+      
+    
+
+    
+<main id="main-content" class="p-section is-paper">
+  
+    <div class="main">
+  <section class="p-strip is-deep u-no-padding--bottom homepage-suru-strip--mobile">
+    <div class="row">
+      <div class="col-6 col-start-large-4">
+        <div class="p-block">
+          <h1>The app store for Linux</h1>
+        </div>
+        <form class="p-search-box" action="/search">
+          <label class="u-off-screen" for="search">Search</label>
+          <input type="search" id="search" class="p-search-box__input" name="q" placeholder="Search thousands of snaps" required="" autocomplete="on">
+          <button type="reset" class="p-search-box__reset"><i class="p-icon--close">Close</i></button>
+          <button type="submit" class="p-search-box__button"><i class="p-icon--search">Search</i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <div class="u-fixed-width u-no-padding--left u-no-padding--right">
+    <div class="p-suru25light"></div>
+  </div>
+  <section class="p-section">
+    <div class="u-fixed-width u-hide--small u-hide--medium"><hr class="p-rule"></div>
+    <div class="row--25-75-on-large">
+      <div class="col">
+        <div class="p-section u-sv3">
+          <h2 class="p-muted-heading">Snaps you may like</h2>
+        </div>
+        <div class="p-side-navigation u-hide--small u-hide--medium">
+          <ul class="p-side-navigation__list">
+            
+              <li class="p-side-navigation__item">
+                <a href="#" class="p-side-navigation__link" data-js="featured-category-switch" data-category="Featured" aria-current="page">Featured</a>
+              </li>
+            
+              <li class="p-side-navigation__item">
+                <a href="#" class="p-side-navigation__link" data-js="featured-category-switch" data-category="Development" >Development</a>
+              </li>
+            
+              <li class="p-side-navigation__item">
+                <a href="#" class="p-side-navigation__link" data-js="featured-category-switch" data-category="Games" >Games</a>
+              </li>
+            
+              <li class="p-side-navigation__item">
+                <a href="#" class="p-side-navigation__link" data-js="featured-category-switch" data-category="Server" >Server</a>
+              </li>
+            
+          </ul>
+        </div>
+        <div class="p-tabs u-hide--large">
+          <ul class="p-tabs__list is-light">
+            
+              <li class="p-tabs__item">
+                <a href="#" class="p-tabs__link" data-js="featured-category-switch" data-category="Featured" aria-selected="true">Featured</a>
+              </li>
+            
+              <li class="p-tabs__item">
+                <a href="#" class="p-tabs__link" data-js="featured-category-switch" data-category="Development" >Development</a>
+              </li>
+            
+              <li class="p-tabs__item">
+                <a href="#" class="p-tabs__link" data-js="featured-category-switch" data-category="Games" >Games</a>
+              </li>
+            
+              <li class="p-tabs__item">
+                <a href="#" class="p-tabs__link" data-js="featured-category-switch" data-category="Server" >Server</a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          
+            <div class="col-3 col-medium-2 featured-snap-card" data-js="featured-snap-card">
+              <div class="snap-card-placeholder" data-js="featured-snap-card-placeholder">
+                <div class="snap-card-placeholder__image"></div>
+                <div class="snap-card-placeholder__title"></div>
+                <div class="snap-card-placeholder__publisher"></div>
+                <div class="snap-card-placeholder__description"></div>
+              </div>
+              <div class="u-hide" data-js="featured-snap-card-content"></div>
+            </div>
+          
+            <div class="col-3 col-medium-2 featured-snap-card" data-js="featured-snap-card">
+              <div class="snap-card-placeholder" data-js="featured-snap-card-placeholder">
+                <div class="snap-card-placeholder__image"></div>
+                <div class="snap-card-placeholder__title"></div>
+                <div class="snap-card-placeholder__publisher"></div>
+                <div class="snap-card-placeholder__description"></div>
+              </div>
+              <div class="u-hide" data-js="featured-snap-card-content"></div>
+            </div>
+          
+            <div class="col-3 col-medium-2 featured-snap-card" data-js="featured-snap-card">
+              <div class="snap-card-placeholder" data-js="featured-snap-card-placeholder">
+                <div class="snap-card-placeholder__image"></div>
+                <div class="snap-card-placeholder__title"></div>
+                <div class="snap-card-placeholder__publisher"></div>
+                <div class="snap-card-placeholder__description"></div>
+              </div>
+              <div class="u-hide" data-js="featured-snap-card-content"></div>
+            </div>
+          
+        </div>
+        <hr class="p-rule">
+        <ul class="p-list--divided u-no-margin--bottom">
+          <li class="p-list__item">
+            <a href="/search?category=featured" data-js="view-category-link">
+              View all featured snaps
+            </a>            
+          </li>
+          <li class="p-list__item">
+            <a href="/store">View all snaps</a>    
+          </li>
+        </ul>
+      </div>
+    </div>
+    <template style="display: none;" id="featured-snap-card" >
+      <hr class="p-rule u-hide--medium u-hide--large">
+      <div class="p-block">
+        <a href="" data-js="snap-icon-link">
+          <div class="p-strip is-shallow">
+            <img src="" alt="" data-js="snap-icon" width="64" height="64" style="display: block;">
+          </div>
+          <h3 class="p-heading--2" data-js="snap-title">
+            <a class="p-link--soft" href="" data-js="snap-title-link"></a>
+          </h3>
+            <p data-js="snap-publisher" class="p-muted-heading"></p>
+            <p data-js="snap-description"></p>
+        </a>
+      </div>
+    </template>
+  </section>
+</div>
+
+  
+  
+  <section class="p-section">
+    <hr class="p-rule is-fixed-width">
+    <div class="u-fixed-width">
+      <div class="p-block">
+        <h2 class="p-muted-heading">Official snaps from major publishers</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-small-2 col-medium-2 col-2 u-align--center">
+        <a href="/firefox">
+          
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_146,h_145/https://assets.ubuntu.com/v1/aae93857-logo-mozilla--snapcraft-homepage.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_292,h_290/https://assets.ubuntu.com/v1/aae93857-logo-mozilla--snapcraft-homepage.svg 2x"
+      alt="Mozilla"
+      width="146"
+      height="145"
+      loading="eager"
+    />
+        </a>
+      </div>
+      <div class="col-small-2 col-medium-2 col-2 u-align--center">
+        <a href="/publisher/kde">
+          
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_146,h_145/https://assets.ubuntu.com/v1/6958a93e-kde-logo-snapcraft-homepage.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_292,h_290/https://assets.ubuntu.com/v1/6958a93e-kde-logo-snapcraft-homepage.svg 2x"
+      alt="KDE"
+      width="146"
+      height="145"
+      loading="eager"
+    />
+        </a>
+      </div>
+      <div class="col-small-2 col-medium-2 col-2 u-align--center">
+        <a href="/publisher/jetbrains">
+          
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_146,h_145/https://assets.ubuntu.com/v1/55f6dae7-logo-jetbrains--snapcraft-homepage.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_292,h_290/https://assets.ubuntu.com/v1/55f6dae7-logo-jetbrains--snapcraft-homepage.svg 2x"
+      alt="JetBrains"
+      width="146"
+      height="145"
+      loading="eager"
+    />
+        </a>
+      </div>
+      <div class="col-small-2 col-medium-2 col-2 u-align--center">
+        <a href="/spotify">
+          
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_146,h_145/https://assets.ubuntu.com/v1/63d5fd3f-logo-spotify--snapcraft-homepage.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_292,h_290/https://assets.ubuntu.com/v1/63d5fd3f-logo-spotify--snapcraft-homepage.svg 2x"
+      alt="Spotify"
+      width="146"
+      height="145"
+      loading="eager"
+    />
+        </a>
+      </div>
+      <div class="col-small-2 col-medium-2 col-2 u-align--center">
+        <a href="/google-cloud-sdk">
+          
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_146,h_145/https://assets.ubuntu.com/v1/2d54fa27-logo-google--snapcraft-homepage.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_292,h_290/https://assets.ubuntu.com/v1/2d54fa27-logo-google--snapcraft-homepage.svg 2x"
+      alt="Google"
+      width="146"
+      height="145"
+      loading="eager"
+    />
+        </a>
+      </div>
+      <div class="col-small-2 col-medium-2 col-2 u-align--center">
+        <a href="/code">
+          
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_146,h_145/https://assets.ubuntu.com/v1/7b03d4b8-logo-microsoft--snapcraft-homepage.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_292,h_290/https://assets.ubuntu.com/v1/7b03d4b8-logo-microsoft--snapcraft-homepage.svg 2x"
+      alt="Microsoft"
+      width="146"
+      height="145"
+      loading="eager"
+    />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section" data-js="latest-news">
+    <div class="u-fixed-width"><hr class="p-rule"></div>
+    <div class="row">
+      <div class="col-3 col-medium-2">
+        <h2 class="p-muted-heading">Latest news from <a href="/blog">our blog&nbsp;&rsaquo;</a></h2>
+      </div>
+      <div class="col-9 col-medium-4">
+        <div id="horizontal-latest-articles">
+          <div class="u-align--center" style="min-height: 9.1rem;"><i class="p-icon--spinner u-animation--spin">Loading...</i></div>
+        </div>
+      </div>
+    </div>
+    <template style="display: none;" id="horizontal-articles-template">
+      <div class="p-section">
+        <hr class="p-rule">
+        <div class="row">
+          <div class="col-6">
+            <h3 class="p-heading--2"><a class="article-link article-title"></a></h3>
+          </div>
+          <div class="col-2 col-start-large-8">
+            <footer>
+              <p class="u-no-margin--bottom">
+                <time pubdate datetime="POST_UPDATED" class="article-time"></time><br>
+              </p>
+              <em class="article-author"></em>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </template>
+    <script src="/static/js/dist/latest-news.js"></script>
+    <script>
+      canonicalLatestNews.fetchLatestNews({
+        articlesContainerSelector: "#horizontal-latest-articles",
+        articleTemplateSelector: "#horizontal-articles-template",
+        tagId: "2996",
+        limit: 3,
+      });
+    </script>
+  </section>
+
+  <section class="p-strip--white u-no-padding--top u-no-padding--bottom">
+    
+
+
+  
+
+
+<div class="row">
+  <div class="col-start-large-4 col-9">
+    <div class="p-strip is-deep">
+      <h2>Learn how to snap an app in 30 minutes</h2>
+    </div>
+  </div>
+</div>
+<div class="row p-section" id="language">
+  <hr class="p-rule">
+  <div class="col-2">
+    <div class="u-hide--large">
+      <div class="p-muted-heading">
+        <label for="choose-language">Choose your language:</label>
+      </div>
+      <select id="choose-language" data-js="flow-options">
+        <option value="python">Python</option>
+        <option value="pre-built">Pre-built apps</option>
+        <option value="c">C/C++</option>
+        <option value="go">Go</option>
+        <option value="java">Java</option>
+        <option value="node">Node.js</option>
+        <option value="electron">Electron</option>
+        <option value="flutter">Flutter</option>
+        <option value="ruby">Ruby</option>
+        <option value="rust">Rust</option>
+        <option value="moos">MOOS</option>
+        <option value="ros">ROS</option>
+        <option value="ros2">ROS 2</option>
+      </select>
+    </div>
+    <h3 class="p-muted-heading u-hide--small u-hide--medium u-sv2">Choose <br>your language:</h3>
+    <div class="p-side-navigation u-hide--small u-hide--medium">
+      <ul class="p-side-navigation__list" data-js="flow-links-container">
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/python" data-js="flow-link" data-flow="python" aria-current="page">
+            <img src="https://assets.ubuntu.com/v1/b0f5ac3f-logo-python.svg" alt="" width="24" height="24">
+            &nbsp;
+            Python
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/pre-built" data-js="flow-link" data-flow="pre-built">
+            <img src="https://assets.ubuntu.com/v1/571b641b-logo-prepackaged-apps.svg" alt="" width="24" height="24">
+            &nbsp;
+            Pre-built apps
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/c" data-js="flow-link" data-flow="c">
+            <img src="https://assets.ubuntu.com/v1/ef1f8882-logo-cpp.svg" alt="" width="24" height="24">
+            &nbsp;
+            C/C++
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/golang" data-js="flow-link" data-flow="go">
+            <img src="https://assets.ubuntu.com/v1/551b3590-logo-go.svg" alt="" width="24" height="24">
+            &nbsp;
+            Go
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/java" data-js="flow-link" data-flow="java">
+            <img src="https://assets.ubuntu.com/v1/d1ed3b5d-logo-java.svg" alt="" width="24" height="24">
+            &nbsp;
+            Java
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/node" data-js="flow-link" data-flow="node">
+            <img src="https://assets.ubuntu.com/v1/792b186f-logo-node.svg" alt="" width="24" height="24">
+            &nbsp;
+            Node.js
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/docs/build-snaps/electron" data-js="flow-link" data-flow="electron">
+            <img src="https://assets.ubuntu.com/v1/7dcb7e61-logo-electron.svg" alt="" width="24" height="24">
+            &nbsp;
+            Electron
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/flutter" data-js="flow-link" data-flow="flutter">
+            <img src="https://assets.ubuntu.com/v1/12d888b1-logo-flutter.svg" alt="" width="24" height="24">
+            &nbsp;
+            Flutter
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/ruby" data-js="flow-link" data-flow="ruby">
+            <img src="https://assets.ubuntu.com/v1/bbfae801-logo-ruby.svg" alt="" width="24" height="24">
+            &nbsp;
+            Ruby
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/rust" data-js="flow-link" data-flow="rust">
+            <img src="https://assets.ubuntu.com/v1/6f250572-logo-rust.svg" alt="" width="24" height="24">
+            &nbsp;
+            Rust
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/moos" data-js="flow-link" data-flow="moos">
+            <img src="https://assets.ubuntu.com/v1/6808d58c-logo-moos.svg" alt="" width="24" height="24">
+            &nbsp;
+            MOOS
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/ros" data-js="flow-link" data-flow="ros">
+            <img src="https://assets.ubuntu.com/v1/ecb3bce5-logo-ros.svg" alt="" width="24" height="24">
+            &nbsp;
+            ROS
+          </a>
+        </li>
+        <li class="p-side-navigation__item">
+          <a class="p-side-navigation__link" href="/first-snap/ros2" data-js="flow-link" data-flow="ros2">
+            <img src="https://assets.ubuntu.com/v1/6fd7ea3b-logo-ros-2.svg" alt="" width="24" height="24">
+            &nbsp;
+            ROS 2
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-9 col-start-large-4 js-fsf-language-select p-rule--vertical">
+    <div class="u-hide" data-flow-details="c">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for C/C++ projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Snaps are easy to discover and install. Millions of users can browse and install snaps graphically in the Snap Store or from the command-line.</li>
+        <li class="p-list__item has-bullet">Snaps install and run the same across Linux. They bundle the exact versions of your app’s dependencies.</li>
+        <li class="p-list__item has-bullet">Snaps automatically update to the latest version. Four times a day, users’ systems will check for new versions and upgrade in the background.</li>
+        <li class="p-list__item has-bullet">Upgrades are not disruptive. Because upgrades are not in-place, users can keep your app open as it’s upgraded in the background.</li>
+        <li class="p-list__item has-bullet">Upgrades are safe. If your app fails to upgrade, users automatically roll back to the previous revision.</li>
+      </ul>
+      <p>In just a few steps, you’ll have an example C/C++ app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+    <div class="row">
+      <div class="col-3">
+        <h3 class="p-heading--5">Here's how <a href="https://snapcraft.io/docs/c-c-applications">DOSBox</a> defines snapcraft.yaml:</h3>
+      </div>
+      <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+        <pre class="p-code-yaml"><b>name</b>: dosbox
+<b>version</b>: "0.74-svn"
+<b>summary</b>: DOS emulator
+<b>description</b>: |
+  DOSBox is a x86 emulator with Tandy/Hercules/ [&hellip;]
+
+<b>base</b>: core18
+<b>confinement</b>: devmode
+
+<b>parts</b>:
+  <b>dosbox</b>:
+    <b>plugin</b>: autotools
+    <b>source-type</b>: tar
+    <b>source</b>: http://source.dosbox.com/dosboxsvn.tgz
+    <b>build-packages</b>:
+      - g++
+      - make
+      - libsdl1.2-dev
+      [&hellip;]
+      - libasound2-dev
+    <b>stage-packages</b>:
+      - freeglut3
+      - libsdl-sound1.2
+      - libsdl-net1.2
+      [&hellip;]
+      - zlib1g
+
+<b>apps</b>:
+  <b>dosbox</b>:
+    <b>command</b>: dosbox
+    <b>environment</b>:
+      <b>"LD_LIBRARY_PATH"</b>: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio"
+      <b>"DISABLE_WAYLAND"</b>: "1"</pre>
+
+        <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/c-c-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="electron">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for Electron projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Snaps are easy to discover and install. Millions of users can browse and install snaps graphically in the Snap Store or from the command-line.</li>
+        <li class="p-list__item has-bullet">Snaps install and run the same across Linux. They bundle Electron and all of your app’s dependencies, be they Node modules or system libraries.</li>
+        <li class="p-list__item has-bullet">Snaps automatically update to the latest version. Four times a day, users’ systems will check for new versions and upgrade in the background.</li>
+        <li class="p-list__item has-bullet">Upgrades are not disruptive. Because upgrades are not in-place, users can keep your app open as it’s upgraded in the background.</li>
+        <li class="p-list__item has-bullet">Upgrades are safe. If your app fails to upgrade, users automatically roll back to the previous revision.</li>
+      </ul>
+      <p>In just a few steps, you’ll have an example Electron app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's how to use it with <a href="https://github.com/electron/electron-quick-start">Electron quick-start</a></h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml">{
+  <b>"name"</b>: "electron-quick-start",
+  <b>"version"</b>: "1.0.0",
+  <b>"description"</b>: "A minimal Electron application",
+  <b>"main"</b>: "main.js",
+  <b>"scripts"</b>: {
+    <b>"start"</b>: "electron .",
+    <b>"dist"</b>: "build --linux snap"
+  },
+  <b>"repository"</b>: "https://github.com/electron/electron-quick-start",
+  <b>"keywords"</b>: [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  <b>"author"</b>: "GitHub",
+  <b>"license"</b>: "CC0-1.0",
+  <b>"devDependencies"</b>: {
+    <b>"electron"</b>: "^11.2.1",
+    <b>"electron-builder"</b>: "^22.9.1"
+  }
+}</pre>
+
+        <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/electron-apps">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="flutter">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for Flutter projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Snaps are easy to discover and install. Millions of users can browse and install snaps graphically in the Snap Store or from the command-line.</li>
+        <li class="p-list__item has-bullet">Snaps install and run the same across Linux. They bundle the exact versions of your app’s dependencies.</li>
+        <li class="p-list__item has-bullet">Snaps automatically update to the latest version. Four times a day, users’ systems will check for new versions and upgrade in the background.</li>
+        <li class="p-list__item has-bullet">Upgrades are not disruptive. Because upgrades are not in-place, users can keep your app open as it’s upgraded in the background.</li>
+        <li class="p-list__item has-bullet">Upgrades are safe. If your app fails to upgrade, users automatically roll back to the previous revision.</li>
+      </ul>
+      <p>In just a few steps, you’ll have an example Flutter app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's how <a href="https://github.com/snapcraft-docs/my-flutter-app">my-flutter-app</a> defines snapcraft.yaml:</h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: my-flutter-app
+<b>version</b>: '1.0'
+<b>summary</b>: An example Flutter snap
+<b>description</b>: |
+  An example showing how Flutter programs can be packaged as snaps.
+
+<b>base</b>: core22
+<b>confinement</b>: strict
+<b>grade</b>: stable
+
+<b>apps</b>:
+  <b>my-flutter-app</b>:
+    <b>command</b>: my_flutter_app
+    <b>extensions</b>: [gnome]
+
+<b>parts</b>:
+  <b>my-flutter-app</b>:
+    <b>source</b>: .
+    <b>plugin: flutter</b>
+    <b>flutter-target</b>: lib/main.dart</pre>
+
+      <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/flutter-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="go">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for Go projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Easy to discover and install by millions using the Snap Store or command-line every day</li>
+        <li class="p-list__item has-bullet">Automatically updated to the latest stable version of your app</li>
+        <li class="p-list__item has-bullet">Revert to the previous version if an update fails, preserving data</li>
+      </ul>
+      <p>
+        Programming in Go makes it easy to create a zip of your app that runs across Linux, without dependencies.
+        However, end user discovery and update management remain a challenge.
+        Snaps fill this gap, letting you distribute a Go app in an app store experience for end users.
+      </p>
+      <p>In just a few steps, you’ll have an example Go app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here’s how <a href=https://github.com/degville/woke-snap>Woke</a> defines snapcraft.yaml:</h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: woke
+<b>summary</b>: Detect non-inclusive language in your source code
+<b>description</b>: |
+  Creating an inclusive work environment is imperative [&hellip;]
+<b>version</b>: git
+<b>grade</b>: stable
+<b>base</b>: core20
+
+<b>confinement</b>: devmode
+
+<b>apps</b>:
+  <b>woke</b>:
+    <b>command</b>: bin/woke
+    <b>plugs</b>:
+      - home
+<b>parts</b>:
+  <b>woke</b>:
+    <b>plugin</b>: go
+    <b>source-type</b>: git
+    <b>source</b>: https://github.com/get-woke/woke</pre>
+
+      <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/go-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="java">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for Java projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Simplify installation instructions, regardless of distribution, to snap install myjavaapp.</li>
+        <li class="p-list__item has-bullet">Directly control the delivery of automatic application updates.</li>
+      </ul>
+      <p>Distributing a Java application for Linux and reaching the widest possible audience is complicated. Typically, the user has to make sure the JRE/SDK version and their environment are configured correctly. When a Linux distribution changes the delivered JRE, this can be problematic for applications. Snapcraft ensures the correct JRE is shipped alongside the application at all times.</p>
+      <p>In just a few steps, you’ll have an example Java app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's how <a href="https://github.com/snapcraft-docs/freeplane">Freeplane</a> defines snapcraft.yaml:</h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: freeplane
+<b>title</b>: Freeplane
+<b>version</b>: '1.8.1'
+<b>summary</b>: A free tool to structure and organise your information [&hellip;]
+<b>description</b>: |
+  Freeplane is a free and open source software [&hellip;]
+
+<b>base</b>: core18
+<b>confinement</b>: strict
+
+<b>apps</b>:
+  <b>freeplane</b>:
+    <b>extensions</b>:
+      - gnome-3-28
+    <b>command</b>: freeplane-$SNAPCRAFT_PROJECT_VERSION/freeplane.sh
+    <b>environment</b>:
+      JAVA_HOME: $SNAP/usr/lib/jvm/java-11-openjdk-amd64
+      PATH: $JAVA_HOME/jre/bin:$PATH
+    <b>plugs</b>:
+      - home
+      - network
+      - cups-control
+
+<b>parts</b>:
+  <b>freeplane</b>:
+    <b>plugin</b>: gradle
+    <b>source</b>: https://github.com/freeplane/freeplane.git
+    <b>source-tag</b>: release-$SNAPCRAFT_PROJECT_VERSION
+    <b>gradle-version</b>: '5.1.1'
+    <b>gradle-output-dir</b>: BIN
+    <b>gradle-options</b>: [binZip, -xtest, -xcreateGitTag]
+    <b>override-build</b>: |
+      snapcraftctl build
+      unzip -o DIST/freeplane_bin-*.zip -d $SNAPCRAFT_PART_INSTALL/
+    <b>build-packages</b>:
+      - unzip</pre>
+
+        <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/java-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="moos">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for MOOS projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Bundle all the runtime requirements, including the exact version of MOOS/MOOS-IvP and system libraries you need.</li>
+        <li class="p-list__item has-bullet">Directly and reliably control the delivery of application updates using existing infrastructure.</li>
+        <li class="p-list__item has-bullet">Upgrades are safe. If your app fails to upgrade, users automatically roll back to the previous revision.</li>
+        <li class="p-list__item has-bullet">Extremely simple creation of daemons.</li>
+      </ul>
+      <p>In just a few steps, you’ll have an example MOOS app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's an example snapcraft.yaml that uses MOOS:</h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: test-moos
+<b>version</b>: '0.1'
+<b>summary</b>: MOOS Example
+<b>description</b>: |
+  This example includes MOOSDB, the main [&hellip;]
+
+<b>base</b>: core18
+<b>confinement</b>: devmode
+
+<b>parts</b>:
+  <b>test-moos</b>:
+    <b>source</b>: https://github.com/themoos/core-moos/archive/v10.4.0.tar.gz
+    <b>plugin</b>: cmake
+    <b>build-packages</b>: [g++]
+
+<b>apps</b>:
+  <b>test-moos</b>:
+    <b>command</b>: bin/MOOSDB</pre>
+
+      <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/moos-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="node">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for Node.js projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Easy to discover and install by millions using the Snap Store or command-line every day.</li>
+        <li class="p-list__item has-bullet">Automatically updated to the latest stable version of your app.</li>
+        <li class="p-list__item has-bullet">Revert to the previous version if an update fails, preserving data.</li>
+      </ul>
+      <p>With npm you can distribute apps to other developers, but it’s not tailored to end users. Snaps let you distribute your Node app in an app store experience.</p>
+      <p>In just a few steps, you’ll have an example Node.js app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's how <a href="https://github.com/snapcraft-docs/wethr">wethr</a> defines snapcraft.yaml:</h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: wethr
+<b>version</b>: git
+<b>summary</b>: Command line weather tool.
+<b>description</b>: |
+  Get current weather:-
+    $ wethr
+  Get current weather in metric units
+    $ wethr --metric
+  Get current weather in imperial units
+    $ wethr --imperial
+
+<b>confinement</b>: strict
+<b>base</b>: core20
+
+<b>apps</b>:
+  <b>wethr</b>:
+    <b>command</b>: wethr
+
+<b>parts</b>:
+  <b>wethr</b>:
+    <b>plugin</b>: npm
+    <b>npm-node-version</b>: 14.16.1
+    <b>source</b>: .</pre>
+
+        <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/node-apps">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="pre-built">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for pre-built apps?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Easy to discover and install by millions using the Snap Store or command-line every day</li>
+        <li class="p-list__item has-bullet">Automatically updated to the latest stable version of your app</li>
+        <li class="p-list__item has-bullet">Revert to the previous version if an update fails, preserving data</li>
+        <li class="p-list__item has-bullet">Isolation ensures no conflicts between applications</li>
+        <li class="p-list__item has-bullet">Identical behaviour across Linux distributions, even with library dependencies</li>
+      </ul>
+      <p>
+        Distributing the Linux build of your app as a zip lets you provide one download and set of instructions for all of Linux.
+        However, end user discovery and update management remain a challenge.
+        Snaps fill this gap, letting you wrap your existing Linux build in an app store experience for end users.
+      </p>
+      <p>In just a few steps, you’ll have an example pre-built app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">How <a href="https://github.com/snapcraft-docs/geekbench4">geekbench 4</a> defines snapcraft.yaml</h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: test-geekbench4
+<b>version</b>: 4.2.0
+<b>summary</b>: Cross-Platform Benchmark
+<b>description</b>: |
+  Geekbench 4 measures your system's power [&hellip;]
+<b>confinement</b>: devmode
+<b>base</b>: core18
+
+<b>parts</b>:
+  <b>test-geekbench4</b>:
+    <b>plugin</b>: dump
+    <b>source</b>: http://cdn.geekbench.com/Geekbench-$SNAPCRAFT_PROJECT_VERSION-Linux.tar.gz
+
+<b>apps</b>:
+  <b>test-geekbench4</b>:
+    <b>command</b>: geekbench4</pre>
+
+      <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/pre-built-apps">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="python">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for Python projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Easy to discover and install by millions using the Snap Store or command-line every day</li>
+        <li class="p-list__item has-bullet">Automatically updated to the latest stable version of your app</li>
+        <li class="p-list__item has-bullet">Revert to the previous version if an update fails, preserving data</li>
+        <li class="p-list__item has-bullet">Isolation ensures no conflicts between applications</li>
+        <li class="p-list__item has-bullet">Identical behaviour across Linux distributions, even with library dependencies</li>
+      </ul>
+      <p>
+        With PyPI you can distribute apps to other developers, but it’s not tailored to end users.
+        Virtualenv lets you install an app’s dependencies in isolation, but it’s not automatically used for installs from PyPI.
+        Snaps let you distribute a dependency-isolated Python app in an app store experience for end users.
+      </p>
+      <p>In just a few steps, you’ll have an example Python app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's how <a href="https://snapcraft.io/liquidctl">liquidctl</a> defines snapcraft.yaml:</h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: liquidctl
+<b>summary</b>: a status and control utility to for power, cooling and LED components
+<b>description</b>: |
+  liquidctl is a command-line tool to monitor and control [&hellip;]
+<b>version</b>: test
+<b>base</b>: core22
+<b>confinement</b>: strict
+
+<b>parts</b>:
+  <b>liquidctl</b>:
+    <b>plugin</b>: python
+    <b>source</b>: .
+    <b>stage-packages</b>:
+      - python3-usb
+
+<b>apps</b>:
+  <b>liquidctl</b>:
+    <b>command</b>: bin/liquidctl
+    <b>plugs</b>:
+      - raw-usb
+      - hardware-observe</pre>
+
+        <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/python-apps">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="ros">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for ROS projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Bundle all the runtime requirements, including the exact version of ROS and system libraries you need.</li>
+        <li class="p-list__item has-bullet">Expand the distributions supported beyond just Ubuntu.</li>
+        <li class="p-list__item has-bullet">Directly and reliably control the delivery of application updates using existing infrastructure.</li>
+        <li class="p-list__item has-bullet">Extremely simple creation of daemons.</li>
+      </ul>
+      <p>In just a few steps, you’ll have an example ROS app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's an example snapcraft.yaml that uses ROS:</h3>
+    </div>
+    <div class ="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: ros-talker-listener
+<b>version</b>: '0.1'
+<b>summary</b>: ROS Talker/Listener Example
+<b>description</b>: |
+  This example launches a ROS talker and listener.
+
+<b>confinement</b>: devmode
+<b>base</b>: core20
+
+<b>parts</b>:
+  <b>ros-tutorials</b>:
+    <b>plugin</b>: catkin
+    <b>source</b>: https://github.com/ros/ros_tutorials.git
+    <b>source-branch</b>: noetic-devel
+    <b>catkin-packages</b>: [roscpp_tutorials]
+    <b>stage-packages</b>:
+      - ros-noetic-roslaunch
+
+<b>apps</b>:
+  <b>ros-talker-listener</b>:
+    <b>command</b>: opt/ros/noetic/bin/roslaunch roscpp_tutorials talker_listener.launch
+    <b>extensions</b>: [ros1-noetic]</pre>
+
+      <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/ros-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="ros2">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for ROS2 projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Bundle all the runtime requirements, including the exact version of ROS and system libraries you need.</li>
+        <li class="p-list__item has-bullet">Expand the distributions supported beyond just Ubuntu.</li>
+        <li class="p-list__item has-bullet">Directly and reliably control the delivery of application updates using existing infrastructure.</li>
+        <li class="p-list__item has-bullet">Extremely simple creation of daemons.</li>
+      </ul>
+      <p>In just a few steps, you’ll have an example ROS2 app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's an example snapcraft.yaml that uses ROS2:</h3>
+    </div>
+    <div class="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: ros2-talker-listener
+<b>version</b>: '0.1'
+<b>summary</b>: ROS2 Talker/Listener Example
+<b>description</b>: |
+  This example launches a ROS2 talker and listener.
+
+<b>confinement</b>: devmode
+<b>base</b>: core22
+
+<b>parts</b>:
+  <b>ros-demos</b>:
+    <b>plugin</b>: colcon
+    <b>source</b>: https://github.com/ros2/demos.git
+    <b>source-branch</b>: humble
+    <b>source-subdir</b>: demo_nodes_cpp
+    <b>stage-packages</b>: [ros-humble-ros2launch]
+
+<b>apps</b>:
+  <b>ros2-talker-listener</b>:
+    <b>command</b>: opt/ros/humble/bin/ros2 launch demo_nodes_cpp talker_listener.launch.py
+    <b>extensions</b>: [ros2-humble]</pre>
+
+      <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/ros2-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="ruby">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for Ruby projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Bundle all the runtime requirements.</li>
+        <li class="p-list__item has-bullet">Simplify installation instructions, regardless of distribution, to snap install myrubyapp.</li>
+        <li class="p-list__item has-bullet">Directly control the delivery of automatic application updates.</li>
+        <li class="p-list__item has-bullet">Extremely simple creation of services.</li>
+      </ul>
+      <p>Linux install instructions for Ruby applications often get complicated. To prevent modules from different Ruby applications clashing with each other, developer tools like rvm or rbenv must be used. With snapcraft, it’s one command to produce a bundle that works anywhere.</p>
+      <p>In just a few steps, you’ll have an example Ruby app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here’s how <a href="https://github.com/snapcraft-docs/mdl">Markdown lint tool</a> uses it:</h3>
+    </div>
+    <div class="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: test-mdl
+<b>version</b>: "0.5.0"
+<b>summary</b>: Markdown lint tool
+<b>description</b>: |
+  Style checker/lint tool for markdown files
+
+<b>confinement</b>: devmode
+<b>base</b>: core18
+
+<b>parts</b>:
+  <b>test-mdl</b>:
+    <b>source</b>: .
+    <b>plugin</b>: ruby
+    <b>gems</b>:
+      - rake
+      - bundler
+      <b>override-build</b>: |
+        snapcraftctl build
+        rake install
+      <b>build-packages</b>:
+        - git
+
+<b>apps</b>:
+  <b>test-mdl</b>:
+    <b>command</b>: bin/mdl</pre>
+
+      <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/ruby-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+    <div class="u-hide" data-flow-details="rust">
+  <hr class="p-rule u-hide--large">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Why are snaps good for Rust projects?</h3>
+    </div>
+    <div class="col-6">
+      <ul class="p-list--divided">
+        <li class="p-list__item has-bullet">Easy to discover and install by millions using the Snap Store or command-line every day.</li>
+        <li class="p-list__item has-bullet">Automatically updated to the latest stable version of your app.</li>
+        <li class="p-list__item has-bullet">Revert to the previous version if an update fails, preserving data.</li>
+      </ul>
+      <p>You can distribute your apps across Linux using a musl-enabled version of Rust, with all the dependencies satisfied. However, end user discovery and update management remain a challenge. Snaps fill this gap, letting you distribute a Rust app in an app store experience for end users.</p>
+      <p>In just a few steps, you’ll have an example Rust app in the Snap Store.</p>
+    </div>
+  </div>
+  <hr class="p-rule">
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--5">Here's how <a href="https://github.com/snapcraft-docs/xsv">XSV</a> defines snapcraft.yaml:</h3>
+    </div>
+    <div class="p-show-more is-collapsed col-6" data-js="js-show-more">
+      <pre class="p-code-yaml"><b>name</b>: test-xsv
+<b>version</b>: git
+<b>summary</b>: A fast CSV command line toolkit written in Rust
+<b>description</b>: |
+  xsv is a command line program for indexing [&hellip;]
+
+<b>base</b>: core18
+<b>confinement</b>: devmode
+
+<b>parts</b>:
+  <b>test-xsv</b>:
+    <b>plugin</b>: rust
+    <b>source</b>: .
+
+<b>apps</b>:
+  <b>test-xsv</b>:
+    <b>command</b>: bin/xsv</pre>
+
+      <div class="p-show-more__fade">
+  <div class="p-show-more__link-container">
+    <a href="/" class="p-show-more__link p-button has-icon">
+      <span>Show more</span>
+      <i class="p-icon--chevron-down"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div class="u-align--right">
+    <hr>
+    <a class="p-button--positive" href="/docs/rust-applications">Continue &rsaquo;</a>
+  </div>
+</div>
+  </div>
+</div>
+  </section>
+  
+  <section class="p-strip is-deep">
+    <div class="u-fixed-width p-block">
+  <hr class="p-rule">
+  <h2 class="p-muted-heading">
+    Testimonials
+  </h2>
+</div>
+<div class="row">
+  <div class="col-medium-6 col-3">
+    <a href="/heroku">
+      
+<div class="lazyload" data-noscript>
+  <noscript>
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_128,h_64/https://assets.ubuntu.com/v1/53b1b835-logo-heroku.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_256,h_128/https://assets.ubuntu.com/v1/53b1b835-logo-heroku.svg 2x"
+      alt="Heroku"
+      width="128"
+      height="64"
+      loading="lazy"
+    />
+  </noscript>
+</div>
+
+    </a>
+  </div>
+  <div class="col-medium-3 col-3">
+    <h3 class="p-heading--4"><em>“The auto-updating feature is huge”</em></h3>
+  </div>
+  <div class="col-medium-3 col-6">
+    <blockquote class="p-testimonial">
+      <p><em>Due to the nature of our platform, we release updates more than daily which admittedly can be annoying for our users to constantly update.</em></p>
+      <p><em>Therefore, having them done seamlessly in the background makes life for our users so much easier. It’s great to see snaps as the first serious attempt to try and unify the community.</em></p>
+      <cite>
+        <strong>Jeff Dickey</strong><br> 
+        <span class="u-text-muted">CLI engineer, <a href="https://www.heroku.com/" >Heroku</a></span>
+      </cite>
+    </blockquote>
+  </div>
+</div>
+    
+<div class="u-fixed-width"><hr class="p-rule"></div>
+    
+<div class="row">
+  <div class="col-medium-6 col-3">
+    <a href="/code">
+      
+<div class="lazyload" data-noscript>
+  <noscript>
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_128,h_64/https://assets.ubuntu.com/v1/e4c220b3-logo-microsoft.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_256,h_128/https://assets.ubuntu.com/v1/e4c220b3-logo-microsoft.svg 2x"
+      alt="Microsoft"
+      width="128"
+      height="64"
+      loading="lazy"
+    />
+  </noscript>
+</div>
+
+    </a>
+  </div>
+  <div class="col-medium-3 col-3">
+    <h3 class="p-heading--4"><em>“Starting with snaps <br class="u-hide--medium u-hide--small"> is easy”</em></h3>
+  </div>
+  <div class="col-medium-3 col-6">
+    <blockquote class="p-testimonial">
+      <p><em>We definitely find Snapcraft easier as it is yaml based and provides details of what artifacts are needed. Debian packaging has things that need to be followed which can be distribution specific, which creates complication.</em></p>
+      <p><em>The modular containment is what appealed about snaps and [we] can see it will be a lot more flexible. Starting with snaps is easy and the resources that are provided are clean and structured which aids adoption.</em></p>
+      <cite>
+        <strong>Lee Coward and Rakesh Singh</strong><br>
+        <a href="https://www.microsoft.com/net/" >.NET (Microsoft)</a>
+      </cite>
+    </blockquote>
+  </div>
+</div>
+    
+<div class="u-fixed-width"><hr class="p-rule"></div>
+    
+<div class="row">
+  <div class="col-medium-6 col-3" style="padding-top: 8px;">
+    <a href="/publisher/jetbrains">
+      
+<div class="lazyload" data-noscript>
+  <noscript>
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_66,h_72/https://assets.ubuntu.com/v1/a82ec61c-logo-jetbrains.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_132,h_144/https://assets.ubuntu.com/v1/a82ec61c-logo-jetbrains.svg 2x"
+      alt="JetBrains"
+      width="66"
+      height="72"
+      loading="lazy"
+    />
+  </noscript>
+</div>
+
+    </a>
+  </div>
+  <div class="col-medium-3 col-3">
+    <h3 class="p-heading--4"><em>“A major software discovery tool”</em></h3>
+  </div>
+  <div class="col-medium-3 col-6">
+    <blockquote class="p-testimonial u-no-margin--bottom">
+      <p><em>The Snap store provides additional exposure to our tools for many of our existing and potential users. The decision to use it came quite naturally. We believe the store will be a major software discovery tool on Linux, so the more people find out about our tools naturally and install them more easily, the better for everyone.</em></p>
+      <cite>
+        <strong>Aleksey Rostovskiy</strong><br> 
+        <span class="u-text-muted">Engineer, <a href="https://www.jetbrains.com/" >JetBrains</a></span>
+      </cite>
+    </blockquote>
+  </div>
+</div>
+  </section>
+
+  <section class="p-section">
+    <hr class="p-rule is-fixed-width">
+    <div class="row--50-50">
+      <div class="col">
+        <h2>Showcase to millions</h2>
+      </div>
+      <div class="col">
+        <p>Reach beyond your existing audience with a listing on the Snap Store, the front page for app discovery on Ubuntu and other popular distros.</p>
+        <p style="margin-bottom: 2rem;"><a href="/store">Browse the Snap Store</a></p>
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      
+<div class="lazyload" data-noscript>
+  <noscript>
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2216,h_1591/https://assets.ubuntu.com/v1/cfd29985-skype-snap-page.jpg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_4432,h_3182/https://assets.ubuntu.com/v1/cfd29985-skype-snap-page.jpg 2x"
+      alt="Snap details page"
+      width="2216"
+      height="1591"
+      loading="lazy"
+      class="u-full-width"
+    />
+  </noscript>
+</div>
+
+    </div>
+  </section>
+  <section class="p-section">
+    <div class="u-fixed-width u-hide--small u-hide--medium"><hr class="p-rule"></div>
+    <div class="row--50-50">
+      <div class="col">
+        <h2>Measure user growth</h2>
+        <p>Make data-driven decisions with active install metrics. Watch as automatic updates migrate users to your latest release. Understand your audience with geographic and version breakdowns.</p>
+      </div>
+      <div class="col" style="padding-top: 1rem;">
+        
+<div class="lazyload" data-noscript>
+  <noscript>
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_600,h_338/https://assets.ubuntu.com/v1/6a7a7b93-analytics.png"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1200,h_676/https://assets.ubuntu.com/v1/6a7a7b93-analytics.png 2x"
+      alt="Snap metrics"
+      width="600"
+      height="338"
+      loading="lazy"
+    />
+  </noscript>
+</div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    
+  
+<footer class="p-strip--dark p-sticky-footer" id="footer">
+  <div class="row">
+    <div class="col-9">
+      <p>
+        <a class="p-link--inverted" href="#">Back to top <i class="p-icon--chevron-up is-light"></i></a>
+      </p>
+      <p>
+        &copy; 2024 Canonical Ltd. <br/>
+        Ubuntu and Canonical are registered trademarks of Canonical Ltd.
+        <br/>
+        Powered by <a href="https://www.ubuntu.com/kubernetes">Charmed Kubernetes</a>
+      </p>
+      <p class="u-no-limit">
+        <small>
+          <a
+            href="https://forum.snapcraft.io/">Join the forum</a>, contribute to or report problems with,
+          <a
+            href="https://bugs.launchpad.net/snapd"
+          >snapd</a>,
+          <a
+            href="https://bugs.launchpad.net/snapcraft"
+          >Snapcraft</a>,
+          or <a href="https://github.com/canonical/snapcraft.io/issues/new">this site</a>.
+        </small>
+      </p>
+    </div>
+    <div class="col-3">
+       <ul class="p-inline-list u-align--right">
+         <li class="p-inline-list__item">
+           <a href="https://twitter.com/snapcraftio" class="p-icon--twitter">Share on Twitter</a>
+         </li>
+         <li class="p-inline-list__item">
+           <a href="https://www.facebook.com/snapcraftio" class="p-icon--facebook">Share on Facebook</a>
+         </li>
+         <li class="p-inline-list__item">
+           <a href="https://www.youtube.com/snapcraftio" class="p-icon--youtube">Share on YouTube</a>
+         </li>
+       </ul>
+     </div>
+  </div>
+  <div class="u-fixed-width">
+    <ul class="p-inline-list--middot u-no-margin--bottom">
+      <li class="p-inline-list__item">
+        <a class="p-link--inverted" href="https://ubuntu.com/legal/terms-and-policies/snap-store-terms"><small>Terms of Service</small></a>
+      </li>
+      <li class="p-inline-list__item">
+        <a class="p-link--inverted" href="https://www.ubuntu.com/legal/data-privacy"><small>Data privacy</small></a>
+      </li>
+      <li class="p-inline-list__item">
+        <a class="p-link--inverted js-revoke-cookie-manager" href=""><small>Manage your tracker settings</small></a>
+      </li>
+      <li class="p-inline-list__item">
+        <a class="p-link--inverted" href="https://status.snapcraft.io/"><small>Service status</small></a>
+      </li>
+      <li class="p-inline-list__item">
+        <a class="p-link--inverted" href="https://dashboard.snapcraft.io/"><small>Other functions</small></a>
+      </li>
+      <li class="p-inline-list__item">
+        <a
+          class="p-link--inverted"
+          href="/about/contact-us"
+          data-js="contact-form-trigger"
+          data-formid="2639">
+          Contact us
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+<div class="p-modal u-hide" id="contact-form-modal">
+  <section class="p-modal__dialog" role="dialog" aria-modal="true" aria-labeledby="modal-title">
+    <header class="p-modal__header">
+      <h2 class="p-modal__title">Contact us</h2>
+      <button class="p-modal__close" aria-label="Close active modal" aria-controls="modal" data-js="close-modal-control">Close</button>
+    </header>
+    <div id="modal-body"></div>
+  </section>
+</div>
+
+<script type="text/template" id="contactFormTemplate">
+  
+    <form action="https://ubuntu.com/marketo/submit" method="post" id="mktoForm_{{formid}}">
+  <fieldset class="u-no-margin--bottom">
+    <legend class="u-off-screen">About you</legend>
+    <h2 class="p-heading--3">About you</h2>
+    <ul class="p-list">
+      <li class="p-list__item">
+        <label for="firstName">First name:</label>
+        <input required id="firstName" name="firstName" maxlength="255" type="text" />
+      </li>
+      <li class="p-list__item">
+        <label for="lastName">Last name:</label>
+        <input required id="lastName" name="lastName" maxlength="255" type="text" />
+      </li>
+      <li class="p-list__item">
+        <label for="email">Email address:</label>
+        <input required id="email" name="email" maxlength="255" type="email" pattern="^[^ ]+@[^ ]+\.[a-z]{2,26}$" />
+      </li>
+      <li class="p-list__item">
+        <label for="phone">Mobile/cell phone number:</label>
+        <input required id="phone" name="phone" maxlength="255" type="tel" />
+      </li>
+      
+<li class="p-list__item">
+  <label for="country">Country:</label>
+  
+  <select
+    required
+    id="country"
+    name="country"
+  >
+    <option value="">Select...</option
+    ><option value="FR">France</option
+    ><option value="DE">Germany</option
+    ><option value="JP">Japan</option
+    ><option value="GB">United Kingdom</option
+    ><option value="US">United States of America</option
+    ><option disabled>——————————————————</option
+    ><option value="AF">Afghanistan</option
+    ><option value="AX">Åland Islands</option
+    ><option value="AL">Albania</option
+    ><option value="DZ">Algeria</option
+    ><option value="AS">American Samoa</option
+    ><option value="AD">Andorra</option
+    ><option value="AO">Angola</option
+    ><option value="AI">Anguilla</option
+    ><option value="AQ">Antarctica</option
+    ><option value="AG">Antigua and Barbuda</option
+    ><option value="AR">Argentina</option
+    ><option value="AM">Armenia</option
+    ><option value="AW">Aruba</option
+    ><option value="AU">Australia</option
+    ><option value="AT">Austria</option
+    ><option value="AZ">Azerbaijan</option
+    ><option value="BS">Bahamas</option
+    ><option value="BH">Bahrain</option
+    ><option value="BD">Bangladesh</option
+    ><option value="BB">Barbados</option
+    ><option value="BY">Belarus</option
+    ><option value="BE">Belgium</option
+    ><option value="BZ">Belize</option
+    ><option value="BJ">Benin</option
+    ><option value="BM">Bermuda</option
+    ><option value="BT">Bhutan</option
+    ><option value="BO">Bolivia (Plurinational State of)</option
+    ><option value="BQ">Bonaire, Sint Eustatius and Saba</option
+    ><option value="BA">Bosnia and Herzegovina</option
+    ><option value="BW">Botswana</option
+    ><option value="BV">Bouvet Island</option
+    ><option value="BR">Brazil</option
+    ><option value="IO">British Indian Ocean Territory</option
+    ><option value="BN">Brunei Darussalam</option
+    ><option value="BG">Bulgaria</option
+    ><option value="BF">Burkina Faso</option
+    ><option value="BI">Burundi</option
+    ><option value="KH">Cambodia</option
+    ><option value="CM">Cameroon</option
+    ><option value="CA">Canada</option
+    ><option value="CV">Cabo Verde</option
+    ><option value="KY">Cayman Islands</option
+    ><option value="CF">Central African Republic</option
+    ><option value="TD">Chad</option
+    ><option value="CL">Chile</option
+    ><option value="CN">China</option
+    ><option value="CX">Christmas Island</option
+    ><option value="CC">Cocos (Keeling) Islands</option
+    ><option value="CO">Colombia</option
+    ><option value="KM">Comoros</option
+    ><option value="CG">Congo</option
+    ><option value="CD">Congo (Democratic Republic of the)</option
+    ><option value="CK">Cook Islands</option
+    ><option value="CR">Costa Rica</option
+    ><option value="CI">Côte d'Ivoire</option
+    ><option value="HR">Croatia</option
+    ><option value="CU">Cuba</option
+    ><option value="CW">Curaçao</option
+    ><option value="CY">Cyprus</option
+    ><option value="CZ">Czech Republic</option
+    ><option value="DK">Denmark</option
+    ><option value="DJ">Djibouti</option
+    ><option value="DM">Dominica</option
+    ><option value="DO">Dominican Republic</option
+    ><option value="EC">Ecuador</option
+    ><option value="EG">Egypt</option
+    ><option value="SV">El Salvador</option
+    ><option value="GQ">Equatorial Guinea</option
+    ><option value="ER">Eritrea</option
+    ><option value="EE">Estonia</option
+    ><option value="ET">Ethiopia</option
+    ><option value="FK">Falkland Islands (Malvinas)</option
+    ><option value="FO">Faroe Islands</option
+    ><option value="FJ">Fiji</option
+    ><option value="FI">Finland</option
+    ><option value="FR">France</option
+    ><option value="GF">French Guiana</option
+    ><option value="PF">French Polynesia</option
+    ><option value="TF">French Southern Territories</option
+    ><option value="GA">Gabon</option
+    ><option value="GM">Gambia</option
+    ><option value="GE">Georgia</option
+    ><option value="DE">Germany</option
+    ><option value="GH">Ghana</option
+    ><option value="GI">Gibraltar</option
+    ><option value="GR">Greece</option
+    ><option value="GL">Greenland</option
+    ><option value="GD">Grenada</option
+    ><option value="GP">Guadeloupe</option
+    ><option value="GU">Guam</option
+    ><option value="GT">Guatemala</option
+    ><option value="GG">Guernsey</option
+    ><option value="GN">Guinea</option
+    ><option value="GW">Guinea-Bissau</option
+    ><option value="GY">Guyana</option
+    ><option value="HT">Haiti</option
+    ><option value="HM">Heard Island and McDonald Islands</option
+    ><option value="VA">Holy See</option
+    ><option value="HN">Honduras</option
+    ><option value="HK">Hong Kong</option
+    ><option value="HU">Hungary</option
+    ><option value="IS">Iceland</option
+    ><option value="IN">India</option
+    ><option value="ID">Indonesia</option
+    ><option value="IR">Iran (Islamic Republic of)</option
+    ><option value="IQ">Iraq</option
+    ><option value="IE">Ireland</option
+    ><option value="IM">Isle of Man</option
+    ><option value="IL">Israel</option
+    ><option value="IT">Italy</option
+    ><option value="JM">Jamaica</option
+    ><option value="JP">Japan</option
+    ><option value="JE">Jersey</option
+    ><option value="JO">Jordan</option
+    ><option value="KZ">Kazakhstan</option
+    ><option value="KE">Kenya</option
+    ><option value="KI">Kiribati</option
+    ><option value="KP">Korea (Democratic People's Republic of)</option
+    ><option value="KR">Korea (Republic of)</option
+    ><option value="KW">Kuwait</option
+    ><option value="KG">Kyrgyzstan</option
+    ><option value="LA">Lao People's Democratic Republic</option
+    ><option value="LV">Latvia</option
+    ><option value="LB">Lebanon</option
+    ><option value="LS">Lesotho</option
+    ><option value="LR">Liberia</option
+    ><option value="LY">Libya</option
+    ><option value="LI">Liechtenstein</option
+    ><option value="LT">Lithuania</option
+    ><option value="LU">Luxembourg</option
+    ><option value="MO">Macao</option
+    ><option value="MK">Macedonia (the former Yugoslav Republic of)</option
+    ><option value="MG">Madagascar</option
+    ><option value="MW">Malawi</option
+    ><option value="MY">Malaysia</option
+    ><option value="MV">Maldives</option
+    ><option value="ML">Mali</option
+    ><option value="MT">Malta</option
+    ><option value="MH">Marshall Islands</option
+    ><option value="MQ">Martinique</option
+    ><option value="MR">Mauritania</option
+    ><option value="MU">Mauritius</option
+    ><option value="YT">Mayotte</option
+    ><option value="MX">Mexico</option
+    ><option value="FM">Micronesia (Federated States of)</option
+    ><option value="MD">Moldova (Republic of)</option
+    ><option value="MC">Monaco</option
+    ><option value="MN">Mongolia</option
+    ><option value="ME">Montenegro</option
+    ><option value="MS">Montserrat</option
+    ><option value="MA">Morocco</option
+    ><option value="MZ">Mozambique</option
+    ><option value="MM">Myanmar</option
+    ><option value="NA">Namibia</option
+    ><option value="NR">Nauru</option
+    ><option value="NP">Nepal</option
+    ><option value="NL">Netherlands</option
+    ><option value="NC">New Caledonia</option
+    ><option value="NZ">New Zealand</option
+    ><option value="NI">Nicaragua</option
+    ><option value="NE">Niger</option
+    ><option value="NG">Nigeria</option
+    ><option value="NU">Niue</option
+    ><option value="NF">Norfolk Island</option
+    ><option value="MP">Northern Mariana Islands</option
+    ><option value="NO">Norway</option
+    ><option value="OM">Oman</option
+    ><option value="PK">Pakistan</option
+    ><option value="PW">Palau</option
+    ><option value="PS">Palestine, State of</option
+    ><option value="PA">Panama</option
+    ><option value="PG">Papua New Guinea</option
+    ><option value="PY">Paraguay</option
+    ><option value="PE">Peru</option
+    ><option value="PH">Philippines</option
+    ><option value="PN">Pitcairn</option
+    ><option value="PL">Poland</option
+    ><option value="PT">Portugal</option
+    ><option value="PR">Puerto Rico</option
+    ><option value="QA">Qatar</option
+    ><option value="RE">Réunion</option
+    ><option value="RO">Romania</option
+    ><option value="RU">Russian Federation</option
+    ><option value="RW">Rwanda</option
+    ><option value="BL">Saint Barthélemy</option
+    ><option value="SH">Saint Helena, Ascension and Tristan da Cunha</option
+    ><option value="KN">Saint Kitts and Nevis</option
+    ><option value="LC">Saint Lucia</option
+    ><option value="MF">Saint Martin (French part)</option
+    ><option value="PM">Saint Pierre and Miquelon</option
+    ><option value="VC">Saint Vincent and the Grenadines</option
+    ><option value="WS">Samoa</option
+    ><option value="SM">San Marino</option
+    ><option value="ST">Sao Tome and Principe</option
+    ><option value="SA">Saudi Arabia</option
+    ><option value="SN">Senegal</option
+    ><option value="RS">Serbia</option
+    ><option value="SC">Seychelles</option
+    ><option value="SL">Sierra Leone</option
+    ><option value="SG">Singapore</option
+    ><option value="SX">Sint Maarten (Dutch part)</option
+    ><option value="SK">Slovakia</option
+    ><option value="SI">Slovenia</option
+    ><option value="SB">Solomon Islands</option
+    ><option value="SO">Somalia</option
+    ><option value="ZA">South Africa</option
+    ><option value="GS">South Georgia and the South Sandwich Islands</option
+    ><option value="SS">South Sudan</option
+    ><option value="ES">Spain</option
+    ><option value="LK">Sri Lanka</option
+    ><option value="SD">Sudan</option
+    ><option value="SR">Suriname</option
+    ><option value="SJ">Svalbard and Jan Mayen</option
+    ><option value="SZ">Swaziland</option
+    ><option value="SE">Sweden</option
+    ><option value="CH">Switzerland</option
+    ><option value="SY">Syrian Arab Republic</option
+    ><option value="TW">Taiwan</option
+    ><option value="TJ">Tajikistan</option
+    ><option value="TZ">Tanzania, United Republic of</option
+    ><option value="TH">Thailand</option
+    ><option value="TL">Timor-Leste</option
+    ><option value="TG">Togo</option
+    ><option value="TK">Tokelau</option
+    ><option value="TO">Tonga</option
+    ><option value="TT">Trinidad and Tobago</option
+    ><option value="TN">Tunisia</option
+    ><option value="TR">Turkey</option
+    ><option value="TM">Turkmenistan</option
+    ><option value="TC">Turks and Caicos Islands</option
+    ><option value="TV">Tuvalu</option
+    ><option value="UG">Uganda</option
+    ><option value="UA">Ukraine</option
+    ><option value="AE">United Arab Emirates</option
+    ><option value="GB">United Kingdom</option
+    ><option value="US">United States of America</option
+    ><option value="UM">United States Minor Outlying Islands</option
+    ><option value="UY">Uruguay</option
+    ><option value="UZ">Uzbekistan</option
+    ><option value="VU">Vanuatu</option
+    ><option value="VE">Venezuela (Bolivarian Republic of)</option
+    ><option value="VN">Viet Nam</option
+    ><option value="VG">Virgin Islands (British)</option
+    ><option value="VI">Virgin Islands (U.S.)</option
+    ><option value="WF">Wallis and Futuna</option
+    ><option value="EH">Western Sahara</option
+    ><option value="YE">Yemen</option
+    ><option value="ZM">Zambia</option
+    ><option value="ZW">Zimbabwe</option>
+  </select>
+  
+</li>
+
+    </ul>
+  </fieldset>
+
+  <fieldset class="u-no-margin--bottom">
+    <legend class="u-off-screen">About your company</legend>
+    <h2 class="p-heading--3">About your company</h2>
+    <ul class="p-list">
+      <li class="p-list__item">
+        <label for="company">Company name:</label>
+        <input required id="company" name="company" maxlength="255" type="text" />
+      </li>
+      <li class="p-list__item">
+        <label for="job-title">Job title:</label>
+        <input required id="job-title" name="title" maxlength="255" type="text" />
+      </li>
+
+    </ul>
+  </fieldset>
+
+  <fieldset class="u-no-margin--bottom">
+    <legend class="u-off-screen">Your comments</legend>
+    <h2 class="p-heading--3">Your comments</h2>
+    <ul class="p-list">
+      <li class="p-list__item">
+        <label for="Comments_from_lead__c">What would you like to talk to us about?</label>
+        <textarea required id="Comments_from_lead__c" name="Comments_from_lead__c" rows="5" maxlength="2000"></textarea>
+      </li>
+      <li class="p-list__item">
+        <label class="p-checkbox">
+          <input class="p-checkbox__input" value="yes" aria-labelledby="canonicalUpdatesOptIn"
+            name="canonicalUpdatesOptIn" type="checkbox">
+          <span class="p-checkbox__label" id="canonicalUpdatesOptIn">I agree to receive information about Canonical's
+            products and services.</span>
+        </label>
+      </li>
+      <li class="p-list__item">In submitting this form, I confirm that I have read and agree to <a
+          href="/legal/data-privacy/contact">Canonical's Privacy Notice</a> and <a href="/legal/data-privacy">Privacy
+          Policy</a>.</li>
+      
+      <li class="u-off-screen">
+        <label class="website" for="website">Website:</label>
+        <input name="website" type="text" class="website" autocomplete="off" value="" id="website" tabindex="-1" />
+      </li>
+      <li class="u-off-screen">
+        <label class="name" for="name">Name:</label>
+        <input name="name" type="text" class="name" autocomplete="off" value="" id="name" tabindex="-1" />
+      </li>
+      
+      <li class="p-list__item">
+        <button type="submit" class="p-button--positive"
+          onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Form', 'eventAction' : 'iot contact-us', 'eventLabel' : 'snapcraft.ioappstore', 'eventValue' : undefined });">Submit</button>
+      </li>
+    </ul>
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formid" value="{{formid}}" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="returnURL" value="https://snapcraft.io/about/thank-you" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="Consent_to_Processing__c" value="yes" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_campaign" id="utm_campaign" value="" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_medium" id="utm_medium" value="" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_source" id="utm_source" value="" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_content" id="utm_content" value="" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_term" id="utm_term" value="" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="GCLID__c" id="GCLID__c" value="" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" name="Facebook_Click_ID__c"
+      id="Facebook_Click_ID__c" value="" />
+    <input type="hidden" aria-hidden="true" aria-label="hidden field" id="preferredLanguage" name="preferredLanguage"
+      maxlength="255" value="" />
+  </fieldset>
+</form>
+  
+</script>
+<script src="https://assets.ubuntu.com/v1/37b1db88-jquery.min.js"></script>
+<script src="https://assets.ubuntu.com/v1/d55f58bb-jquery.validate.js"></script>
+<script>
+ $("#mktoForm_1098").validate({
+    errorElement: "span",
+    errorClass: "mktFormMsg mktError",
+    onkeyup: false,
+   onclick: false,
+   onblur: false
+ });
+</script>
+
+
+
+    
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    Raven.context(function () {
+      snapcraft.public.homepage.initFSFLanguageSelect();
+      snapcraft.public.homepage.initExpandableArea();
+      snapcraft.public.featuredSnaps.init(['Featured', 'Development', 'Games', 'Server']);
+
+      
+    });
+  });
+</script>
+
+
+    <script src="/static/js/dist/global-nav.js?v=22a6ad8"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@id": "https://snapcraft.io/#organization",
+        "@type": "Organization",
+        "name": "Snapcraft",
+        "logo": "https://assets.ubuntu.com/v1/e635d1ef-snapcraft_green-red_hex.png",
+        "url": "https://snapcraft.io",
+        "sameAs": [
+          "https://developer.ubuntu.com/snapcraft",
+          "https://github.com/snapcore/snapcraft",
+          "https://en.wikipedia.org/wiki/Snappy_(package_manager)",
+          "https://twitter.com/snapcraftio",
+          "https://www.facebook.com/snapcraftio/",
+          "https://www.youtube.com/snapcraftio"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@id": "https://snapcraft.io/#website",
+        "@type": "WebPage",
+        "name": "Snapcraft",
+        "url": "https://snapcraft.io/"
+      }
+    </script>
+
+    
+  </body>
+</html>

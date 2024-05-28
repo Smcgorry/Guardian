@@ -13,19 +13,19 @@ from llama_index.packs.corrective_rag import CorrectiveRAGPack
 
 #Load LLM
 Settings.llm = OpenAILike(
-    model="phi-2-dpo.Q8_0.gguf",
+    model="model-id",
     api_key="fake",
     api_base="http://localhost:1234/v1",
     is_chat_model=True
 )
 Settings.embed_model = LangchainEmbedding(GPT4AllEmbeddings(model='http://localhost:1234/v1/embeddings'))
-whoosh = "/home/headquarters/Documents/Guardian/WebIndex/"
+whoosh = "../WebIndex/"
 
 collection_name = input("Enter the name of the collection to pull: ")
 question = input("Write a query for the chatbot: ")
 
 # load from disk
-db2 = chromadb.PersistentClient(path="/home/headquarters/Documents/Guardian/VectorDatabase/")
+db2 = chromadb.PersistentClient(path="../VectorDatabase/")
 
 chroma_collection = db2.get_or_create_collection(collection_name)
 

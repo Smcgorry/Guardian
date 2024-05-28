@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="https://assets.ubuntu.com/v1/3ba2d831-cof-favicon-16x16.ico" sizes="16x16" />
+  <link rel="icon" type="image/png" href="https://assets.ubuntu.com/v1/2c6276dc-cof-favicon-32x32.ico" sizes="32x32" />
+  <title>Canonical Netplan</title>
+
+  <meta name="description" content="Backend-agnostic network configuration in YAML.">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/static/css/main.css?v=56c715e">
+
+  <meta name="copydoc" content="">
+
+  
+  <meta name="twitter:title" content="Netplan | Canonical Netplan">
+  <meta property="og:title" content="Netplan | Canonical Netplan">
+  
+
+  
+  <meta name="twitter:description" content="Backend-agnostic network configuration in YAML.">
+  <meta property="og:description" content="Backend-agnostic network configuration in YAML.">
+  
+
+  
+  <script src="/static/js/build/global-nav.js?v=b127c93"></script>
+  <script src="/static/js/build/cookie-policy.js?v=b0e790c"></script>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M95NRRR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="navigation" class="p-navigation is-dark">
+  <div class="p-navigation__row">
+    <div class="p-navigation__banner">
+      <div class="p-navigation__tagged-logo">
+        <a class="p-navigation__link" href="/" aria-label="Go to home page">
+          <div class="p-navigation__logo-tag">
+            <img class="p-navigation__logo-icon" src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg" alt="">
+          </div>
+          <span class="p-navigation__logo-title">Canonical Netplan</span>
+        </a>
+      </div>
+      <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+      <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+    </div>
+
+    <nav class="p-navigation__nav">
+      <ul class="p-navigation__items">
+        <li class="p-navigation__item"><a href="https://netplan.readthedocs.io/" class="p-navigation__link">Documentation</a></li>
+        <li class="p-navigation__item"><a href="/design" class="p-navigation__link">Design</a></li>
+        <li class="p-navigation__item"><a href="/faq" class="p-navigation__link">FAQ</a></li>
+        <li class="p-navigation__item"><a href="/troubleshooting" class="p-navigation__link">Troubleshooting</a></li>
+      </ul>
+      <ul class="p-navigation__items global-nav"></ul>
+    </nav>
+  </div>
+</header>
+    
+<div id="main-content" class="p-strip is-bordered is-deep">
+  <div class="row">
+    <div class="col-8 col-medium-4">
+      <h1>Netplan</h1>
+      <p class="p-heading--4">
+        The network configuration abstraction renderer
+      </p>
+      <p>Netplan is a utility for easily configuring networking on a linux system. You simply create a YAML description of the required network interfaces and what each should be configured to do. From this description Netplan will generate all the necessary configuration for your chosen renderer tool.</p>
+    </div>
+    <div class="col-4 col-medium-2 u-vertically-center u-align--center u-hide--small">
+      <img src="https://assets.ubuntu.com/v1/0fbee9c4-pictogram_internet01.svg?w=200" width="200" alt="" />
+    </div>
+  </div>
+</div>
+
+<div id="how-does-it-work" class="p-strip--light is-bordered is-deep">
+  <div class="row u-vertically-center">
+    <div class="col-8 col-medium-4">
+      <h2>How does it work?</h2>
+      <p>Netplan reads network configuration from <code>/etc/netplan/*.yaml</code> which are written by administrators, installers, cloud image instantiations, or other OS deployments. During early boot, Netplan generates backend specific configuration files in <code>/run</code> to hand off control of devices to a particular networking daemon.</p>
+      <p>Netplan currently works with these supported renderers</p>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">
+          <a href="https://help.ubuntu.com/community/NetworkManager">NetworkManager</a>
+        </li>
+        <li class="p-list__item is-ticked">
+          <a href="http://manpages.ubuntu.com/manpages/bionic/man5/systemd.network.5.html">Systemd-networkd</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-4 col-medium-2 u-align--center u-hide--small">
+      <img src="https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg" width="300" alt="" />
+    </div>
+  </div>
+</div>
+
+<div id="quick-start" class="p-strip is-bordered is-deep">
+  <div class="row">
+    <div class="col-12">
+      <h2>How do I use it?</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 col-medium-3">
+      <h3>Configuration</h3>
+      <p>Without configuration, Netplan will not do anything. The simplest configuration snippet (to bring up things via DHCP on workstations) is as follows:</p>
+      <pre><code>network:
+  version: 2
+  renderer: NetworkManager</code></pre>
+      <p>This will make Netplan hand over control to NetworkManager, which will manage all devices in its default way (i.e. any ethernet device will come up with DHCP once carrier is detected).</p>
+      <p>When individual interface configurations are given, it will not let devices automatically come up using DHCP, but each interface needs to be specified in a file in /etc/netplan/ with its explicit YAML settings for the networkd or NetworkManager backend renderers.</p>
+    </div>
+    <div class="col-6 col-medium-3">
+      <h3>Commands</h3>
+      <p>Netplan uses a set of subcommands to drive its behavior:</p>
+      <ul>
+        <li><strong>netplan generate</strong>: Use <code>/etc/netplan</code> to generate the required configuration for the renderers.</li>
+        <li><strong>netplan apply</strong>: Apply all configuration for the renderers, restarting them as necessary.</li>
+        <li><strong>netplan try</strong>: Apply configuration and wait for user confirmation; will roll back if network is broken or no confirmation is given.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <hr />
+<footer class="p-strip u-no-margin--top">
+    <div class="row">
+        <div class="col-4 col-medium-2">
+            <h4>Netplan</h4>
+            <ul class="p-list">
+                <li class="p-list__item">
+                    <a class="p-link--soft" href="/">Home</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--soft" href="https://netplan.readthedocs.io">Documentation</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--soft" href="/design">Design</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-4 col-medium-2">
+            <h4>Need help?</h4>
+            <ul class="p-list">
+                <li class="p-list__item">
+                    <a class="p-link--soft" href="https://askubuntu.com/questions/tagged/netplan">Ask Ubuntu</a>
+                </li>
+                <li class="p-list__item">
+                    <a class="p-link--soft" href="https://libera.chat">Join <code>#netplan</code> on Libera Chat</a>
+                </li>
+                <li class="p-inline-list__item">
+                    <a class="p-link--soft" href="https://launchpad.net/netplan/+filebug">Report a bug</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-4 col-medium-2">
+            <h4>Contribute</h4>
+            <ul class="p-list">
+                <li class="p-list__item">
+                    <a class="p-link--soft" href="https://github.com/canonical/netplan">GitHub</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  <div class="row">
+    <div class="col-12">
+      <p>
+        &copy; 2024 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
+      </p>
+      <nav>
+        <ul class="p-inline-list--middot">
+          <li class="p-inline-list__item">
+            <a class="p-link--soft" href="https://www.ubuntu.com/legal">Legal info</a>
+          </li>
+          <li class="p-inline-list__item">
+            <a class="p-link--soft js-revoke-cookie-manager" href="">Manage your tracker settings</a>
+          </li>
+          <li class="p-inline-list__item">
+            <a class="p-link--soft" href="https://github.com/canonical-websites/netplan.io/issues/new">Report a bug with this site</a>
+          </li>
+          <li class="p-inline-list__item">
+            <a class="p-link--soft" href="https://launchpad.net/netplan/+filebug">Report a bug with Netplan</a>
+          </li>
+        </ul>
+        <span class="u-off-screen">
+          <a href="#">Go to the top of the page</a>
+        </span>
+      </nav>
+    </div>
+  </div>
+</footer>
+    <script>
+      if (typeof cpNs !== "undefined") {
+        cpNs.cookiePolicy();
+      }
+      if (typeof canonicalGlobalNav !== "undefined") {
+        canonicalGlobalNav.createNav({breakpoint: 940});
+      }
+    </script>
+  </body>
+</html>

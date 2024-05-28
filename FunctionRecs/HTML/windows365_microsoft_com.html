@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="product" content="Windows 365" />
+    <meta name="awa-pageType" content="web" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <title>Windows 365</title>
+    <link href="/static/css/main.css?v=0.1.02665.1916" rel="stylesheet" />
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="cookie-banner" style="position: fixed;width: 100%;bottom: 0;z-index: 2;"></div>
+    <div id="root"></div>
+    <script>
+        var serviceConfig = {
+            brandName: "Windows 365",
+            previewBrandName: "Windows App",
+            previewAppUrl: "https://windows.cloud.microsoft"
+        };
+    </script>
+    <script>
+      var userInfo = {
+        name: "",
+        language: "" || "en",
+        translation: "" || "en",
+        email: "",
+        sid: "",
+        version: "0.1.02665.1916",
+        env: "PROD",
+        tid: "",
+        uid: "",
+        isAdmin: "False",
+        isWindows365Admin: "False",
+        MACBaseUri: "https://admin.microsoft.com",
+        enableSSO: "",
+        client: "",
+        enableSpaAuth: "True",
+        enableSessionStorage: "True"
+      };
+    </script>
+    <script>
+      var features = {
+        enableEUDB: "True",
+        enableSW: "True",
+        enableRedirectOpt: "False"
+      };
+    </script>
+    <script type="text/javascript">
+        document.documentElement.lang = userInfo.language || "en";
+    </script>
+    <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+    <script src="https://shell.cdn.office.net/api/shellbootstrapper/business/oneshell"></script>
+    <script src="/static/js/runtime-main.0.1.02665.1916.js"></script>
+    <script src="/static/js/vendor.0.1.02665.1916.js"></script>
+    <script src="/static/js/main.0.1.02665.1916.js"></script>
+</body>
+</html>
