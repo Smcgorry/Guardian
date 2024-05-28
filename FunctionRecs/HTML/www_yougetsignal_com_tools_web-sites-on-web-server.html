@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<title>Reverse IP Lookup - Find Other Web Sites Hosted on a Web Server</title>
+	<meta name="description" content="This tool performs a reverse IP domain check which takes the domain name or IP address of a web server and searches for other sites known to be hosted on that same web server. Data is gathered from search engine results, which is not guaranteed to be complete. Knowing the other web sites hosted on a web server is important from both an SEO and web filtering perspective, particularly for those on shared web hosting plans." />
+	<meta name="keywords" content="reverse, dns, webserver, seo, search, engine, optimization, filter, webhost, hosting, shared hosting" />
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LYYXRDEXHP"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-LYYXRDEXHP');
+	</script>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="resource-type" content="document" />
+	<meta name="robots" content="index, follow, all" />
+	<meta name="author" content="Kirk Ouimet" />
+	<meta name="author-url" content="http://www.kirkouimet.com/" />
+    
+	<!-- You Get Signal JavaScript -->
+	<script type="text/javascript" language="javascript" src="/js/yougetsignal.js"></script>
+
+	<!-- Prototype and Scriptaculous -->
+	<script type="text/javascript" language="javascript" src="/js/prototype.js"></script>
+	<script type="text/javascript" language="javascript" src="/js/scriptaculous/scriptaculous.js?load=builder,effects"></script>
+
+	<!-- ProtoTip -->
+	<script type="text/javascript" language="javascript" src="/js/prototip.js"></script>
+	
+	<link rel="icon" type="image/png" href="/favicon.ico" />
+    
+	<!-- You Get Signal CSS -->
+	<script type="text/javascript" language="javascript"></script>
+	<style type="text/css" media="all">
+		@import "/css/yougetsignal.css";
+	</style>
+    
+    <!-- Tool JavaScript -->
+	<script type="text/javascript" language="javascript" src="js/tool-domains.js?v=4"></script>
+</head>
+<body onload="changeNav('nav_web-sites-on-web-server'); initToolTips(); document.getElementById('remoteAddress').focus();">
+	<div id="wrapper">
+	<div id="container">
+    	
+        <!-- Header -->
+		<div id="header">
+							<a href="/"><img src="/img/site_logo.gif" alt="You Get Signal" style="width: 13.25em; height: 2.8125em; float: left; padding-top: .2em; border: none;" /></a>
+			<div style="clear: both;"></div>		</div> <!-- End div#header -->
+        
+		<!-- Curved Border Around Content -->
+        <div class="curvedBorderTop"><div class="curvedBorderBottom"><div class="curvedBorderLeft"><div class="curvedBorderRight"><div class="curvedBorderBottomLeft"><div class="curvedBorderBottomRight"><div class="curvedBorderTopLeft"><div class="curvedBorderTopRight">
+
+		<!-- Content -->
+        <div id="content">
+        
+        	<!-- Navigation -->
+            <ul id="navigation">
+				                <li id="nav_open-ports"><a href="/tools/open-ports/"><img src="/img/nav_open-ports.gif" alt="" /></a></li>
+                <li id="nav_network-location" ><a href="/tools/network-location/"><img src="/img/nav_network-location.gif" alt="" /></a></li>
+                <li id="nav_visual-tracert"><a href="/tools/visual-tracert/"><img src="/img/nav_visual-tracert.gif" alt="" /></a></li>
+                <li id="nav_phone-location"><a href="/tools/phone-location/"><img src="/img/nav_phone-location.gif" alt="" /></a></li>
+                <li id="nav_reverse-email"><a href="/tools/reverse-email-lookup/"><img src="/img/nav_reverse-email.gif" alt="" /></a></li>
+                <li id="nav_web-sites-on-web-server"><a href="/tools/web-sites-on-web-server/"><img src="/img/nav_web-sites-on-web-server.gif" alt="" /></a></li>
+                <li id="nav_whois-lookup"><a href="/tools/whois-lookup/"><img src="/img/nav_whois-lookup.gif" alt="" /></a></li>
+                <li id="nav_igoogle"><a href="/igoogle/"><img src="/img/nav_igoogle.gif" alt="" /></a></li>
+                <li id="nav_vista"><a href="/vista/"><img src="/img/nav_vista.gif" alt="" /></a></li>
+                <li id="nav_links"><a href="/links/"><img src="/img/nav_links.gif" alt="" /></a></li>
+                <li id="nav_about"><a href="/about/"><img src="/img/nav_about.gif" alt="" /></a></li>
+
+				<!--
+                <li id="nav_pingTool" style="display: none;"><a class="navigationLink" href="/pingTool"><img src="/img/nav_pingTool.gif" alt="Ping a Network Address" /></a></li>
+                <li style="display: none;"><a class="navigationLink" href="/textMessageTool"><img src="/img/nav_textMessageTool.gif" alt="Send a Text Message to a Mobile Phone" /></a></li>
+                <li style="display: none;"><a class="navigationLink" href="/whoisTool"><img src="/img/nav_whoisTool.gif" alt="Perform a Whois on a Domain or Network" /></a></li>
+                <li style="display: none;"><a class="navigationLink" href="/nsmxLookupTool"><img src="/img/nav_nsmxLookupTool.gif" alt="Perform a Name Server and MX Lookup on a Domain" /></a></li>
+                <li style="display: none;"><a class="navigationLink" href="/verifyEmailTool"><img src="/img/nav_verifyEmailTool.gif" alt="Verify an E-mail Address Exists" /></a></li>
+                <li style="display: none;"><a class="navigationLink" href="/webpageSpeedTool"><img src="/img/nav_webpageSpeedTool.gif" alt="Find Out How Long a Webpage Takes to Load" /></a></li>
+                <li style="display: none;"><a class="navigationLink" href="/speedTestTool"><img src="/img/nav_speedTestTool.gif" alt="Test the Speed of Your Internet Connection" /></a></li>
+                <li style="display: none;"><a class="navigationLink" href="/forum"><img src="/img/nav_forum.gif" alt="Forum" /></a></li>
+				-->            </ul>
+            
+            <!-- The Tool -->
+            <div id="theTool">
+                <img src="img/title.gif" alt="Reverse IP Domain Check" style="margin-bottom: .5em;" /><br />
+                <div style="height: .6em; clear: both;"></div>                
+                <div style="margin: 0; padding: 0;">
+                    <span style="float: left; line-height: 1.7em;">
+                        Remote Address&nbsp;
+                    </span>
+                    <span style="float: left;">
+                        <input class="myInput" type="text" id="remoteAddress" style="width: 12em;" value="digg.com" onkeyup="submitUsingEnter(event);" />&nbsp;<input class="myButton" type="submit" value="Check" onclick="reverseIpDomainCheck(document.getElementById('remoteAddress').value);" />&nbsp;
+                    </span>
+                </div>
+                <div style="height: 1em; clear: both;"></div>
+                <div id="results" style="margin: 0; padding: 0;">
+					Find other sites hosted on a web server by entering a domain or IP address above.
+                </div>
+                <div class="spacer"></div>
+                
+                <!-- About -->
+                <img src="/img/about.gif" alt="about" style="width: 4.125em; height: 1.25em; margin-bottom: .5em;" />
+                
+                <p style="font-size: .8em;"><b>Note</b>: For those of you interested, as of May 2014, my database has grown to over 100 million domain names. I am now offering this <a href="/list-of-domain-names/">domain list for purchase</a>.</p>
+                
+                <p style="font-size: .8em; margin-top: 1em;">
+                    A reverse IP domain check takes a domain name or IP address pointing to a web server and searches for other sites known
+                    to be hosted on that same web server. Data is gathered from search engine results, which are not guaranteed to be complete.
+                    IP-Address.org provides interesting visual <a href="http://www.ip-address.org/reverse-lookup/reverse-ip.php">reverse IP</a> lookup tool.
+                    Knowing the other web sites hosted on a web server is important from both an SEO and web filtering perspective, particularly for
+                    those on <a href="http://www.findbestwebhosting.com/top10hostingcompanies.aspx/linux-web-hosting/2">shared web hosting</a> plans.
+                    <br /><span id="moreInfoSwitch"><a onclick="moreInfoSwitch();">More about this tool</a>.</span> <a onclick="setKey();">Set an API Key</a>.
+                </p>
+                
+                
+                <div id="moreToolInfo" style="display: none;">
+                    <p style="font-size: .8em; padding-top: 1em;">
+                        <b>Background</b><br /><br />
+                        All web sites are hosted on web servers, which are computers running specialized software that distribute web content as requested. Each web server typically has a single IP address, a unique numeric identifier assigned to no other computer on the entire Internet. Web sites are usually associated with domain names, textual strings like "google.com" that are easier for users to remember than numeric IP addresses. Since HTTP version 1.1, many domains can be hosted on a single IP address.<br /><br />
+                        As of 2003, more than 87% of all active domains names were found to share their IP addresses (i.e. their web servers) with one or more additional domains. More than two thirds of these domains share their server with fifty or more additional domains. Simply put, most web sites are hosted on servers that host many other web sites.<br /><br />
+                        While IP sharing is typically transparent to ordinary users, it may cause complications for both search engine optimization and web site filtering.<br /><br />
+                        <b>Concerning SEO (search engine optimization)</b><br /><br />
+                        Almost all popular search engines (Google, Yahoo, etc.) increase a web site's rank based on the number of links pointing towards the web site. In an attempt to falsely inflate a web site's popularity, an individual may generate hundreds or even thousands of dummy web sites containing little to no content except for links pointing towards a specific domain name. One method that search engines use to detect this type of miscreant behavior is to see if these inter-linking web sites are hosted on the same IP address or IP address range. If the web sites are in the same IP address range, it is highly likely that they are operated by the same individual. Search engines devalue links from web sites pointing to other web sites hosted on the same IP address range.<br /><br />
+                        Conversely, search engines value links from web sites hosted on different IP addresses. An effective search engine optimizer would go further than hosting inter-linking web sites on different IP addresses. They would host the web sites on completely different class C network addresses. They would make sure that all of their domains were registered with different registrars under different names. They would not use the same template on more than one web site. They would erase all traces that their sites are operated by the same individual. They would go through all of this trouble with one goal in mind - to game the search engines in order to bring in more organic traffic.<br /><br />
+                        For most web sites, having a dedicated unique IP address will have little to no effect on search engine rankings. Matt Cutts, the head of Google's Webspam team, stated:<br /><br />
+                        <i>"If you are an average webmaster and just running a few sites, I wouldn't worry about them being on the same IP address and I definitely wouldn't worry about them being on the same server. That's something that everybody does."</i><br /><br />
+                        <b>Concerning web site filtering</b><br /><br />
+                        With so many sites sharing IP addresses, IP-based filtering efforts are bound to produce "overblocking", which is the accidental denial of access to web sites that abide by the stated filtering rules. Overblocking occurs when a single website containing some form of adult or explicit content is blocked by its IP address. If this happens, all other sites hosted on that IP address, regardless of their content, will be blocked as well. Unfortunately, research has indicated that it is not atypical for a single web server to host a mixture of sites that are sexually explicit and sites that are not.<br /><br />
+                        Overblocking is a problem known to affect filtering in China, Vietnam, Saudi Arabia, and other countries that employ government-mandated country-wide web filtering policies. Additionally, research has indicated that IP address filtering is used by many commercial web filters installed in libraries and schools in the United States. Sometimes Internet services providers are legally required to implement IP address level filtering. For example, under 2002 law, the Attorney General of Pennsylvania ordered Internet service providers in Pennsylvania to disable access to sites found to offer child pornography. Most providers receiving such orders reportedly use router-level filtering to disable access to the affected IP addresses, even though those IP addresses host scores of additional web sites without child pornography.<br /><br />
+                        <b>Solution</b><br /><br />
+                        To avoid any of the potential problems related with IP address sharing, it is best to acquire a unique IP address for your web site. Contact your web host and tell them you would like your own unique IP address. Be sure to let them know you would like a fresh IP address, not a recycled one. Web hosts will often reuse IP addresses that spammers have previously blacklisted. You may need to speak with several individuals until you can find a technician who can understand your request. Acquiring a unique IP address for your web site can cost anywhere from $25 to $100 for an initial setup fee, and $2 to $25 per month thereafter.<br /><br />
+						The tool currently does not support sites only using IPv6 addresses.<br /><br />
+                        <b>Sources</b><br /><br />
+                        <a href="http://cyber.law.harvard.edu/people/edelman/ip-sharing/" target="_blank">Web Sites Sharing IP Addresses: Prevalence and Significance by Benjamin Edelman from Harvard Law School</a><br />
+                        <a href="http://www.mattcutts.com/blog/" target="_blank">Matt Cutts' Blog, Head of Google's Webspam Team</a>
+                    </p>
+                </div>
+
+
+
+                
+                <div id="viralLinks">
+                    <div style="float: left; margin-left: 1.2em;">
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="image" src="https://www.yougetsignal.com/img/donations.gif" name="submit" alt="Donate" />
+                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                        " />
+                        </form>                        
+                    </div>
+                </div>
+
+                <!-- Precache Images -->
+                <img src="/img/loader.gif" alt="" style="display: none;" />
+                <img src="/img/flag_red.gif" alt="" style="display: none;" />
+                <img src="/img/flag_green.gif" alt="" style="display: none;" />                
+            </div>
+          
+            <!-- Ads -->
+            <div id="ads">
+				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7932289504147766"
+     crossorigin="anonymous"></script>
+<!-- YouGetSignal.com Bottom Ad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-7932289504147766"
+     data-ad-slot="0520801231"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>            </div>
+
+        </div> <!-- End div#content -->
+
+		</div></div></div></div></div></div></div></div><div class="curvedBorderBottomClear">&nbsp;</div> <!-- End Curved Border Around Content -->
+
+        <!-- Footer -->
+		<div id="footer">
+			            <p>&copy;2009 <a href="http://www.kirkouimet.com/" target="_blank" title="">Kirk Ouimet Design</a>. All rights reserved. <a href="/privacy-policy.php">Privacy Policy</a>. Hosted by <a href="https://www.vpsserver.com/?affcode=2de97cc6e82d">VPSServer.com</a>.</p>        </div> <!-- End div#footer -->
+        
+	</div> <!-- End div#container -->
+	</div> <!-- End div#wrapper -->    
+
+    <!-- Google Analytics -->
+	    
+    </body>
+</html>

@@ -13,7 +13,7 @@ graph_config = {
     "llm": {
         "model": "gpt-3.5-turbo",
         "temperature": 0,
-        "api_key": "sk-proj-2OA94ojphMfgksXvav85T3BlbkFJXWdxppTapa6ALK3KmwcQ",
+        "api_key": "api-key",
         "streaming": True,
     }
 }
@@ -113,7 +113,7 @@ def setup_whoosh_index(index_path, schema):
 
 def main():
     # Part 1: Retrieve and Normalize URLs
-    file_path1 = "/home/headquarters/Documents/Guardian/FunctionRecs/WebDocs/URLs.json"
+    file_path1 = "../FunctionRecs/WebDocs/URLs.json"
     prompt = input('Keyword to search URLs for: ')
     search_graph = SearchGraph(
         prompt=f"List all urls related to {prompt}",
@@ -130,11 +130,11 @@ def main():
     accessible_urls = [url for url in urls_with_schemes if check_url_accessibility(url)]
 
     # Save accessible URLs
-    file_path2 = "/home/headquarters/Documents/Guardian/FunctionRecs/WebDocs/AccessibleURLs.json"
+    file_path2 = "../FunctionRecs/WebDocs/AccessibleURLs.json"
     save_new_urls(file_path2, accessible_urls)
 
     # Part 2: Fetch and Save HTML content
-    base_path = "/home/headquarters/Documents/Guardian/FunctionRecs/HTML/"
+    base_path = "../FunctionRecs/HTML/"
     for url in accessible_urls:
         html_content = fetch_html(url)
         if html_content:
@@ -146,7 +146,7 @@ def main():
     content=TEXT(stored=True)
     )
 
-    whoosh_index_path = "/home/headquarters/Documents/Guardian/WebIndex/"
+    whoosh_index_path = "../WebIndex/"
     setup_whoosh_index(whoosh_index_path, whoosh_schema)
     add_html_to_index(whoosh_index_path, base_path)
 if __name__ == "__main__":

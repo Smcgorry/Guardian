@@ -12,18 +12,18 @@ from llama_index.packs.corrective_rag import CorrectiveRAGPack
 from Packages.QuestionEval import QuestionEvaluator
 import re
 Settings.llm = OpenAILike(
-    model="Meta-Llama-3-8B-Instruct.Q8_0.gguf",
+    model="model-id",
     api_key="fake",
     api_base="http://localhost:1234/v1",
     is_chat_model=True
 )
 Settings.embed_model = LangchainEmbedding(GPT4AllEmbeddings(model='http://localhost:1234/v1/embeddings'))
-whoosh = "/home/headquarters/Documents/Guardian/WebIndex/"
+whoosh = "../WebIndex/"
 
 def QuestionCheck(collection_name, question):
 
     # Load from disk
-    db2 = chromadb.PersistentClient(path="/home/headquarters/Documents/Guardian/VectorDatabase/")
+    db2 = chromadb.PersistentClient(path="../VectorDatabase/")
     chroma_collection = db2.get_or_create_collection(collection_name)
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
 

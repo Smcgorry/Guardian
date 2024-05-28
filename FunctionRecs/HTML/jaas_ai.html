@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/Product">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manage large scale Juju deployments with Jaas | Juju</title>
+  <!-- Preconnect domains -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://munchkin.marketo.net">
+  <link rel="preconnect" href="https://assets.ubuntu.com">
+  <!-- Inline scripts -->
+  <script>window.app = {utils: {}};</script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css?v=108a9d1" />
+  <!-- External scripts -->
+  <script src="/static/js/dist/app.js?v=a05900c" defer></script>
+  <script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js" defer></script>
+  <!-- Touch Icons -->
+  <link rel="apple-touch-icon" href="https://assets.ubuntu.com/v1/905b8df0-apple-touch-icon-180x180-precomposed.png"/>
+  <!-- SEO -->
+  <meta name="description" content="" />
+  
+  <!-- Twitter Opengraph tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@juju_devops">
+  <meta name="twitter:creator" content="@juju_devops">
+  <meta name="twitter:domain" content="jaas.ai">
+  <meta name="twitter:title" content="JAAS | Juju as a service">
+  <meta name="twitter:description" content="Juju is an open source, application and service modelling tool from Canonical that helps you deploy, manage, and scale your applications on any cloud.">
+  <meta name="twitter:image" content="https://assets.ubuntu.com/v1/01868685-juju-twitter.png">
+  
+  <meta name="msvalidate.01" content="F922865A678BADA5E7209E29B2656AA6" />
+</head>
+
+<body class="is-paper">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K9KCMZ"
+height="0" width="0"
+style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K9KCMZ');</script>
+<!-- End Google Tag Manager -->
+
+<header id="navigation" class="p-navigation is-dark" data-js="navigation">
+  <div class="p-navigation__row">
+    <div class="p-navigation__banner">
+      <div class="p-navigation__tagged-logo">
+        <a class="p-navigation__link" href="/">
+          <div class="p-navigation__logo-tag">
+            <img class="p-navigation__logo-icon" src="https://assets.ubuntu.com/v1/a603c7c9-Favicon - Juju.svg" alt="Canonical Juju" />
+          </div>
+          <span class="p-navigation__logo-title">Canonical JAAS</span>
+        </a>
+      </div>
+      <ul class="p-navigation__items">
+        <li class="p-navigation__item">
+          <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+          <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="p-navigation__nav">
+      <span class="u-off-screen">
+        <a href="#main-content">Jump to main content</a>
+      </span>
+      <ul class="p-navigation__items" role="menu">
+        <li class="p-navigation__item">
+          <a class="p-navigation__link" href="https://juju.is">Juju</a>
+        </li>
+        <li class="p-navigation__item">
+          <a class="p-navigation__link" href="https://charmhub.io">Charmhub</a>
+        </li>
+        <li class="p-navigation__item--dropdown-toggle" id="learn-link">
+          <a class="p-navigation__link" href="#forum-link-menu" aria-controls="forum-link-menu">Community</a>
+          <ul class="p-navigation__dropdown" id="forum-link-menu" aria-hidden="true">
+            <li>
+              <a href="https://discourse.charmhub.io/" class="p-navigation__dropdown-item">Discourse forum</a>
+            </li>
+            <li>
+              <a href="https://matrix.to/#/#charmhub:ubuntu.com" class="p-navigation__dropdown-item">Matrix chat</a>
+            </li>
+          </ul>
+        </li>
+        <li class="p-navigation__item--dropdown-toggle" id="contribute-link">
+          <a class="p-navigation__link" href="#docs-link-menu" aria-controls="docs-link-menu">Docs</a>
+          <ul class="p-navigation__dropdown" id="docs-link-menu" aria-hidden="true">
+            <li>
+              <a href="/docs/juju" class="p-navigation__dropdown-item">Juju</a>
+            </li>
+            <li>
+              <a href="/docs/sdk" class="p-navigation__dropdown-item">Charm SDK</a>
+            </li>
+            <li>
+              <a href="/docs/dev" class="p-navigation__dropdown-item">Contribute to Juju</a>
+            </li>
+            <li>
+              <a href="/operator-day" class="p-navigation__dropdown-item">Operator Day</a>
+            </li>
+            <li>
+              <a href="https://charmhub.io/topics" class="p-navigation__dropdown-item">Topics</a>
+            </li>
+          </ul>
+        </li>
+        <li class="p-navigation__item">
+          <a class="p-navigation__link" href="https://ubuntu.com/blog/tag/juju">Blog</a>
+        </li>
+      </ul>
+      <ul class="p-navigation__items p-navigation_login global-nav" role="menu">
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script src="/static/js/navigation.js?v=1249708"></script>
+<script>
+  initNavDropdowns(".p-navigation__item--dropdown-toggle");
+</script>
+
+<main id="main-content">
+  
+<main id="main-content">
+  <section class="p-strip u-no-padding--bottom">
+    <div class="row">
+      <div class="col-7">
+        <h1 class="p-heading--2"><strong>Take control</strong> of your large-scale <br/>Juju deployments</h1>
+        <p>Juju as a service (JAAS) provides a single location to interact, manage and audit your charmed applications using a dashboard or Juju CLI commands.</p>
+        <p>
+          <a href="https://juju.is/docs/juju/get-started-with-juju" class="p-button--positive">Get started with JAAS</a>
+        </p>
+      </div>
+      <div class="col-5">
+        
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_534,h_374/https://assets.ubuntu.com/v1/d1f2108a-Slide+-+Jaas.svg"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1068,h_748/https://assets.ubuntu.com/v1/d1f2108a-Slide+-+Jaas.svg 2x"
+      alt=""
+      width="534"
+      height="374"
+      loading="auto"
+    />
+      </div>
+    </div>
+  </section>
+  <img src="https://assets.ubuntu.com/v1/3fc676d0-suru-leftangle-jujuis.png" alt="" style="display: block; margin-bottom: 1rem;" class="u-hide--small">
+  <section class="p-section">
+    <div class="u-fixed-width">
+      <hr class="p-rule">
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h2>Why use JAAS?</h2>
+      </div>
+      <div class="col-6">
+        <p>Jaas simplifies the management of large scale Juju deployments and it is the ideal tool to use if you:</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 col-start-large-4">
+        <div class="u-fixed-width"><hr class="p-rule"></div>
+        <div class="row">
+          <div class="col-3">
+            <h5>Have many Juju models<h5>
+          </div>
+          <div class="col-6">
+            <p>to maintain, across multiple clouds or machine types and you would like to address them all from a central location</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 col-start-large-4">
+        <div class="u-fixed-width">
+          <hr class="p-rule">
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <h5>Need tighter compliance controls<h5>
+          </div>
+          <div class="col-6">
+            <p>to satisfy security or regulatory requirements, as Jaas is able to centrally enforce permission and auditing policies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 col-start-large-4">
+        <div class="u-fixed-width">
+          <hr class="p-rule">
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <h5>Prefer a simpler management UI<h5>
+          </div>
+          <div class="col-6">
+            <p>to control your entire deployment, so that admins can execute routine management actions at the simple press of a button</p>
+            <p>You can deploy JAAS on your preferred infrastructure, leaving you complete privacy and control over what is done where.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-section">
+    <div class="u-fixed-width">
+      <hr class="p-rule">
+    </div>
+    <div class="u-fixed-width">
+      <h2>Trusted by 10,000+ engineers at</h2>
+    </div>
+    <div class="u-fixed-width">
+      <div class="p-logo-section">
+        <div class="p-logo-section__items u-no-margin--bottom">
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/7040f392-Ubuntu-logo.png" alt="Ubuntu logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/a76d4ee3-deutsche-telekom.png" alt="Deutsche Telekom logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/0a6968e6-ibm-logo.png" alt="IBM logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/cc65269a-intel-new-logo.png" alt="Intel logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/ea63a7ba-microsoft-azure-2021.png" alt="Microsoft Azure logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/f3d556d7-cisco-logo.png" alt="Cisco logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/757f59f0-china-telecom-logo.png" alt="China Telecom logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/f044cea8-bt-logo.png" alt="BT logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/89365c81-nec-logo.png" alt="nec logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/4b74a5f4-hp-logo.png" alt="Hewlett Packard logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/02d41af7-yahoo-jp-logo.png" alt="Yahoo! Japan logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/067bffc3-verizon-logo.png" alt="verizon logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/05d9f06b-bell-logo.png" alt="Bell logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/5482ad8a-swissquote-logo.png" alt="Swissquote logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/8848ee2f-panasonic-logo.png" alt="Panasonic logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/e0b84fa2-scania-logo.png" alt="Scania logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/d8060c1d-rabobank-logo.png" alt="Rabobank logo">
+          </div>
+          <div class="p-logo-section__item">
+            <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/e2fa6efb-tele2-logo.png" alt="tele2 logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-section">
+    <hr class="p-rule is-fixed-width">
+    <div class="row">
+      <div class="col-6 col-medium-3">
+        <h2 class="p-section--shallow">What is JAAS?</h2>
+      </div>
+      <div class="col-6 col-medium-3">
+        <p>JAAS has two main components:</p>
+        <div class="row">
+          <div class="col-2">
+            <h5>JIMM</h5>
+          </div>
+          <div class="col-4">
+            <p>the Juju Infinite Model Manager is a single point of contact for multiple Juju controllers</p>
+          </div>
+        </div>
+        <hr class="p-rule is-muted">
+        <div class="row">
+          <div class="col-2">
+            <h5>Dashboard</h5>
+          </div>
+          <div class="col-4">
+            <p>a graphical user interface to simplify common administrative operations</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="u-fixed-width">
+            
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1072,h_514/https://assets.ubuntu.com/v1/cae5250f-Jaas.png"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2144,h_1028/https://assets.ubuntu.com/v1/cae5250f-Jaas.png 2x"
+      alt=""
+      width="1072"
+      height="514"
+      loading="auto"
+    />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-section">
+    <div class="u-fixed-width">
+      <hr class="p-rule">
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <h2>Add visibility, auditing and compliance controls to your Juju deployment</h2>
+      </div>
+    </div>
+    <div>
+      <div class="u-fixed-width">
+        <p style="max-width: 50rem;">JAAS is your centralised enterprise control plane for Juju deployments. With JAAS you can:</p>
+      </div>
+    </div>
+  </section>
+  <section class="p-section">
+    <div class="row">
+      <div class="col-3">
+        <div class="p-side-navigation homepage-tabs" style="margin-top: 0;">
+          <ul class="p-side-navigation__list">
+            <li class="p-side-navigation__item">
+              <a href="#view-models-and-controllers-details" class="p-side-navigation__link is-active" data-js="panel-link">View models and controllers details</a>
+            </li>
+            <li class="p-side-navigation__item">
+              <a href="#run-actions" class="p-side-navigation__link" data-js="panel-link">Run actions</a>
+            </li>
+            <li class="p-side-navigation__item">
+              <a href="#configure-applications" class="p-side-navigation__link" data-js="panel-link">Configure applications</a>
+            </li>
+            <li class="p-side-navigation__item">
+              <a href="#onboard-controllers-and-manage-access" class="p-side-navigation__link" data-js="panel-link">Onboard controllers and manage access</a>
+            </li>
+            <li class="p-side-navigation__item">
+              <a href="#run-audits-and-reports" class="p-side-navigation__link" data-js="panel-link">Run audits and reports</a>
+            </li>
+            <li class="p-side-navigation__item">
+              <a href="#search-and-filter" class="p-side-navigation__link" data-js="panel-link">Search and filter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-9 homepage-tabs-content">
+        <div class="tabs-content-wrapper">
+          <div class="row" id="view-models-and-controllers-details">
+            
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1031,h_510/https://assets.ubuntu.com/v1/ddb3a5a4-jaas_landing_page_integrations.png"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2062,h_1020/https://assets.ubuntu.com/v1/ddb3a5a4-jaas_landing_page_integrations.png 2x"
+      alt=""
+      width="1031"
+      height="510"
+      loading="auto"
+    />
+            <p style="max-width: 500rem;">Drill down to view the details of everything that is deployed inside a model, such as applications, integrations, units, and more.</p>
+          </div>
+          <div class="row u-hide" id="run-actions">
+            
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1031,h_510/https://assets.ubuntu.com/v1/9ebc2a50-jass_landing_page_run_actions.png"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2062,h_1020/https://assets.ubuntu.com/v1/9ebc2a50-jass_landing_page_run_actions.png 2x"
+      alt=""
+      width="1031"
+      height="510"
+      loading="auto"
+    />
+            <p>Execute Juju action from the UI and view the resulting logs to confirm their status.</p>
+          </div>
+          <div class="row u-hide" id="configure-applications">
+            
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1031,h_510/https://assets.ubuntu.com/v1/e5c2fb04-jaas_landing_page_configure_applications.png"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2062,h_1020/https://assets.ubuntu.com/v1/e5c2fb04-jaas_landing_page_configure_applications.png 2x"
+      alt=""
+      width="1031"
+      height="510"
+      loading="auto"
+    />
+            <p>Perform common administrative operations and apply machine configurations.</p>
+          </div>
+          <div class="row u-hide" id="onboard-controllers-and-manage-access">
+            
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1031,h_510/https://assets.ubuntu.com/v1/28442c33-jaas_landing_page_controllers.png"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2062,h_1020/https://assets.ubuntu.com/v1/28442c33-jaas_landing_page_controllers.png 2x"
+      alt=""
+      width="1031"
+      height="510"
+      loading="auto"
+    />
+            <p>Onboard controllers and add, remove or manage user access to models and controllers.</p>
+          </div>
+          <div class="row u-hide" id="run-audits-and-reports">
+            
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1031,h_510/https://assets.ubuntu.com/v1/28e88a31-jaas_landing_page_run_audits.png"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2062,h_1020/https://assets.ubuntu.com/v1/28e88a31-jaas_landing_page_run_audits.png 2x"
+      alt=""
+      width="1031"
+      height="510"
+      loading="auto"
+    />
+            <p>Access the logs from your deployment in a single, centralised location.</p>
+          </div>
+          <div class="row u-hide" id="search-and-filter">
+            
+    <img
+      src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1031,h_510/https://assets.ubuntu.com/v1/0a0fc6ba-jaas_landing_page_search_and_filter_final.png"
+      srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_2062,h_1020/https://assets.ubuntu.com/v1/0a0fc6ba-jaas_landing_page_search_and_filter_final.png 2x"
+      alt=""
+      width="1031"
+      height="510"
+      loading="auto"
+    />
+            <p style="max-width: 500rem;">Perform complex searches/filters through your entire deployment and share the result through a unique URL.</p>
+          </div>
+        </div>
+        <div class="homepage-tabs-button u-align--right">
+          <button class="p-button has-icon" disabled data-js="previous-tab-button">&lsaquo; Previous</button>
+          <button class="p-button has-icon" data-js="next-tab-button">Next &rsaquo;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="p-section u-no-padding--bottom">
+    <div class="u-fixed-width">
+      <hr class="p-rule">
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h2>Deploy and manage charms across public clouds, <br />Kubernetes and VMs</h2>
+      </div>
+      <div class="col-6">
+        <p>Jaas helps you to manage your distributed applications across any infrastructure.</p>
+        <p>Thanks to <a href="http://juju.is">Juju</a> you can automate your system’s lifecycle management across public clouds, Kubernetes, virtual (VM) and bare metal machines.</p>
+        <ul class="p-inline-list">
+          <li class="p-inline-list__item">
+            <a href="https://juju.is/docs/juju/openstack ">
+              <img src="https://assets.ubuntu.com/v1/f07eaf0c-Canonical%20OpenStack.svg" alt="OpenStack" style="height: 42px; width: auto;">
+            </a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="https://juju.is/docs/juju/maas">
+              <img src="https://assets.ubuntu.com/v1/e45b7f3f-Canonical%20MAAS.svg" alt="MAAS" style="height: 42px; width: auto;">
+            </a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="https://juju.is/docs/juju/lxd">
+              <img src="https://assets.ubuntu.com/v1/096ad2c0-Canonical%20LXD.svg" alt="LXD" style="height: 42px; width: auto;">
+            </a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="https://juju.is/docs/juju/microk8s">
+              <img src="https://assets.ubuntu.com/v1/9f59974d-microk8s.png" alt="" style="height: 42px; width: auto;">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="u-fixed-width u-align--center">
+      <ul class="p-inline-list">
+        <li class="p-inline-list__item" style="margin-right: 1.5rem;">
+          <a href="https://juju.is/docs/juju/equinix-metal">
+            <img src="https://assets.ubuntu.com/v1/1a6ed36e-equinix-logo.png" alt="Equinix Metal" width="108" height="128">
+          </a>
+        </li>
+        <li class="p-inline-list__item" style="margin-right: 1.5rem;">
+          <a href="https://juju.is/docs/juju/google-gke">
+            <img src="https://assets.ubuntu.com/v1/995e34d4-google-kubernetes-engine-logo.png" width="46" height="128">
+          </a>
+        </li>
+        <li class="p-inline-list__item" style="margin-right: 1.5rem;">
+          <a href="https://juju.is/docs/juju/vmware-vsphere">
+            <img src="https://assets.ubuntu.com/v1/87b04c6a-vmware-logo.png" alt="VMWare vSphere" width="128" height="128">
+          </a>
+        </li>
+        <li class="p-inline-list__item" style="margin-right: 1.5rem;">
+          <a href="https://juju.is/docs/juju/google-gke">
+            <img src="https://assets.ubuntu.com/v1/d503827d-google-gke-logo.png" alt="Google GKE" width="55" height="128">
+          </a>
+        </li>
+        <li class="p-inline-list__item" style="margin-right: 1.5rem;">
+          <a href="https://juju.is/docs/juju/microsoft-azure">
+            <img src="https://assets.ubuntu.com/v1/21c19804-microsoft-azure-logo.png" alt="Microsoft Azure logo" width="112" height="128">
+          </a>
+        </li>
+        <li class="p-inline-list__item" style="margin-right: 1.5rem;">
+          <a href="https://juju.is/docs/juju/google-gce">
+            <img src="https://assets.ubuntu.com/v1/80023687-Google-gce-logo.png" alt="Google GCE" width="55" height="128">
+          </a>
+        </li>
+        <li class="p-inline-list__item" style="margin-right: 1.5rem;">
+          <a href="https://juju.is/docs/juju/oracle-oci">
+            <img src="https://assets.ubuntu.com/v1/b3e692f4-oracle-new-logo.png" alt="Oracle logo" width="129" height="128">
+          </a>
+        </li>
+        <li class="p-inline-list__item" style="margin-right: 1.5rem;">
+          <a href="https://juju.is/docs/juju/amazon-eks ">
+            <img src="https://assets.ubuntu.com/v1/111c6bda-amazon-eks-logo.png" alt="Amazon EKS" width="112" height="128">
+          </a>
+        </li>
+        <li class="p-inline-list__item">
+          <a href="https://juju.is/docs/juju/amazon-ec2">
+            <img src="https://assets.ubuntu.com/v1/08874e63-amazon-web-services-logo.png" alt="Amazon AWS logo" width="128" height="128">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="p-section">
+    <div class="u-fixed-width">
+      <hr class="p-rule">
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h2>JAAS is available through <br />Ubuntu Pro</h2>
+      </div>
+      <div class="col-6">
+        <p>You can deploy JAAS on your infrastructure with an <a href="https://ubuntu.com/pro">Ubuntu Pro</a> subscription.</p>
+        <p>Ubuntu Pro is a comprehensive subscription from Canonical which includes:</p>
+        <div class="u-fixed-width">
+          <hr class="p-rule">
+        </div>
+        <ul class="p-list--divided">
+          <li class="p-list__item has-bullet">JAAS charms and sample Terraform plan</li>
+          <li class="p-list__item has-bullet">Access to our world-class technical team and knowledge base</li>
+          <li class="p-list__item has-bullet">Security patching for all your software</li>
+          <li class="p-list__item has-bullet">Option of a dedicated Canonical support engineer on your premises</li>
+          <li class="p-list__item has-bullet">24/7 phone, portal and email support (optional)</li>
+        </ul>
+        <p>
+          <a href="https://ubuntu.com/pro" class="p-button--positive">Get JAAS with an Ubuntu Pro subscription</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="p-section--deep p-suru--bottom-right">
+    <div class="u-fixed-width">
+      <hr class="p-rule">
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <h2>Learn more about Juju</h2>
+      </div>
+    <div class="col-6 col-start-large-7">
+      <div class="u-fixed-width">
+        <hr class="p-rule">
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h3 class="p-heading--5">Read more</h3>
+        </div>
+        <div class="col-3">
+          <p>
+            <a href="https://juju.is/docs/olm">Juju documentation</a>
+          </p>
+          <hr class="p-rule">
+          <p>
+            <a href="https://juju.is/docs/sdk">Charm SDK documentation</a>
+          </p>
+          <hr class="p-rule">
+          <p>
+            <a href="https://ubuntu.com/engage/kubernetes-operators-explained">What is a software operator?</a>
+          </p>
+          <hr class="p-rule">
+          <p>
+            <a href="https://ubuntu.com/engage/kubernetes-operators-explained-whitepaper">Software operators explained</a>
+          </p>
+        </div>
+      </div>
+      <div class="u-fixed-width">
+        <hr class="p-rule">
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h3 class="p-heading--5">Connect with the community</h3>
+        </div>
+        <div class="col-3">
+          <p>
+            <a href="https://matrix.to/#/#charmhub:ubuntu.com">Charmhub chat</a>
+          </p>
+          <hr class="p-rule">
+          <p>
+            <a href="https://discourse.charmhub.io/">Discourse forum</a>
+          </p>
+        </div>
+      </div>
+      <div class="u-fixed-width">
+        <hr class="p-rule">
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <h3 class="p-heading--5">Contact us</h3>
+        </div>
+        <div class="col-3">
+          <p>
+            <button class="p-button--link" data-js="open-modal-control">Talk to a Canonical expert</>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="p-modal u-hide" id="modal">
+  <section class="p-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <header class="p-modal__header">
+      <h2 class="p-modal__title">Get in touch</h2>
+      <button class="p-modal__close" aria-label="Close active modal" aria-controls="modal" data-js="close-modal-control">Close</button>
+    </header>
+    <form action="https://ubuntu.com/marketo/submit" method="post" id="mktoForm_5332" style="max-width: 560px;">
+      <label for="firstName">First name</label>
+      <input type="text" name="firstName" id="firstName" required>
+      <label for="lastName">Last name</label>
+      <input type="text" name="lastName" id="lastName" required>
+      <label for="title">Job title</label>
+      <input type="text" name="title" id="title" required>
+      <label for="Email">Email address:</label>
+      <input type="email" name="email" id="email" required>
+      <label for="phone">Phone</label>
+      <input type="text" name="phone" id="phone" required>
+      <label for="Comments_from_lead__c">Comments</label>
+      <textarea name="Comments_from_lead__c" id="Comments_from_lead__c"></textarea>
+      <label class="p-checkbox">
+        <input type="checkbox" class="p-checkbox__input u-no-margin--top" name="canonicalUpdatesOptIn" aria-labelledby="CanonicalUpdatesOptIn" value="yes">
+        <span class="p-checkbox__label" id="CanonicalUpdatesOptIn">
+          <small>I agree to receive information about Canonical's products and services.</small>
+        </span>
+      </label>
+      <p>
+        <small>In submitting this form, I confirm that I have read and agree to <a href="https://ubuntu.com/legal/data-privacy/newsletter">Canonical's Privacy Notice</a> and <a href="https://ubuntu.com/legal/data-privacy">Privacy Policy</a>.</small>
+      </p>
+      <button type="submit" class="p-button--positive u-no-margin--bottom" aria-label="Submit">Get in touch</button>
+      <input type="hidden" name="formid" class="mktoField" value="5332">
+      <input type="hidden" name="returnURL" value="https://juju.is/thank-you" />
+      <input type="hidden" name="Consent_to_Processing__c" value="yes">
+      <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+      <input type="hidden" name="utm_source" id="utm_source" value="">
+      <input type="hidden" name="utm_medium" id="utm_medium" value="">
+      <input type="hidden" name="utmcontent" id="utmcontent" value="">
+      <input type="hidden" name="utm_term" id="utm_term" value="">
+      <input type="hidden" name="GCLID__c" id="GCLID__c" value="">
+      <input type="hidden" name="Facebook_Click_ID__c" id="Facebook_Click_ID__c" value="">
+      <input type="hidden" name="grecaptcharesponse" id="grecaptcharesponse" value="">
+      <input type="hidden" name="productContext" id="productContext" value="">
+    </form>
+  </section>
+</div>
+
+<script>
+  // side navigation and panels
+  const panelLinks = document.querySelectorAll("[data-js='panel-link']");
+  const tabs = document.querySelectorAll('.homepage-tabs-content .tabs-content-wrapper > .row');
+  let currentTab = 0;
+
+  function showTab(index) {
+    tabs.forEach(tab => tab.classList.add('u-hide'));
+    tabs[index].classList.remove('u-hide');
+    updateNavigation(index);
+    updateButtonStatus();
+  }
+
+  function updateNavigation(index) {
+    panelLinks.forEach(link => link.classList.remove('is-active'));
+    panelLinks[index].classList.add('is-active');
+  }
+
+  function updateButtonStatus() {
+    const prevBtn = document.querySelector('[data-js="previous-tab-button"]');
+    const nextBtn = document.querySelector('[data-js="next-tab-button"]');
+    prevBtn.disabled = currentTab === 0;
+    nextBtn.disabled = currentTab === tabs.length - 1;
+  }
+
+  panelLinks.forEach((panelLink, index) => {
+    panelLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentTab = index;
+      showTab(currentTab);
+    });
+  });
+
+  const prevBtn = document.querySelector('[data-js="previous-tab-button"]');
+  const nextBtn = document.querySelector('[data-js="next-tab-button"]');
+
+  prevBtn.addEventListener('click', () => {
+    if (currentTab > 0) {
+      currentTab--;
+      showTab(currentTab);
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentTab < tabs.length - 1) {
+      currentTab++;
+      showTab(currentTab);
+    }
+  });
+
+  // Contact us modal
+    const modal = document.querySelector("#modal");
+    const openModalControl = document.querySelector("[data-js='open-modal-control']");
+    const closeModalControl = document.querySelector("[data-js='close-modal-control']");
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("u-hide");
+      }
+    });
+
+    openModalControl.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.remove("u-hide");
+    });
+
+    closeModalControl.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("u-hide");
+    });
+</script>
+
+</main>
+
+<footer class="p-strip--dark footer">
+  <div class="p-section">
+    <div class="row u-vertically-center">
+      <div class="col-7">
+        <h2>Join the community</h2>
+      </div>
+      <div class="col-5">
+        <ul class="p-inline-list u-no-margin--bottom">
+          <li class="p-inline-list__item">
+            <a href="https://github.com/canonical/jaas.ai" class="p-icon--github p-icon--github-white"></a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="https://twitter.com/ubuntu" class="p-icon--twitter"></a>
+          </li>
+          <li class="p-inline-list__item">
+            <a href="https://www.youtube.com/@UbuntuOS" class="p-icon--youtube"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="p-section">
+    <div class="u-fixed-width">
+      <hr class="p-rule is-dark">
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <h2 class="p-heading--5">JAAS</h2>
+        <ul class="p-list">
+          <li class="p-list__item">
+            <a href="https://jaas.ai/">What is JAAS?</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/">What is Juju?</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://charmhub.io">What is Charmhub?</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/docs/juju/reference">What are Charms?</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/docs/sdk">What is the Charm SDK?</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <h2 class="p-heading--5">Charms</h2>
+        <ul class="p-list">
+          <li class="p-list__item">
+            <a href="https://charmhub.io/?categories=big-data%2Cdatabases">Data</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://ubuntu.com/kubernetes">Charmed Kubernetes</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://ubuntu.com/openstack">Charmed OpenStack</a>
+          </li>
+          <li class="p-list__item">
+            <a class="p-heading--5" href="https://charmhub.io/">All operators&nbsp;&rsaquo;</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <h2 class="p-heading--5">Compare</h2>
+        <ul class="p-list">
+          <li class="p-list__item">
+            <a href="https://juju.is/blog/operators-and-charmed-operators">Operators & Charms</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/blog/beyond-helm-and-kustomize-the-future-of-kubernetes-apps">Helm alternative</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/blog/beyond-helm-and-kustomize-the-future-of-kubernetes-apps">Kustomize alternative</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/blog/ansible-vs-terraform-vs-juju-fight-or-cooperation">Ansible alternative</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/blog/juju-vs-infrastructure-as-code-tools">Terraform alternative</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <h2 class="p-heading--5">Blog</h2>
+        <ul class="p-list">
+          <li class="p-list__item">
+            <a href="https://juju.is/blog/ubuntu-and-canonical-at-kubecon-europe-2021">Best Practices for creating charms</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/model-driven-operations-manifesto">Model Driven Operations Manifesto</a>
+          </li>
+          <li class="p-list__item">
+            <a href="https://juju.is/blog/beyond-helm-and-kustomize-the-future-of-kubernetes-apps">Why Helm and Kustomize aren’t enough: the future of Kubernetes apps</a>
+          </li>
+          <li class="p-list__item">
+            <a class="p-heading--5" href="https://juju.is/blog">Read all of our blogs&nbsp;&rsaquo;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="p-section">
+    <div class="u-fixed-width">
+      <hr class="p-rule is-dark">
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p>&copy; 2024 Canonical Ltd.</p>
+      </div>
+      <div class="col-3">
+        <p>
+          <a class="js-revoke-cookie-manager" href="">Manage your tracker settings</a>
+          <br>
+          <a href="https://www.ubuntu.com/legal">Legal Information</a>
+        </p>
+      </div>
+      <div class="col-6">
+        <p> Ubuntu and Canonical are registered trademarks.<br> All other trademarks are the property of their respective owners. </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="text/template" id="cookie-warning-template">
+  <div class="cookie-policy" style="position: fixed; bottom: 0; width: 100%;">
+    <div class="row">
+      <div class="col-12">
+      <div class="p-notification" id="notification">
+        <p class="p-notification__response">
+          We use cookies to improve your experience. By your continued use of this
+          site you accept such use. To change your settings please
+          <a href="http://www.ubuntu.com/legal/terms-and-policies/privacy-policy#cookies">
+            see our policy
+          </a>.
+        </p>
+        <a href="?cp=close" class="link-cta p-icon--close" aria-label="Close notification">Close</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</script>
+
+<!-- begin usabilla live embed code -->
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/3dcbd8f54975.js");
+/*]]>{/literal}*/</script>
+
+</body>
+</html>

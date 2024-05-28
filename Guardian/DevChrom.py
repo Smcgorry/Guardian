@@ -19,7 +19,7 @@ from llama_index.core.node_parser import SimpleFileNodeParser
 
 #LM Studio Model
 Settings.llm = OpenAILike(
-    model="phi-2-dpo.Q8_0.gguf",
+    model="model-id",
     api_key="fake",
     api_base="http://localhost:1234/v1",
     is_chat_model=True
@@ -29,7 +29,7 @@ Settings.llm = OpenAILike(
 Settings.embed_model = LangchainEmbedding(GPT4AllEmbeddings(model='http://localhost:1234/v1/embeddings'))
 
 #Path for Database Store
-db = chromadb.PersistentClient(path="/home/headquarters/Documents/Guardian/TestDB/")
+db = chromadb.PersistentClient(path="../VectorDatabase/")
 
 #Function for Loading new info into Database
 def loaddata(collection_name, nodes):
@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     #Document Loader
     if choice == 'load':
-        input_dir = '/home/headquarters/Documents/Guardian/FunctionRecs/DataUpload/'
+        input_dir = '../FunctionRecs/DataUpload/'
         metadata_name = str(input('Please provide a title for this group of documents to help you easily identify and recall them later: '))
         filename_fn = lambda filename: {"file_name": metadata_name}
         documents = SimpleDirectoryReader(input_dir=input_dir,file_metadata=filename_fn)
@@ -82,7 +82,7 @@ if __name__ == '__main__':
         loaddata(collection_name, nodes)
     #Document Add to Store
     elif choice == 'add':
-        basepath = '/home/headquarters/Documents/Guardian/FunctionRecs/AddData/'
+        basepath = '../FunctionRecs/AddData/'
         available_directories = list_directories(basepath)
         if available_directories:
             while True:

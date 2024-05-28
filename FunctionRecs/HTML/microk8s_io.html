@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+
+<!--
+  This is a basic HTML file template to become the new homepage of the site.
+  Currently it simply includes Vanilla styles and not much else.
+
+  When you come to work on it in ernest, please remove this comment
+  and replace index.html with this file.
+-->
+
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="copydoc" content="https://docs.google.com/document/d/1ObWmhRc4GCIhrBi8gT7yIIs0J_dn_8ravfLtcwhr3uQ/edit">
+
+  <title>
+    MicroK8s - Zero-ops Kubernetes for developers, edge and IoT
+  </title>
+
+  <!-- Google Analytics and Google Optimize -->
+  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-1018242-59', 'auto', {'allowLinker': true, 'siteSpeedSampleRate': 100});
+  ga('require', 'GTM-WVQJJBD');
+  ga('require', 'linker');
+  ga('linker:autoLink', ['conjure-up.io', 'login.ubuntu.com', 'www.ubuntu.com',
+  'ubuntu.com', 'insights.ubuntu.com', 'developer.ubuntu.com', 'cn.ubuntu.com',
+  'design.ubuntu.com', 'maas.io', 'canonical.com', 'landscape.canonical.com',
+  'pages.ubuntu.com', 'tutorials.ubuntu.com', 'docs.ubuntu.com']);
+  </script>
+  <!-- End Google Analytics and Google Optimize -->
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-T5SMPTS');</script>
+  <!-- End Google Tag Manager -->
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <link rel="shortcut icon" type="image/png" href="https://assets.ubuntu.com/v1/d53eeeac-MicroK8s_favicon_64px_v2.png">
+
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/e8c07df6-Ubuntu-L_W.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/7f100985-Ubuntu-Th_W.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/f8097dea-Ubuntu-LI_W.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/fff37993-Ubuntu-R_W.woff2" crossorigin>
+
+  <meta name="description" content="MicroK8s is the simplest production-grade conformant K8s. Lightweight and focused. Single command install on Linux, Windows and macOS. Made for devOps, great for edge, appliances and IoT. Full high availability Kubernetes with autonomous clusters and distributed storage.">
+
+  <meta name="theme-color" content="#E95420">
+  <meta name="twitter:account_id" content="4503599627481511">
+  <meta name="twitter:site" content="@ubuntu">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://microk8s.io">
+  <meta property="og:site_name" content="microk8s.io">
+
+  
+  <meta name="twitter:title" content="MicroK8s - Zero-ops Kubernetes for developers, edge and IoT | MicroK8s">
+  <meta property="og:title" content="MicroK8s - Zero-ops Kubernetes for developers, edge and IoT | MicroK8s">
+  
+
+  
+  <meta name="twitter:description" content="MicroK8s is the simplest production-grade conformant K8s. Lightweight and focused. Single command install on Linux, Windows and macOS. Made for devOps, great for edge, appliances and IoT. Full high availability Kubernetes with autonomous clusters and distributed storage.">
+  <meta property="og:description" content="MicroK8s is the simplest production-grade conformant K8s. Lightweight and focused. Single command install on Linux, Windows and macOS. Made for devOps, great for edge, appliances and IoT. Full high availability Kubernetes with autonomous clusters and distributed storage.">
+  
+
+  
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css?v=fce61d7">
+</head>
+
+
+<body class="no-js is-paper l-site">
+  <script>document.querySelector('body').classList.remove('no-js')</script>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5SMPTS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  
+
+
+
+<a href="#main-content" class="p-link--skip">Jump to main content</a>
+
+<header id="navigation" class="p-navigation is-dark">
+  
+  
+  <div class="row">
+    <div class="col-3">
+      
+<div class="p-navigation__banner u-no-padding--left">
+  <div class="p-navigation__tagged-logo">
+    <a class="p-navigation__link" href="/">
+      <div class="p-navigation__logo-tag">
+        <img class="p-navigation__logo-icon" src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg" alt="Canonical" width="95">
+      </div>
+      <span class="p-navigation__logo-title">MicroK8s</span>
+    </a>
+  </div>
+  <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+  <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+</div>
+
+    </div>
+    <div class="col-9">
+      
+<nav class="p-navigation__nav" aria-label="main-navigation">
+  <ul class="p-navigation__items" style="margin-left: -.75rem;">
+    <li class="p-navigation__item ">
+      <a href="/features" class="p-navigation__link">Features</a>
+    </li>
+    <li class="p-navigation__item ">
+      <a href="/compare" class="p-navigation__link">Compare</a>
+    </li>
+    <li class="p-navigation__item ">
+      <a href="/tutorials" class="p-navigation__link">Tutorials</a>
+    </li>
+    <li class="p-navigation__item ">
+      <a href="/docs" class="p-navigation__link">Docs</a>
+    </li>
+    <li class="p-navigation__item ">
+      <a href="/resources" class="p-navigation__link">Resources</a>
+    </li>
+    <li class="p-navigation__item">
+      <a href="https://discuss.kubernetes.io/c/general-discussions/microk8s/26" class="p-navigation__link">Community</a>
+    </li>
+  </ul>
+  <ul class="p-navigation__items global-nav"></ul>
+</nav>
+
+    </div>
+  </div>
+  
+  
+</header>
+
+  <main id="main-content">
+    
+<section class="p-strip--whitesuru is-shallow u-no-padding--bottom">
+  <div class="p-section--deep">
+    <div class="row">
+      <div class="col-start-large-4 col-9">
+        <div class="p-section">
+          <h1 class="u-no-margin--bottom">The effortless Kubernetes</h1>
+          <p class="p-heading--2">Zero-ops, pure-upstream, HA Kubernetes,<br class="u-hide--small"> from developer workstations to production.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-start-large-4 col-9">
+        <hr class="p-rule">
+        <div class="p-stection is-landing">
+          <div>
+            <a class="p-button--positive" href="#install-microk8s">Get started</a> 
+            <a href="https://www.brighttalk.com/webcast/6793/378029?utm_source=brighttalk-portal&utm_medium=web&utm_content=microk8s&utm_campaign=webcasts-search-results-feed">Watch an intro to MicroK8s &nbsp;&rsaquo;</a>
+          </div>
+          <div>
+            <a class="github-button" data-size="large" href="https://github.com/ubuntu/microk8s" aria-label="Follow @ubuntu on GitHub"></a>
+<a class="github-button" data-size="large" href="https://github.com/ubuntu/microk8s" data-icon="octicon-star" data-show-count="true" aria-label="Star ubuntu/microk8s on GitHub"></a>
+<a class="github-button" data-size="large" href="https://github.com/ubuntu/microk8s/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork ubuntu/microk8s on GitHub"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--25-75">
+    <hr class="p-rule">
+    <div class="col">
+      <h2 class="p-text--small-caps">What is MicroK8s</h2>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col-6 u-embedded-media">
+          <iframe class="u-embedded-media__element" src="https://player.vimeo.com/video/466106710?h=206809c045&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="560" height="315" title="What is MicroK8s?"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--25-75 p-section">
+    <hr class="p-rule">
+    <div class="col">
+      <h2 class="p-text--small-caps">Why MicroK8s</h2>
+    </div>
+    <div class="col">
+      <p class="p-heading--2">The best Kubernetes experience for developers, DevOps, cloud and edge</p>
+    </div>    
+  </div>
+  <div class="row">
+    <hr class="p-rule col-start-large-4 col-9">
+    <div class="col-start-large-4 col-3">
+      <h3 class="p-heading--5">For Developers</h3>
+      <p>MicroK8s is the easiest and fastest way to get Kubernetes up and running. Experiment with the latest upstream features and toggle services on and off. Seamlessly move your work from dev to production.</p>
+    </div>
+    <div class="col-3">
+      <h3 class="p-heading--5">For DevOps</h3>
+      <p>With self-healing high availability, transactional OTA updates and secure sandboxed kubelet environments, MicroK8s is the go-to platform for mission-critical workloads. Quickly spin nodes up in your CI/CD and reduce your production maintenance costs.</p>
+    </div>
+    <div class="col-3">
+      <h3 class="p-heading--5">For software vendors</h3>
+      <p>Leverage the simplicity, robustness and security of MicroK8s as a full embedded Kubernetes platform. Build containerised solutions with a system that doesn't require your attention. Focus on your customers, not the infrastructure.</p>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--50-50">
+    <hr class="p-rule">
+    <div class="col p-section">
+      <h2 class="p-text--small-caps">Hassle-free Kubernetes</h2>
+      <p class="p-heading--2">The simplest way to get K8s anywhere</p>
+    </div>
+    <div class="col">
+      <p>ARM or Intel. Under the cell tower. On Raspberry Pis. On clouds or everyday appliances. MicroK8s delivers the full Kubernetes experience with a single command.</p> 
+      <p class="p-heading--5 u-no-padding--top">Install. Cluster. Enable the services you need. No hassle.</p>
+      <p>A fully isolated deployment package protects your underlying system. Self-healing high-availability and over-the-air updates for ultra-reliable operations.</p>
+      <p>MicroK8s architecture and OS compatibility allows you to deploy on COTS hardware and develop on any workstation.</p>
+      <p>
+        <a href="https://www.brighttalk.com/webcast/6793/488796/kubernetes-at-the-edge-easy-as-pi">Watch the webinar: K8s at the edge: easy as “Pi”&nbsp;&rsaquo;</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="p-section" id="get-started">
+  <div class="u-fixed-width p-section">
+    <hr class="p-rule">
+    <h2 id="install-microk8s">Install MicroK8s</h2>
+  </div>
+  <div class="u-fixed-width">
+    <div class="p-tabs">
+      <div class="p-tabs__list js-tabbed-content u-no-margin--bottom" role="tablist" aria-label="Install MicroK8s">
+        <div class="p-tabs__item">
+          <button class="p-tabs__link" role="tab" aria-selected="true" aria-controls="linux-tab" id="linux">Linux</button>
+        </div>
+        <div class="p-tabs__item">
+          <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="windows-tab" id="windows" tabindex="-1">Windows</button>
+        </div>
+        <div class="p-tabs__item">
+          <button class="p-tabs__link" role="tab" aria-selected="false" aria-controls="mac-tab" id="macOS" tabindex="-1">MacOS</button>
+        </div>
+      </div>
+
+      <div tabindex="0" role="tabpanel" id="linux-tab" aria-labelledby="linux">
+        <div class="row--25-75">
+  <div class="col usv-2">
+    <img src="https://assets.ubuntu.com/v1/6d9cf05a-Linux-var-width.svg" height="144" alt="Linux">
+  </div>
+  <div class="col">
+    <ol class="p-stepped-list--detailed">
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Install MicroK8s on Linux</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>sudo snap install microk8s --classic</code></pre>
+              </div>
+              <p>Don't have the <code>snap</code> command? <a href="https://docs.snapcraft.io/installing-snapd" >Get set up for snaps</a></p>
+            </div>   
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Check the status while Kubernetes starts</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s status --wait-ready</code></pre>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Turn on the services you want</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s enable dashboard</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable dns</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable registry</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable istio</code></pre>
+              </div>
+              <p>Try <code>microk8s enable --help</code> for a list of available services and optional features. <code>microk8s disable &lt;name&gt;</code> turns off a service.</p>
+            </div>     
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Start using Kubernetes</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s kubectl get all --all-namespaces</code></pre>
+              </div>
+              <p>If you mainly use MicroK8s you can make our kubectl the default one on your command-line with <code>alias mkctl="microk8s kubectl"</code>. Since it is a standard upstream kubectl, you can also drive other Kubernetes clusters with it by pointing to the respective kubeconfig file via the <code>--kubeconfig</code> argument.</p>
+            </div>      
+          </div>
+        </div>
+      </li>
+
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Access the Kubernetes dashboard</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s dashboard-proxy</code></pre>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </li>
+
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Start and stop Kubernetes to save battery</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <p>Kubernetes is a collection of system services that talk to each other all the time. If you don't need them running in the background then you will save battery by stopping them. <code>microk8s start</code> and <code>microk8s stop</code> will do the work for you.</p>
+              <p><a href="/docs">Read the docs to learn more&nbsp;&rsaquo;</a></p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <hr class="p-rule">
+    <div class="row">
+      <div class="col-3">
+        <p class="p-heading--5">Join the community</p>
+      </div>
+      <div class="col-6">
+        <p>
+          <a href="https://discuss.kubernetes.io/c/general-discussions/microk8s/26">Connect with our community and see what others are doing with MicroK8s&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div tabindex="0" role="tabpanel" id="windows-tab" aria-labelledby="windows">
+        <div class="row--25-75">
+  <div class="col">
+    <img src="https://assets.ubuntu.com/v1/11ecbd2d-2018-logo-windows.svg" style="height: 145px;" alt="Windows">
+  </div>
+  <div class="col">
+    <ol class="p-stepped-list--detailed">
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Download the installer for Windows</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <p>
+                <a class="p-button--positive" href="/microk8s-installer.exe">Download MicroK8s for Windows</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Run the Installer</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <p>
+                <img src="https://assets.ubuntu.com/v1/40617546-win2.png" alt="Windows installer">
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Open a command line</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <p>
+                <img src="https://assets.ubuntu.com/v1/a2f7ab2a-win1.png" alt="Windows commandline">
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Check the status while Kubernetes starts</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s status --wait-ready</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Turn on the services you want</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s enable dashboard</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable dns</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable registry</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable istio</code></pre>
+              </div>
+              <p>
+                Try <code>microk8s enable --help</code> for a list of available services built in. microk8s disable turns off a service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Start using Kubernetes</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s kubectl get all --all-namespaces</code></pre>
+              </div>
+              <p>If you mainly use MicroK8s you can run the native Windows version of kubectl on your command-line.</p>
+              <p>
+                <a href="/docs/working-with-kubectl#heading--kubectl-windows">Learn how&nbsp;&rsaquo;</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Access the Kubernetes dashboard</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s dashboard-proxy</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Start and stop Kubernetes to save battery</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <p>Kubernetes is a collection of system services that talk to each other all the time. If you don't need them running in the background then you will save battery by stopping them. <code>microk8s start</code> and <code>microk8s stop</code> will do the work for you.</p>
+              <p>
+                <a href="/docs">Read the docs to learn more&nbsp;&rsaquo;</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <hr class="p-rule">
+    <div class="row">
+      <div class="col-3">
+        <p class="p-heading--5">Join the community</p>
+      </div>
+      <div class="col-6">
+        <p>
+          <a href="https://discuss.kubernetes.io/c/general-discussions/microk8s/26">Connect with our community and see what others are doing with MicroK8s&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div tabindex="0" role="tabpanel" id="mac-tab" aria-labelledby="macOS">
+        <div class="row--25-75">
+  <div class="col">
+    <img src="https://assets.ubuntu.com/v1/236f314d-macos.svg" style="height: 145px;" alt="macOS">
+  </div>
+  <div class="col">
+    <ol class="p-stepped-list--detailed">
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Install MicroK8s on macOS</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>brew install ubuntu/microk8s/microk8s</code></pre>
+              </div>
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s install</code></pre>
+              </div>
+              <p>
+                <img src="https://assets.ubuntu.com/v1/670398bd-mac1.png" alt="macOS terminal installing MicroK8s">
+              </p>
+              <p>Don't have the <code>brew</code> command? Get it from the <a  href="http://brew.sh/">Homebrew website</a></p>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Check the status while Kubernetes starts</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s status --wait-ready</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Turn on the services you want</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s enable dashboard</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable dns</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable registry</code></pre>
+                <pre class="p-code-snippet__block"><code>microk8s enable istio</code></pre>
+              </div>
+              <p>
+                Try <code>microk8s enable --help</code> for a list of available services built in. <code>microk8s disable</code> turns off a service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Start using Kubernetes</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s kubectl get all --all-namespaces</code></pre>
+              </div>
+              <p>If you mainly use MicroK8s you can run the native macOS version of kubectl on your command-line.</p>
+              <p>
+                <a href="/docs/working-with-kubectl#heading--kubectl-macos">Learn how&nbsp;&rsaquo;</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Access the Kubernetes dashboard</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <div class="p-code-snippet">
+                <pre class="p-code-snippet__block"><code>microk8s dashboard-proxy</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-stepped-list__item">
+        <div class="row">
+          <div class="col-3">
+            <p class="p-stepped-list__title p-heading--5">Start and stop Kubernetes to save battery</p>
+          </div>
+          <div class="col-6">
+            <div class="p-stepped-list__content">
+              <p>Kubernetes is a collection of system services that talk to each other all the time. If you don't need them running in the background then you will save battery by stopping them. <code>microk8s start</code> and <code>microk8s stop</code> will do the work for you.</p>
+              <p>
+                <a href="/docs">Read the docs to learn more&nbsp;&rsaquo;</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <hr class="p-rule">
+    <div class="row">
+      <div class="col-3">
+        <p class="p-heading--5">Join the community</p>
+      </div>
+      <div class="col-6">
+        <p>
+          <a href="https://discuss.kubernetes.io/c/general-discussions/microk8s/26">Connect with our community and see what others are doing with MicroK8s&nbsp;&rsaquo;</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--50-50">
+    <hr class="p-rule">
+    <div class="col p-section">
+      <h2>Enterprise support option, no licence fees</h2>
+    </div>
+    <div class="col">
+      <p class="p-heading--5">99.9% uptime SLA and 10-year security maintenance</p>
+      <p>As the publishers of MicroK8s, we deliver the world's most efficient multi-cloud, multi-arch Kubernetes through high quality packages and distribution channels.</p>
+      <p>A <a href="https://ubuntu.com/advantage">single subscription</a> covers your physical and cloud native infrastructure and your applications on top.</p>
+      <p><a class="p-button--positive" href="/contact-us">Contact us</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--50-50 p-section--shallow">
+    <hr class="p-rule">
+    <div class="col p-section">
+      <h2>Zero-ops infrastructure</h2>
+    </div>
+    <div class="col">
+      <p class="p-heading--5">Set it up and let it run</p>
+      <p>Our goal is to eliminate toil from Kubernetes cluster administration. MicroK8s needs  just a few minutes to set up fully-functional highly-available clusters, with automated K8s datastore maintenance and unattended security updates. Fire and forget or customise it for your needs.</p>
+    </div>
+  </div>
+  <div class="u-fixed-width u-hide--small">
+    <div class="p-strip is-deep u-align--center u-vertically-center" style="background: rgba(0, 0, 0, 0.03);">
+      <img src="https://assets.ubuntu.com/v1/e51438b1-Kubernetes-dedicated+platforms%201.svg" alt="" style="height: 276px;"/>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="u-fixed-width">
+    <hr class="p-rule">
+    <h2>The most popular cloud native projects<br class="u-hide--small"> at your fingertips. No config needed</h2>
+  </div>
+  <div class="row--50-50">
+    <div class="col p-strip">
+      <p>Prometheus is popular for metrics, so we bundled it. Just like Jaeger, Istio, LinkerD and KNative.</p>
+      <p>Turn them on or off with one command. Or <a href="/docs/howto-addons"> bring your own addon</a> if you like.</p>
+      <p>MicroK8s also comes with sensible defaults for the most widely used Kubernetes options, so it 'just works' with no config necessary.</p>
+    </div>
+    <div class="col u-hide--small u-hide--medium u-align--right">
+      <img src="https://assets.ubuntu.com/v1/46f57a18-cutoff_laptop.svg" alt="" style="height: 328px;"/>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--50-50">
+    <hr class="p-rule">
+    <div class="col p-section">
+      <h2>Minimal, CNCF-certified distribution</h2>
+    </div>
+    <div class="col">
+      <p class="p-heading--5">All upstream services in an efficient package</p>
+      <p>Build your container strategy on a conformant platform, leverage the cloud native ecosystem, no vendor lock in. Get all Kubernetes services in a single, fully contained package. No moving parts and dependencies, better security and simpler ops.</p>
+      <div class="p-strip is-shallow">
+        <div class="p-logo-section">
+          <div class="p-logo-section__items">
+            <div class="p-logo-section__item">
+              <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/e00eba9b-cloud-native-logo.svg" alt="Cloud Native" style="height: 4rem;">
+            </div>
+            <div class="p-logo-section__item">
+              <img class="p-logo-section__logo" src="https://assets.ubuntu.com/v1/806dc762-open-container-initiative.svg" alt="Open container initiative" style="height: 4rem">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--50-50">
+    <hr class="p-rule">
+    <div class="col p-section">
+      <h2>Automatic security updates and streamlined upgrades</h2>
+    </div>
+    <div class="col">
+      <p class="p-heading--5">Let it roll, or take control</p>
+      <p>MicroK8s will apply security updates automatically by default, and roll back on failure. Defer them if you want.</p>
+      <p>Upgrade to a newer version of Kubernetes with a single command. It's really that easy. Stick with a major version, or follow the latest upstream work. Go with the flow, or take control in the enterprise to specify versions with perfect precision.</p>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--50-50">
+    <hr class="p-rule">
+    <div class="col p-section">
+      <h2>Experience MicroK8s</h2>
+    </div>
+    <div class="col">
+      <p>Watch the intro video.<br class="u-hide--small"> Pause and copy commands straight from this text console.</p>
+    </div>
+  </div>
+  <div class="u-fixed-width">
+    <div class="asciinema-container">
+    <script id="asciicast-KUqQaDt7p3iNO5DP0xC7W4Ufj" src="https://asciinema.org/a/KUqQaDt7p3iNO5DP0xC7W4Ufj.js" async> </script>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--50-50">
+    <hr class="p-rule">
+    <div class="col" id="resources-heading">
+      <h2>MicroK8s and Kubernetes resources</h2>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col-2">
+          <h3 class="p-text--small-caps">Webinars</h3>
+        </div>
+        <div class="col-4">
+          <ul class="p-list--divided">
+            <li class="p-list__item"><a href="https://www.brighttalk.com/webcast/6793/378029?utm_source=brighttalk-portal&utm_medium=web&utm_content=microk8s&utm_campaign=webcasts-search-results-feed">An intro to MicroK8s</a></li>
+            <li class="p-list__item"><a href="https://www.brighttalk.com/webcast/6793/488796/kubernetes-at-the-edge-easy-as-pi">K8s at the edge: easy as “Pi”</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-start-large-7 col-6 col-start-medium-4 col-medium-3">
+      <hr class="p-rule">
+      <div class="row">
+        <div class="col-2">
+          <h3 class="p-text--small-caps">Datasheet</h3>
+        </div>
+        <div class="col-4">
+          <ul class="p-list--divided">
+            <li class="p-list__item"><a href="https://assets.ubuntu.com/v1/80a86843-MicroK8s.for.ISVs.DS.pdf">Microk8s for ISVs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-start-large-7 col-6 col-start-medium-4 col-medium-3">
+      <hr class="p-rule">
+      <div class="row">
+        <div class="col-2">
+          <h3 class="p-text--small-caps">Whitepaper</h3>
+        </div>
+        <div class="col-4">
+          <ul class="p-list--divided">
+            <li class="p-list__item"><a  href="https://ubuntu.com/engage/microk8s-451research">Kubernetes: a secure, flexible and automated edge for IoT developers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-start-large-7 col-6 col-start-medium-4 col-medium-3">
+      <hr class="p-rule">
+      <p><a href="/resources">Find more resources &nbsp;&rsaquo;</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="p-section">
+  <div class="row--50-50">
+    <hr class="p-rule">
+    <div class="col p-section">
+      <h2>Looking for a more composable Kubernetes?</h2>
+    </div>
+    <div class="col">
+      <p>If MicroK8s is too opinionated for you, do not worry. MicroK8s is built by the Kubernetes team at Canonical. We also make <a href="https://ubuntu.com/kubernetes">Charmed Kubernetes</a> for total control of all the permutations of Kubernetes components. Build your clusters from the ground up and tailor them to your needs.</p>
+      <p>
+        <a href="https://ubuntu.com/kubernetes/install#cluster">Get started with Charmed Kubernetes&nbsp;&rsaquo;</a>
+      </p>
+    </div>
+  </div>  
+</section>
+
+<section class="p-strip--white">
+  <div class="row">
+    <div class="col-start-large-4 col-9">
+      <h2>Insure your MicroK8s clusters<br class="u-hide--small"> with <br class="u-hide--medium u-hide--large">enterprise support</h2>
+      <p>Get in touch with our team of Kubernetes experts</p>
+      <p><a href="/contact-us" class="p-button--positive">Contact us</a></p>
+    </div>
+  </div>
+</section>
+<script src="https://assets.ubuntu.com/v1/703e23c9-lazysizes+noscript+native-loading.5.1.2.min.js" defer></script>
+
+<script src="/static/js/tabbed-content.js?v=d48f8cd"></script>
+
+
+  </main>
+
+  
+<footer class="p-footer l-footer--sticky">
+  <div class="row">
+    <div class="col-3 col-medium-2">
+      <p>© 2024 Canonical Ltd.</p>
+    </div>
+    <div class="col-3 col-medium-2">
+      <ul class="p-list is-dark" style="padding-top: .4rem;">
+        <li class="p-list__item--condensed">
+          <a href="https://www.ubuntu.com/legal">Legal information</a>
+        </li>
+        <li class="p-list__item--condensed">
+          <a href="" class="js-revoke-cookie-manager">Manage your tracker settings</a>
+        </li>
+        <li class="p-list__item--condensed">
+          <a class="p-footer__link" href="https://github.com/canonical-websites/microk8s.io/issues/new">Report a bug on this site</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6 col-medium-2">
+      <p>Ubuntu and Canonical are registered trademarks of Canonical&nbsp;Ltd.</p>
+    </div>
+  </div>
+</footer>
+
+
+  
+
+  <script src="/static/js/dist/global-nav.js?v=e78ef14"></script>
+  <script src="/static/js/dist/main.js?v=9522d0a"></script>
+  <script src="/static/js/dist/cookie-policy.js?v=75f65fc"></script>
+</body>
+
+</html>

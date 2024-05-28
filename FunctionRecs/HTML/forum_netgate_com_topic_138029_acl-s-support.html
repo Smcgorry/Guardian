@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en-US" data-dir="ltr" style="direction: ltr;">
+<head>
+	<title>ACL&#x27;s support? | Netgate Forum</title>
+	<meta name="viewport" content="width&#x3D;device-width, initial-scale&#x3D;1.0" />
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta property="og:site_name" content="Netgate Forum" />
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https://forum.netgate.com/sitemap.xml" />
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="keywords" content="pfSense,Netgate,TNSR,SCLR,Firewall,Router" />
+	<meta name="msapplication-square150x150logo" content="/assets/uploads/system/site-logo.png" />
+	<meta name="title" content="ACL&#x27;s support?" />
+	<meta property="og:title" content="ACL&#x27;s support?" />
+	<meta property="og:type" content="article" />
+	<meta property="article:published_time" content="2018-11-24T00:44:15.751Z" />
+	<meta property="article:modified_time" content="2018-11-27T04:37:06.414Z" />
+	<meta property="article:section" content="pfBlockerNG" />
+	<meta name="description" content="Does pfblocker support ACL, example to have some cliente running some strict  DNSBL others others less restricted? Thanks." />
+	<meta property="og:description" content="Does pfblocker support ACL, example to have some cliente running some strict  DNSBL others others less restricted? Thanks." />
+	<meta property="og:image" content="https://forum.netgate.com/assets/uploads/profile/1603-profileavatar-1676343391040.jpeg" />
+	<meta property="og:image:url" content="https://forum.netgate.com/assets/uploads/profile/1603-profileavatar-1676343391040.jpeg" />
+	<meta property="og:image" content="https://forum.netgate.com/assets/uploads/system/site-logo.png" />
+	<meta property="og:image:url" content="https://forum.netgate.com/assets/uploads/system/site-logo.png" />
+	<meta property="og:image:width" content="undefined" />
+	<meta property="og:image:height" content="undefined" />
+	<meta property="og:url" content="https://forum.netgate.com/topic/138029/acl-s-support" />
+	
+	<link rel="stylesheet" type="text/css" href="/assets/client.css?v=797m7udd4uq" />
+	<link rel="icon" type="image/x-icon" href="/assets/uploads/system/favicon.ico?v&#x3D;797m7udd4uq" />
+	<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials" />
+	<link rel="search" type="application/opensearchdescription+xml" title="Netgate Forum" href="/osd.xml" />
+	<link rel="apple-touch-icon" href="/assets/uploads/system/touchicon-orig.png" />
+	<link rel="icon" sizes="36x36" href="/assets/uploads/system/touchicon-36.png" />
+	<link rel="icon" sizes="48x48" href="/assets/uploads/system/touchicon-48.png" />
+	<link rel="icon" sizes="72x72" href="/assets/uploads/system/touchicon-72.png" />
+	<link rel="icon" sizes="96x96" href="/assets/uploads/system/touchicon-96.png" />
+	<link rel="icon" sizes="144x144" href="/assets/uploads/system/touchicon-144.png" />
+	<link rel="icon" sizes="192x192" href="/assets/uploads/system/touchicon-192.png" />
+	<link rel="prefetch" href="/assets/src/modules/composer.js?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/src/modules/composer/uploads.js?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/src/modules/composer/drafts.js?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/src/modules/composer/tags.js?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/src/modules/composer/categoryList.js?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/src/modules/composer/resize.js?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/src/modules/composer/autocomplete.js?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/templates/composer.tpl?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/language/en-US/topic.json?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/language/en-US/modules.json?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch" href="/assets/language/en-US/tags.json?v&#x3D;797m7udd4uq" />
+	<link rel="prefetch stylesheet" href="/assets/plugins/nodebb-plugin-markdown/styles/default.css" />
+	<link rel="prefetch" href="/assets/language/en-US/markdown.json?v&#x3D;797m7udd4uq" />
+	<link rel="stylesheet" href="https://forum.netgate.com/assets/plugins/nodebb-plugin-emoji/emoji/styles.css?v&#x3D;797m7udd4uq" />
+	<link rel="canonical" href="https://forum.netgate.com/topic/138029/acl-s-support" />
+	<link rel="alternate" type="application/rss+xml" href="/topic/138029.rss" />
+	<link rel="up" href="https://forum.netgate.com/category/62/pfblockerng" />
+	<link rel="author" href="https://forum.netgate.com/user/periko" />
+	
+
+	<script>
+		var config = JSON.parse('{"relative_path":"","upload_url":"/assets/uploads","asset_base_url":"/assets","assetBaseUrl":"/assets","siteTitle":"Netgate Forum","browserTitle":"Netgate Forum","titleLayout":"&#123;pageTitle&#125; | &#123;browserTitle&#125;","showSiteTitle":false,"maintenanceMode":false,"postQueue":0,"minimumTitleLength":3,"maximumTitleLength":255,"minimumPostLength":2,"maximumPostLength":32767,"minimumTagsPerTopic":0,"maximumTagsPerTopic":5,"minimumTagLength":3,"maximumTagLength":15,"undoTimeout":10000,"useOutgoingLinksPage":false,"allowGuestHandles":false,"allowTopicsThumbnail":false,"usePagination":false,"disableChat":false,"disableChatMessageEditing":false,"maximumChatMessageLength":1000,"socketioTransports":["polling","websocket"],"socketioOrigins":"https://forum.netgate.com:*","websocketAddress":"","maxReconnectionAttempts":5,"reconnectionDelay":1500,"topicsPerPage":40,"postsPerPage":40,"maximumFileSize":2048,"theme:id":"nodebb-theme-persona","theme:src":"","defaultLang":"en-US","userLang":"en-US","loggedIn":false,"uid":-1,"cache-buster":"v=797m7udd4uq","topicPostSort":"oldest_to_newest","categoryTopicSort":"recently_replied","csrf_token":false,"searchEnabled":true,"searchDefaultInQuick":"titles","bootswatchSkin":"","composer:showHelpTab":true,"enablePostHistory":true,"timeagoCutoff":30,"timeagoCodes":["af","am","ar","az-short","az","be","bg","bs","ca","cs","cy","da","de-short","de","dv","el","en-short","en","es-short","es","et","eu","fa-short","fa","fi","fr-short","fr","gl","he","hr","hu","hy","id","is","it-short","it","ja","jv","ko","ky","lt","lv","mk","nl","no","pl","pt-br-short","pt-br","pt-short","pt","ro","rs","ru","rw","si","sk","sl","sq","sr","sv","th","tr-short","tr","uk","ur","uz","vi","zh-CN","zh-TW"],"cookies":{"enabled":false,"message":"[[global:cookies.message]]","dismiss":"[[global:cookies.accept]]","link":"[[global:cookies.learn-more]]","link_url":"https:&#x2F;&#x2F;www.cookiesandyou.com"},"thumbs":{"size":512},"iconBackgrounds":["#f44336","#e91e63","#9c27b0","#673ab7","#3f51b5","#2196f3","#009688","#1b5e20","#33691e","#827717","#e65100","#ff5722","#795548","#607d8b"],"emailPrompt":1,"useragent":{"isYaBrowser":false,"isAuthoritative":false,"isMobile":false,"isMobileNative":false,"isTablet":false,"isiPad":false,"isiPod":false,"isiPhone":false,"isiPhoneNative":false,"isAndroid":false,"isAndroidNative":false,"isBlackberry":false,"isOpera":false,"isIE":false,"isEdge":false,"isIECompatibilityMode":false,"isSafari":false,"isFirefox":false,"isWebkit":false,"isChrome":false,"isKonqueror":false,"isOmniWeb":false,"isSeaMonkey":false,"isFlock":false,"isAmaya":false,"isPhantomJS":false,"isEpiphany":false,"isDesktop":false,"isWindows":false,"isLinux":false,"isLinux64":false,"isMac":false,"isChromeOS":false,"isBada":false,"isSamsung":false,"isRaspberry":false,"isBot":"python","isCurl":false,"isAndroidTablet":false,"isWinJs":false,"isKindleFire":false,"isSilk":false,"isCaptive":false,"isSmartTV":false,"isUC":false,"isFacebook":false,"isAlamoFire":false,"isElectron":false,"silkAccelerated":false,"browser":"python-requests","version":"2.31.0","os":"unknown","platform":"unknown","geoIp":{},"source":"python-requests/2.31.0","isWechat":false},"fontawesome":{"pro":false,"styles":["solid","brands","regular"],"version":"6.5.1"},"acpLang":"undefined","topicSearchEnabled":false,"disableCustomUserSkins":false,"defaultBootswatchSkin":"","hideSubCategories":false,"hideCategoryLastPost":false,"enableQuickReply":false,"composer-default":{},"markdown":{"highlight":1,"highlightLinesLanguageList":"[]","hljsLanguages":["common"],"theme":"default.css","defaultHighlightLanguage":"","externalMark":false},"gdpr":{"require":true,"given":false},"spam-be-gone":{},"emojiCustomFirst":false}');
+		var app = {
+			user: JSON.parse('{"uid":0,"username":"Guest","displayname":"Guest","userslug":"","fullname":"Guest","email":"","icon:text":"?","icon:bgColor":"#aaa","groupTitle":"","groupTitleArray":[],"status":"offline","reputation":0,"email:confirmed":false,"unreadData":{"":{},"new":{},"watched":{},"unreplied":{}},"isAdmin":false,"isGlobalMod":false,"isMod":false,"privileges":{"chat":false,"chat:privileged":false,"upload:post:image":false,"upload:post:file":false,"signature":false,"invite":false,"group:create":false,"search:content":false,"search:users":false,"search:tags":false,"view:users":false,"view:tags":true,"view:groups":false,"local:login":false,"ban":false,"mute":false,"view:users:info":false},"blocks":[],"timeagoCode":"en","offline":true,"lastRoomId":null,"isEmailConfirmSent":false}')
+		};
+
+		document.documentElement.style.setProperty('--panel-offset', `${localStorage.getItem('panelOffset') || 0}px`);
+	</script>
+
+	
+	<meta name="google-site-verification" content="z2TS1xwqaKNtyojMIl9uuUBn4EMDgDNl__0PPBaQRMo" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N2P5PS2');</script>
+<!-- End Google Tag Manager -->
+
+	
+	
+	<style>.topic [component="post/upvote"]{background-image:url("/plugins/nodebb-plugin-emoji/emoji/android/1f44d.png");background-size:14px;background-size:contain;background-repeat:no-repeat}.fa-chevron-up{color:rgba(250,235,215,0)}.custom-footer{background:#efefef;color:#616161;margin-top:25px;padding:25px}.custom-footer h4{margin-top:0}ul.list-icons{list-style:none;padding-left:0;padding-right:0;margin-bottom:15px}ul.list-icons li{margin-bottom:5px}ul.list-icons li i.fa{color:#2A78BE;border-color:#2A78BE}ul.list-icons li a{color:#616161}ul.social-icons{padding:0}ul.social-icons li{display:inline-block;margin:0 10px 5px 0;padding:0;border-radius:100%;overflow:visible;font-size:1.5em}ul.social-icons li a{color:#616161}.hs_email input{width:90%;color:#000;padding:3px 5px}form.hs-form .inputs-list{font-size:.9em;list-style:none;padding:5px 0 0 0}form.hs-form .inputs-list .hs-input{margin-right:5px}.hs-button{text-shadow:0 -1px 0 rgba(0,0,0,0.25);background-color:#2A78BE;border:0;padding:5px 15px;color:#ffffff;letter-spacing:.05em}</style>
+	
+</head>
+
+<body class="page-topic page-topic-138029 page-topic-acl-s-support template-topic page-topic-category-62 page-topic-category-pfblockerng parent-category-16 parent-category-62 page-status-200 theme-persona user-guest skin-noskin">
+	<nav id="menu" class="slideout-menu hidden">
+		<section class="menu-section" data-section="navigation">
+	<ul class="menu-section-list text-bg-dark"></ul>
+</section>
+
+
+	</nav>
+	<nav id="chats-menu" class="slideout-menu hidden">
+		
+	</nav>
+
+	<main id="panel" class="slideout-panel">
+		<nav class="navbar sticky-top navbar-expand-lg bg-light header border-bottom py-0" id="header-menu" component="navbar">
+			<div class="container justify-content-start flex-nowrap">
+							<div class="d-flex align-items-center me-auto" style="min-width: 0px;">
+				<button type="button" class="navbar-toggler border-0" id="mobile-menu">
+					<i class="fa fa-lg fa-fw fa-bars unread-count" ></i>
+					<span component="unread/icon" class="notification-icon fa fa-fw fa-book unread-count" data-content="0" data-unread-url="/unread"></span>
+				</button>
+				<div class="d-inline-flex align-items-center" style="min-width: 0px;">
+					
+					<a class="navbar-brand" href="https://forum.netgate.com">
+						<img alt="Netgate Discussion Forum" class=" forum-logo d-inline-block align-text-bottom" src="/assets/uploads/system/site-logo.png?v=797m7udd4uq" />
+					</a>
+					
+					
+				</div>
+			</div>
+
+			
+			<div class="navbar-search visible-xs">
+				<form action="/search" method="GET">
+					<button type="button" class="btn btn-link"><i class="fa fa-lg fa-fw fa-search" title="Search"></i></button>
+					<input autocomplete="off" type="text" class="form-control hidden" name="term" placeholder="Search"/>
+					<button class="btn btn-primary hidden" type="submit"></button>
+					<input type="text" class="hidden" name="in" value="titles" />
+				</form>
+				<div class="quick-search-container dropdown-menu d-block mt-2 hidden">
+					<div class="quick-search-results-container"></div>
+				</div>
+			</div>
+			
+
+			
+
+			<div component="navbar/title" class="visible-xs hidden">
+				<span></span>
+			</div>
+
+			<div id="nav-dropdown" class="collapse navbar-collapse d-none d-lg-block">
+				<ul id="main-nav" class="navbar-nav me-auto mb-2 mb-lg-0">
+					
+					
+					<li class="nav-item " title="Categories">
+						<a class="nav-link navigation-link "
+						 href="&#x2F;categories" >
+							
+							<i class="fa fa-fw fa-list" data-content=""></i>
+							
+							
+							<span class="visible-xs-inline">Categories</span>
+							
+							
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="nav-item " title="Recent">
+						<a class="nav-link navigation-link "
+						 href="&#x2F;recent" >
+							
+							<i class="fa fa-fw fa-clock-o" data-content=""></i>
+							
+							
+							<span class="visible-xs-inline">Recent</span>
+							
+							
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="nav-item " title="Tags">
+						<a class="nav-link navigation-link "
+						 href="&#x2F;tags" >
+							
+							<i class="fa fa-fw fa-tags" data-content=""></i>
+							
+							
+							<span class="visible-xs-inline">Tags</span>
+							
+							
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="nav-item " title="Popular">
+						<a class="nav-link navigation-link "
+						 href="&#x2F;popular" >
+							
+							<i class="fa fa-fw fa-fire" data-content=""></i>
+							
+							
+							<span class="visible-xs-inline">Popular</span>
+							
+							
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="nav-item " title="Users">
+						<a class="nav-link navigation-link "
+						 href="&#x2F;users" >
+							
+							<i class="fa fa-fw fa-user" data-content=""></i>
+							
+							
+							<span class="visible-xs-inline">Users</span>
+							
+							
+						</a>
+						
+					</li>
+					
+					
+					
+					<li class="nav-item " title="Search">
+						<a class="nav-link navigation-link "
+						 href="&#x2F;search" >
+							
+							<i class="fa fa-fw fa-search" data-content=""></i>
+							
+							
+							<span class="visible-xs-inline">Search</span>
+							
+							
+						</a>
+						
+					</li>
+					
+					
+				</ul>
+				<ul class="navbar-nav mb-2 mb-lg-0 hidden-xs">
+					<li class="nav-item">
+						<a href="#" id="reconnect" class="nav-link hide" title="Looks like your connection to Netgate Forum was lost, please wait while we try to reconnect.">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+				
+				<div class="navbar-nav mb-2 mb-lg-0 position-relative">
+					<form component="search/form" id="search-form" class="d-flex justify-content-end align-items-center" role="search" method="GET">
+	<div component="search/fields" class="hidden" id="search-fields">
+		<div class="input-group flex-nowrap">
+			<input autocomplete="off" type="text" class="form-control" placeholder="Search" name="query" value="">
+
+			<a href="/search" class="btn btn-outline-secondary" aria-label="Type to search">
+				<i class="fa fa-gears fa-fw"></i>
+			</a>
+		</div>
+
+		<div id="quick-search-container" class="quick-search-container dropdown-menu d-block mt-2 hidden">
+			<div class="form-check filter-category mb-2 ms-4">
+				<input class="form-check-input" type="checkbox" checked>
+				<label class="form-check-label name"></label>
+			</div>
+
+			<div class="text-center loading-indicator"><i class="fa fa-spinner fa-spin"></i></div>
+			<div class="quick-search-results-container"></div>
+		</div>
+		<button type="submit" class="btn btn-outline-secondary hide">Search</button>
+	</div>
+
+	<div id="" class="nav-item"><a component="search/button" id="search-button" href="#" class="nav-link"><i class="fa fa-search fa-fw" title="Search"></i></a></div>
+</form>
+
+				</div>
+				
+
+				
+				
+				<ul id="logged-out-menu" class="navbar-nav me-0 mb-2 mb-lg-0 align-items-center">
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/register">
+							<i class="fa fa-pencil fa-fw d-inline-block d-sm-none"></i>
+							<span>Register</span>
+						</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/login">
+							<i class="fa fa-sign-in fa-fw d-inline-block d-sm-none"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+				
+				
+			</div>
+
+			</div>
+		</nav>
+		<script>
+			const rect = document.getElementById('header-menu').getBoundingClientRect();
+			const offset = Math.max(0, rect.bottom);
+			document.documentElement.style.setProperty('--panel-offset', offset + `px`);
+		</script>
+		<div class="container pt-3" id="content">
+		<noscript>
+    <div class="alert alert-danger">
+        <p>
+            Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+        </p>
+        <p>
+            Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+        </p>
+    </div>
+</noscript>
+		
+<div data-widget-area="header">
+	
+</div>
+<div class="row mb-5">
+	<div class="topic col-lg-12" itemid="/topic/138029/acl-s-support" itemscope itemtype="https://schema.org/DiscussionForumPosting">
+		<meta itemprop="datePublished" content="2018-11-24T00:44:15.751Z">
+		<meta itemprop="dateModified" content="2018-11-27T04:37:06.414Z">
+		<meta itemprop="author" itemscope itemtype="https://schema.org/Person" itemref="topicAuthorName topicAuthorUrl">
+		<meta id="topicAuthorName" itemprop="name" content="periko">
+		<meta id="topicAuthorUrl" itemprop="url" content="/user/periko">
+		<div class="topic-header sticky-top">
+			<h1 component="post/header" class="" itemprop="name">
+				<span class="topic-title">
+					<span component="topic/labels" class="d-inline-flex gap-2 align-items-center">
+						<i component="topic/scheduled" class="fa fa-clock-o hidden" title="Scheduled"></i>
+						<i component="topic/pinned" class="fa fa-thumb-tack hidden" title="Pinned"></i>
+						<i component="topic/locked" class="fa fa-lock hidden" title="Locked"></i>
+						<i class="fa fa-arrow-circle-right hidden" title="Moved"></i>
+						
+					</span>
+					<span component="topic/title">ACL&#x27;s support?</span>
+				</span>
+			</h1>
+
+			<div class="topic-info clearfix">
+				<div class="category-item d-inline-block">
+					<span class="icon d-inline-flex justify-content-center align-items-center align-middle rounded-circle" style="background-color: #FFFFFF; border-color: #FFFFFF!important; color: #1475CF; width:24px; height: 24px; font-size: 12px;"><i class="fa fa-fw fa-shield"></i></span>
+					<a href="/category/62/pfblockerng">pfBlockerNG</a>
+				</div>
+
+				<div data-tid="138029" component="topic/tags" class="tags tag-list d-inline-block hidden-xs">
+					
+				</div>
+				<div class="d-inline-block hidden-xs">
+					<div class="stats text-muted">
+	<i class="fa fa-fw fa-user" title="Posters"></i>
+	<span title="3">3</span>
+</div>
+<div class="stats text-muted">
+	<i class="fa fa-fw fa-pencil" title="Posts"></i>
+	<span component="topic/post-count" title="4">4</span>
+</div>
+<div class="stats text-muted">
+	<i class="fa fa-fw fa-eye" title="Views"></i>
+	<span title="484">484</span>
+</div>
+				</div>
+				
+				<a class="hidden-xs" target="_blank" href="/topic/138029.rss"><i class="fa fa-rss-square"></i></a>
+				
+				
+
+				<div class="topic-main-buttons float-end d-inline-block">
+	<span class="loading-indicator btn float-start hidden" done="0">
+		<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+	</span>
+
+	
+
+	
+
+	<div title="Sort by" class="btn-group bottom-sheet hidden-xs" component="thread/sort">
+	<button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Post sort option, Oldest to Newest">
+	<i class="fa fa-fw fa-sort"></i></button>
+	<ul class="dropdown-menu dropdown-menu-end" role="menu">
+		<li><a class="dropdown-item" href="#" class="oldest_to_newest" data-sort="oldest_to_newest" role="menuitem"><i class="fa fa-fw"></i> Oldest to Newest</a></li>
+		<li><a class="dropdown-item" href="#" class="newest_to_oldest" data-sort="newest_to_oldest" role="menuitem"><i class="fa fa-fw"></i> Newest to Oldest</a></li>
+		<li><a class="dropdown-item" href="#" class="most_votes" data-sort="most_votes" role="menuitem"><i class="fa fa-fw"></i> Most Votes</a></li>
+	</ul>
+</div>
+
+
+	<div class="d-inline-block">
+	
+	</div>
+	<div component="topic/reply/container" class="btn-group action-bar bottom-sheet hidden">
+	<a href="/compose?tid=138029" class="btn btn-sm btn-primary" component="topic/reply" data-ajaxify="false" role="button"><i class="fa fa-reply visible-xs-inline"></i><span class="visible-sm-inline visible-md-inline visible-lg-inline"> Reply</span></a>
+	<button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu dropdown-menu-end" role="menu">
+		<li><a class="dropdown-item" href="#" component="topic/reply-as-topic" role="menuitem">Reply as topic</a></li>
+	</ul>
+</div>
+
+
+
+
+<a component="topic/reply/guest" href="/login" class="btn btn-sm btn-primary">Log in to reply</a>
+
+
+</div>
+
+			</div>
+		</div>
+		
+
+		
+
+
+		
+		<div component="topic/deleted/message" class="alert alert-warning mt-3 hidden d-flex justify-content-between flex-wrap">
+    <span>This topic has been deleted. Only users with topic management privileges can see it.</span>
+    <span>
+        
+    </span>
+</div>
+		
+
+		<ul component="topic" class="posts timeline" data-tid="138029" data-cid="62">
+			
+				<li component="post" class="  topic-owner-post" data-index="0" data-pid="806607" data-uid="1603" data-timestamp="1543020255751" data-username="periko" data-userslug="periko" itemprop="comment" itemtype="http://schema.org/Comment" itemscope>
+					<a component="post/anchor" data-index="0" id="1"></a>
+
+					<meta itemprop="datePublished" content="2018-11-24T00:44:15.751Z">
+					<meta itemprop="dateModified" content="">
+
+					
+
+<div class="clearfix post-header">
+	<div class="icon float-start">
+		<a href="/user/periko">
+			<img  alt="periko" title="periko" data-uid="1603" loading="lazy" aria-label="User avatar for periko" class="avatar  avatar-rounded" component="user/picture" src="/assets/uploads/profile/1603-profileavatar-1676343391040.jpeg" style="--avatar-size: 48px;" onError="this.remove();" itemprop="image" /><span  alt="periko" title="periko" data-uid="1603" loading="lazy" aria-label="User avatar for periko" class="avatar  avatar-rounded" component="user/picture" style="--avatar-size: 48px; background-color: #009688;">P</span>
+			<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		</a>
+	</div>
+
+	<small class="d-flex">
+		<div class="d-flex align-items-center gap-1 flex-wrap w-100">
+			<strong class="text-nowrap">
+				<a href="/user/periko" itemprop="author" data-username="periko" data-uid="1603">periko</a>
+			</strong>
+
+			
+
+			
+
+			<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+				
+
+				<span>
+					
+				</span>
+			</span>
+			<div class="d-flex align-items-center gap-1 flex-grow-1 justify-content-end">
+				<span>
+					<i component="post/edit-indicator" class="fa fa-pencil-square edit-icon hidden"></i>
+
+					<span data-editor="" component="post/editor" class="hidden">last edited by  <span class="timeago" title="Invalid Date"></span></span>
+
+					<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+						<a class="permalink text-muted" href="/post/806607"><span class="timeago" title="2018-11-24T00:44:15.751Z"></span></a>
+					</span>
+				</span>
+				<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+			</div>
+		</div>
+	</small>
+</div>
+
+<br />
+
+<div class="content" component="post/content" itemprop="text">
+	<p dir="auto">Does pfblocker support ACL, example to have some cliente running some strict  DNSBL others others less restricted?</p>
+<p dir="auto">Thanks.</p>
+
+</div>
+
+<div class="post-footer">
+	
+	<div component="post/signature" data-uid="1603" class="post-signature"><p dir="auto">Necesitan Soporte de Pfsense en México?/Need Pfsense Support in Mexico?<br />
+www.bajaopensolutions.com<br />
+https://www.facebook.com/BajaOpenSolutions<br />
+Quieres aprender PfSense, visita mi canal de youtube:<br />
+https://www.youtube.com/c/PedroMorenoBOS</p>
+</div>
+	
+
+	<div class="clearfix">
+	
+	<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="threaded-replies user-select-none float-start text-muted hidden">
+		<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top hidden-xs ">
+			
+			
+		</span>
+
+		<span class="replies-count small" component="post/reply-count/text" data-replies="0">1 Reply</span>
+		<span class="replies-last hidden-xs small">Last reply <span class="timeago" title=""></span></span>
+
+		<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+		<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+		<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+	</a>
+	
+
+	<small class="d-flex justify-content-end align-items-center gap-1" component="post/actions">
+		<!-- This partial intentionally left blank; overwritten by nodebb-plugin-reactions -->
+		<span class="post-tools">
+			<a component="post/reply" href="#" class="user-select-none hidden">Reply</a>
+			<a component="post/quote" href="#" class="user-select-none hidden">Quote</a>
+		</span>
+
+		
+		<span class="votes">
+			<a component="post/upvote" href="#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+
+			<span component="post/vote-count" data-votes="0">0</span>
+
+			
+		</span>
+		
+
+		<span component="post/tools" class="dropdown moderator-tools bottom-sheet d-inline-block hidden">
+	<a class="dropdown-toggle d-block" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-end" role="menu"></ul>
+</span>
+
+	</small>
+	</div>
+	<div component="post/replies/container"></div>
+</div>
+
+				</li>
+				
+				
+				
+			
+				<li component="post" class="  " data-index="1" data-pid="807015" data-uid="294826" data-timestamp="1543251097630" data-username="bhjitsense" data-userslug="bhjitsense" itemprop="comment" itemtype="http://schema.org/Comment" itemscope>
+					<a component="post/anchor" data-index="1" id="2"></a>
+
+					<meta itemprop="datePublished" content="2018-11-26T16:51:37.630Z">
+					<meta itemprop="dateModified" content="">
+
+					
+
+<div class="clearfix post-header">
+	<div class="icon float-start">
+		<a href="/user/bhjitsense">
+			<span  alt="bhjitsense" title="bhjitsense" data-uid="294826" loading="lazy" aria-label="User avatar for bhjitsense" class="avatar  avatar-rounded" component="user/picture" style="--avatar-size: 48px; background-color: #1b5e20;">B</span>
+			<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		</a>
+	</div>
+
+	<small class="d-flex">
+		<div class="d-flex align-items-center gap-1 flex-wrap w-100">
+			<strong class="text-nowrap">
+				<a href="/user/bhjitsense" itemprop="author" data-username="bhjitsense" data-uid="294826">bhjitsense</a>
+			</strong>
+
+			
+
+			
+
+			<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+				
+
+				<span>
+					
+				</span>
+			</span>
+			<div class="d-flex align-items-center gap-1 flex-grow-1 justify-content-end">
+				<span>
+					<i component="post/edit-indicator" class="fa fa-pencil-square edit-icon hidden"></i>
+
+					<span data-editor="" component="post/editor" class="hidden">last edited by  <span class="timeago" title="Invalid Date"></span></span>
+
+					<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+						<a class="permalink text-muted" href="/post/807015"><span class="timeago" title="2018-11-26T16:51:37.630Z"></span></a>
+					</span>
+				</span>
+				<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+			</div>
+		</div>
+	</small>
+</div>
+
+<br />
+
+<div class="content" component="post/content" itemprop="text">
+	<p dir="auto">You could use VLANs or firewall aliases for each of your groups.  Then apply pfBlocker rules appropriately.</p>
+
+</div>
+
+<div class="post-footer">
+	
+
+	<div class="clearfix">
+	
+	<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="threaded-replies user-select-none float-start text-muted hidden">
+		<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top hidden-xs ">
+			
+			
+		</span>
+
+		<span class="replies-count small" component="post/reply-count/text" data-replies="0">1 Reply</span>
+		<span class="replies-last hidden-xs small">Last reply <span class="timeago" title=""></span></span>
+
+		<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+		<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+		<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+	</a>
+	
+
+	<small class="d-flex justify-content-end align-items-center gap-1" component="post/actions">
+		<!-- This partial intentionally left blank; overwritten by nodebb-plugin-reactions -->
+		<span class="post-tools">
+			<a component="post/reply" href="#" class="user-select-none hidden">Reply</a>
+			<a component="post/quote" href="#" class="user-select-none hidden">Quote</a>
+		</span>
+
+		
+		<span class="votes">
+			<a component="post/upvote" href="#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+
+			<span component="post/vote-count" data-votes="1">1</span>
+
+			
+		</span>
+		
+
+		<span component="post/tools" class="dropdown moderator-tools bottom-sheet d-inline-block hidden">
+	<a class="dropdown-toggle d-block" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-end" role="menu"></ul>
+</span>
+
+	</small>
+	</div>
+	<div component="post/replies/container"></div>
+</div>
+
+				</li>
+				
+				
+				
+			
+				<li component="post" class="  topic-owner-post" data-index="2" data-pid="807192" data-uid="1603" data-timestamp="1543277999960" data-username="periko" data-userslug="periko" itemprop="comment" itemtype="http://schema.org/Comment" itemscope>
+					<a component="post/anchor" data-index="2" id="3"></a>
+
+					<meta itemprop="datePublished" content="2018-11-27T00:19:59.960Z">
+					<meta itemprop="dateModified" content="">
+
+					
+
+<div class="clearfix post-header">
+	<div class="icon float-start">
+		<a href="/user/periko">
+			<img  alt="periko" title="periko" data-uid="1603" loading="lazy" aria-label="User avatar for periko" class="avatar  avatar-rounded" component="user/picture" src="/assets/uploads/profile/1603-profileavatar-1676343391040.jpeg" style="--avatar-size: 48px;" onError="this.remove();" itemprop="image" /><span  alt="periko" title="periko" data-uid="1603" loading="lazy" aria-label="User avatar for periko" class="avatar  avatar-rounded" component="user/picture" style="--avatar-size: 48px; background-color: #009688;">P</span>
+			<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		</a>
+	</div>
+
+	<small class="d-flex">
+		<div class="d-flex align-items-center gap-1 flex-wrap w-100">
+			<strong class="text-nowrap">
+				<a href="/user/periko" itemprop="author" data-username="periko" data-uid="1603">periko</a>
+			</strong>
+
+			
+
+			
+
+			<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+				
+
+				<span>
+					
+				</span>
+			</span>
+			<div class="d-flex align-items-center gap-1 flex-grow-1 justify-content-end">
+				<span>
+					<i component="post/edit-indicator" class="fa fa-pencil-square edit-icon hidden"></i>
+
+					<span data-editor="" component="post/editor" class="hidden">last edited by  <span class="timeago" title="Invalid Date"></span></span>
+
+					<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+						<a class="permalink text-muted" href="/post/807192"><span class="timeago" title="2018-11-27T00:19:59.960Z"></span></a>
+					</span>
+				</span>
+				<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+			</div>
+		</div>
+	</small>
+</div>
+
+<br />
+
+<div class="content" component="post/content" itemprop="text">
+	<p dir="auto">Hi, I will try this week, this way I can forget about squid MITM, thanks.</p>
+
+</div>
+
+<div class="post-footer">
+	
+	<div component="post/signature" data-uid="1603" class="post-signature"><p dir="auto">Necesitan Soporte de Pfsense en México?/Need Pfsense Support in Mexico?<br />
+www.bajaopensolutions.com<br />
+https://www.facebook.com/BajaOpenSolutions<br />
+Quieres aprender PfSense, visita mi canal de youtube:<br />
+https://www.youtube.com/c/PedroMorenoBOS</p>
+</div>
+	
+
+	<div class="clearfix">
+	
+	<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="threaded-replies user-select-none float-start text-muted hidden">
+		<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top hidden-xs ">
+			
+			
+		</span>
+
+		<span class="replies-count small" component="post/reply-count/text" data-replies="0">1 Reply</span>
+		<span class="replies-last hidden-xs small">Last reply <span class="timeago" title=""></span></span>
+
+		<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+		<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+		<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+	</a>
+	
+
+	<small class="d-flex justify-content-end align-items-center gap-1" component="post/actions">
+		<!-- This partial intentionally left blank; overwritten by nodebb-plugin-reactions -->
+		<span class="post-tools">
+			<a component="post/reply" href="#" class="user-select-none hidden">Reply</a>
+			<a component="post/quote" href="#" class="user-select-none hidden">Quote</a>
+		</span>
+
+		
+		<span class="votes">
+			<a component="post/upvote" href="#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+
+			<span component="post/vote-count" data-votes="0">0</span>
+
+			
+		</span>
+		
+
+		<span component="post/tools" class="dropdown moderator-tools bottom-sheet d-inline-block hidden">
+	<a class="dropdown-toggle d-block" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-end" role="menu"></ul>
+</span>
+
+	</small>
+	</div>
+	<div component="post/replies/container"></div>
+</div>
+
+				</li>
+				
+				
+				
+			
+				<li component="post" class="  " data-index="3" data-pid="807236" data-uid="41979" data-timestamp="1543293426414" data-username="BBcan177" data-userslug="bbcan177" itemprop="comment" itemtype="http://schema.org/Comment" itemscope>
+					<a component="post/anchor" data-index="3" id="4"></a>
+
+					<meta itemprop="datePublished" content="2018-11-27T04:37:06.414Z">
+					<meta itemprop="dateModified" content="">
+
+					
+
+<div class="clearfix post-header">
+	<div class="icon float-start">
+		<a href="/user/bbcan177">
+			<img  alt="BBcan177" title="BBcan177" data-uid="41979" loading="lazy" aria-label="User avatar for BBcan177" class="avatar  avatar-rounded" component="user/picture" src="/assets/uploads/profile/41979-profileavatar.jpeg" style="--avatar-size: 48px;" onError="this.remove();" itemprop="image" /><span  alt="BBcan177" title="BBcan177" data-uid="41979" loading="lazy" aria-label="User avatar for BBcan177" class="avatar  avatar-rounded" component="user/picture" style="--avatar-size: 48px; background-color: #827717;">B</span>
+			<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+		</a>
+	</div>
+
+	<small class="d-flex">
+		<div class="d-flex align-items-center gap-1 flex-wrap w-100">
+			<strong class="text-nowrap">
+				<a href="/user/bbcan177" itemprop="author" data-username="BBcan177" data-uid="41979">BBcan177</a>
+			</strong>
+
+			
+			
+			<a href="/groups/moderator" class="badge rounded-1 text-uppercase text-truncate" style="max-width: 150px;color:#ffffff;background-color: #000000;"><i class="fa hidden"></i><span class="badge-text">Moderator</span></a>
+			
+			
+
+			
+
+			<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+				
+
+				<span>
+					
+				</span>
+			</span>
+			<div class="d-flex align-items-center gap-1 flex-grow-1 justify-content-end">
+				<span>
+					<i component="post/edit-indicator" class="fa fa-pencil-square edit-icon hidden"></i>
+
+					<span data-editor="" component="post/editor" class="hidden">last edited by  <span class="timeago" title="Invalid Date"></span></span>
+
+					<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+						<a class="permalink text-muted" href="/post/807236"><span class="timeago" title="2018-11-27T04:37:06.414Z"></span></a>
+					</span>
+				</span>
+				<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+			</div>
+		</div>
+	</small>
+</div>
+
+<br />
+
+<div class="content" component="post/content" itemprop="text">
+	<p dir="auto">https://forum.netgate.com/topic/129365/bypassing-dnsbl-for-specific-ips</p>
+
+</div>
+
+<div class="post-footer">
+	
+	<div component="post/signature" data-uid="41979" class="post-signature"><p dir="auto">"Experience is something you don't get until just after you need it."</p>
+<p dir="auto">Website: http://pfBlockerNG.com<br />
+Twitter: @BBcan177  #pfBlockerNG<br />
+Reddit: https://www.reddit.com/r/pfBlockerNG/new/</p>
+</div>
+	
+
+	<div class="clearfix">
+	
+	<a component="post/reply-count" data-target-component="post/replies/container" href="#" class="threaded-replies user-select-none float-start text-muted hidden">
+		<span component="post/reply-count/avatars" class="avatars d-inline-flex gap-1 align-items-top hidden-xs ">
+			
+			
+		</span>
+
+		<span class="replies-count small" component="post/reply-count/text" data-replies="0">1 Reply</span>
+		<span class="replies-last hidden-xs small">Last reply <span class="timeago" title=""></span></span>
+
+		<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+		<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+		<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+	</a>
+	
+
+	<small class="d-flex justify-content-end align-items-center gap-1" component="post/actions">
+		<!-- This partial intentionally left blank; overwritten by nodebb-plugin-reactions -->
+		<span class="post-tools">
+			<a component="post/reply" href="#" class="user-select-none hidden">Reply</a>
+			<a component="post/quote" href="#" class="user-select-none hidden">Quote</a>
+		</span>
+
+		
+		<span class="votes">
+			<a component="post/upvote" href="#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+
+			<span component="post/vote-count" data-votes="0">0</span>
+
+			
+		</span>
+		
+
+		<span component="post/tools" class="dropdown moderator-tools bottom-sheet d-inline-block hidden">
+	<a class="dropdown-toggle d-block" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-end" role="menu"></ul>
+</span>
+
+	</small>
+	</div>
+	<div component="post/replies/container"></div>
+</div>
+
+				</li>
+				
+				
+				
+			
+		</ul>
+
+		
+
+		
+
+		
+
+		<div class="pagination-block border border-1 text-bg-light text-center">
+    <div class="progress-bar bg-info"></div>
+    <div class="wrapper dropup">
+        <i class="fa fa-2x fa-angle-double-up pointer fa-fw pagetop"></i>
+
+        <a href="#" class="dropdown-toggle d-inline-block text-decoration-none" data-bs-toggle="dropdown" data-bs-reference="parent" aria-haspopup="true" aria-expanded="false">
+            <span class="pagination-text"></span>
+        </a>
+
+        <i class="fa fa-2x fa-angle-double-down pointer fa-fw pagebottom"></i>
+        <ul class="dropdown-menu dropdown-menu-end" role="menu">
+            <li>
+                <div class="row">
+                    <div class="col-8 post-content"></div>
+                    <div class="col-4 text-end">
+                        <div class="scroller-content">
+                            <span class="pointer pagetop">First post <i class="fa fa-angle-double-up"></i></span>
+                            <div class="scroller-container">
+                                <div class="scroller-thumb">
+                                    <span class="thumb-text"></span>
+                                    <div class="scroller-thumb-icon"></div>
+                                </div>
+                            </div>
+                            <span class="pointer pagebottom">Last post <i class="fa fa-angle-double-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button id="myNextPostBtn" class="btn btn-outline-secondary form-control" disabled>Go to my next post</button>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" class="form-control" id="indexInput" placeholder="Go to post index">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+	</div>
+	<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 hidden">
+		
+	</div>
+</div>
+
+<div data-widget-area="footer">
+	
+</div>
+
+
+<noscript>
+<nav component="pagination" class="pagination-container hidden" aria-label="Pagination">
+	<ul class="pagination hidden-xs justify-content-center">
+		<li class="page-item previous float-start disabled">
+			<a class="page-link" href="?" data-page="1" aria-label="Previous Page"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+		
+
+		<li class="page-item next float-end disabled">
+			<a class="page-link" href="?" data-page="1" aria-label="Next Page"><i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+
+	<ul class="pagination hidden-sm hidden-md hidden-lg justify-content-center">
+		<li class="page-item first disabled">
+			<a class="page-link" href="?" data-page="1" aria-label="First Page"><i class="fa fa-fast-backward"></i> </a>
+		</li>
+
+		<li class="page-item previous disabled">
+			<a class="page-link" href="?" data-page="1" aria-label="Previous Page"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+		<li component="pagination/select-page" class="page-item page select-page">
+			<a class="page-link" href="#" aria-label="Go to page">1 / 1</a>
+		</li>
+
+		<li class="page-item next disabled">
+			<a class="page-link" href="?" data-page="1" aria-label="Next Page"><i class="fa fa-chevron-right"></i></a>
+		</li>
+
+		<li class="page-item last disabled">
+			<a class="page-link" href="?" data-page="1" aria-label="Last Page"><i class="fa fa-fast-forward"></i> </a>
+		</li>
+	</ul>
+</nav>
+</noscript>
+
+<script id="ajaxify-data" type="application/json">{"cid":62,"lastposttime":1543293426414,"mainPid":806607,"postcount":4,"slug":"138029/acl-s-support","tid":138029,"timestamp":1543020255751,"title":"ACL&#x27;s support?","uid":1603,"viewcount":484,"teaserPid":"807236","postercount":3,"deleted":0,"locked":0,"pinned":0,"pinExpiry":0,"upvotes":0,"downvotes":0,"deleterUid":0,"titleRaw":"ACL's support?","timestampISO":"2018-11-24T00:44:15.751Z","scheduled":false,"lastposttimeISO":"2018-11-27T04:37:06.414Z","pinExpiryISO":"","votes":0,"tags":[],"thumbs":[],"posts":[{"content":"<p dir=\"auto\">Does pfblocker support ACL, example to have some cliente running some strict  DNSBL others others less restricted?<\/p>\n<p dir=\"auto\">Thanks.<\/p>\n","pid":806607,"tid":138029,"timestamp":1543020255751,"uid":1603,"deleted":0,"upvotes":0,"downvotes":0,"deleterUid":0,"edited":0,"replies":{"hasMore":false,"hasSingleImmediateReply":false,"users":[],"text":"[[topic:one-reply-to-this-post]]","count":0},"bookmarks":0,"votes":0,"timestampISO":"2018-11-24T00:44:15.751Z","editedISO":"","index":0,"user":{"uid":1603,"username":"periko","fullname":"Pedro Moreno","userslug":"periko","reputation":146,"postcount":1786,"topiccount":303,"picture":"/assets/uploads/profile/1603-profileavatar-1676343391040.jpeg","signature":"<p dir=\"auto\">Necesitan Soporte de Pfsense en México?/Need Pfsense Support in Mexico?<br />\nwww.bajaopensolutions.com<br />\nhttps://www.facebook.com/BajaOpenSolutions<br />\nQuieres aprender PfSense, visita mi canal de youtube:<br />\nhttps://www.youtube.com/c/PedroMorenoBOS<\/p>\n","banned":false,"banned:expire":0,"status":"offline","lastonline":1715442709881,"groupTitle":"[null]","mutedUntil":0,"displayname":"periko","groupTitleArray":[null],"icon:text":"P","icon:bgColor":"#009688","lastonlineISO":"2024-05-11T15:51:49.881Z","banned_until":0,"banned_until_readable":"Not Banned","muted":false,"selectedGroups":[],"custom_profile_info":[]},"editor":null,"bookmarked":false,"upvoted":false,"downvoted":false,"selfPost":false,"events":[],"topicOwnerPost":true,"display_edit_tools":false,"display_delete_tools":false,"display_moderator_tools":false,"display_move_tools":false,"display_post_menu":0},{"content":"<p dir=\"auto\">You could use VLANs or firewall aliases for each of your groups.  Then apply pfBlocker rules appropriately.<\/p>\n","pid":807015,"tid":138029,"timestamp":1543251097630,"uid":294826,"downvotes":0,"upvotes":1,"deleted":0,"deleterUid":0,"edited":0,"replies":{"hasMore":false,"hasSingleImmediateReply":false,"users":[],"text":"[[topic:one-reply-to-this-post]]","count":0},"bookmarks":0,"votes":1,"timestampISO":"2018-11-26T16:51:37.630Z","editedISO":"","index":1,"user":{"uid":294826,"username":"bhjitsense","fullname":"","userslug":"bhjitsense","reputation":5,"postcount":123,"topiccount":50,"picture":null,"signature":"","banned":false,"banned:expire":0,"status":"offline","lastonline":1715341935105,"groupTitle":null,"mutedUntil":0,"displayname":"bhjitsense","groupTitleArray":[],"icon:text":"B","icon:bgColor":"#1b5e20","lastonlineISO":"2024-05-10T11:52:15.105Z","banned_until":0,"banned_until_readable":"Not Banned","muted":false,"selectedGroups":[],"custom_profile_info":[]},"editor":null,"bookmarked":false,"upvoted":false,"downvoted":false,"selfPost":false,"events":[],"topicOwnerPost":false,"display_edit_tools":false,"display_delete_tools":false,"display_moderator_tools":false,"display_move_tools":false,"display_post_menu":0},{"content":"<p dir=\"auto\">Hi, I will try this week, this way I can forget about squid MITM, thanks.<\/p>\n","pid":807192,"tid":138029,"timestamp":1543277999960,"uid":1603,"deleted":0,"upvotes":0,"downvotes":0,"deleterUid":0,"edited":0,"replies":{"hasMore":false,"hasSingleImmediateReply":false,"users":[],"text":"[[topic:one-reply-to-this-post]]","count":0},"bookmarks":0,"votes":0,"timestampISO":"2018-11-27T00:19:59.960Z","editedISO":"","index":2,"user":{"uid":1603,"username":"periko","fullname":"Pedro Moreno","userslug":"periko","reputation":146,"postcount":1786,"topiccount":303,"picture":"/assets/uploads/profile/1603-profileavatar-1676343391040.jpeg","signature":"<p dir=\"auto\">Necesitan Soporte de Pfsense en México?/Need Pfsense Support in Mexico?<br />\nwww.bajaopensolutions.com<br />\nhttps://www.facebook.com/BajaOpenSolutions<br />\nQuieres aprender PfSense, visita mi canal de youtube:<br />\nhttps://www.youtube.com/c/PedroMorenoBOS<\/p>\n","banned":false,"banned:expire":0,"status":"offline","lastonline":1715442709881,"groupTitle":"[null]","mutedUntil":0,"displayname":"periko","groupTitleArray":[null],"icon:text":"P","icon:bgColor":"#009688","lastonlineISO":"2024-05-11T15:51:49.881Z","banned_until":0,"banned_until_readable":"Not Banned","muted":false,"selectedGroups":[],"custom_profile_info":[]},"editor":null,"bookmarked":false,"upvoted":false,"downvoted":false,"selfPost":false,"events":[],"topicOwnerPost":true,"display_edit_tools":false,"display_delete_tools":false,"display_moderator_tools":false,"display_move_tools":false,"display_post_menu":0},{"content":"<p dir=\"auto\">https://forum.netgate.com/topic/129365/bypassing-dnsbl-for-specific-ips<\/p>\n","pid":807236,"tid":138029,"timestamp":1543293426414,"uid":41979,"deleted":0,"upvotes":0,"downvotes":0,"deleterUid":0,"edited":0,"replies":{"hasMore":false,"hasSingleImmediateReply":false,"users":[],"text":"[[topic:one-reply-to-this-post]]","count":0},"bookmarks":0,"votes":0,"timestampISO":"2018-11-27T04:37:06.414Z","editedISO":"","index":3,"user":{"uid":41979,"username":"BBcan177","fullname":"BBcan177","userslug":"bbcan177","reputation":546,"postcount":3439,"topiccount":77,"picture":"/assets/uploads/profile/41979-profileavatar.jpeg","signature":"<p dir=\"auto\">\"Experience is something you don't get until just after you need it.\"<\/p>\n<p dir=\"auto\">Website: http://pfBlockerNG.com<br />\nTwitter: @BBcan177  #pfBlockerNG<br />\nReddit: https://www.reddit.com/r/pfBlockerNG/new/<\/p>\n","banned":false,"banned:expire":0,"status":"offline","lastonline":1715448884364,"groupTitle":"[\"Moderator\"]","mutedUntil":0,"displayname":"BBcan177","groupTitleArray":["Moderator"],"icon:text":"B","icon:bgColor":"#827717","lastonlineISO":"2024-05-11T17:34:44.364Z","banned_until":0,"banned_until_readable":"Not Banned","muted":false,"selectedGroups":[{"name":"Moderator","slug":"moderator","labelColor":"#000000","textColor":"#ffffff","icon":"","userTitle":"Moderator"}],"custom_profile_info":[]},"editor":null,"bookmarked":false,"upvoted":false,"downvoted":false,"selfPost":false,"events":[],"topicOwnerPost":false,"display_edit_tools":false,"display_delete_tools":false,"display_moderator_tools":false,"display_move_tools":false,"display_post_menu":0}],"events":[],"category":{"bgColor":"#FFFFFF","cid":62,"class":"col-md-3 col-xs-6","color":"#1475CF","description":"Discussions about the pfBlockerNG package","descriptionParsed":"<p>Discussions about the pfBlockerNG package<\/p>\n","disabled":0,"icon":"fa-shield","imageClass":"cover","link":"","name":"pfBlockerNG","numRecentReplies":1,"order":4,"parentCid":16,"post_count":18328,"slug":"62/pfblockerng","topic_count":2440,"__imported_original_data__":"{\"_cid\":70,\"_parentCid\":15,\"_name\":\"pfBlockerNG\",\"_description\":\"This is for discussion of the pfBlockerNG package.\",\"_timestamp\":0,\"_order\":26}","subCategoriesPerPage":10,"minTags":0,"maxTags":5,"postQueue":0,"isSection":0,"totalPostCount":18328,"totalTopicCount":2440},"tagWhitelist":[],"minTags":0,"maxTags":5,"thread_tools":[],"isFollowing":false,"isNotFollowing":true,"isIgnoring":false,"bookmark":null,"postSharing":[],"deleter":null,"merger":null,"forker":null,"related":[],"unreplied":false,"icons":[],"privileges":{"topics:reply":false,"topics:read":true,"topics:schedule":false,"topics:tag":false,"topics:delete":false,"posts:edit":false,"posts:history":false,"posts:upvote":false,"posts:downvote":false,"posts:delete":false,"posts:view_deleted":false,"read":true,"purge":false,"view_thread_tools":false,"editable":false,"deletable":false,"view_deleted":false,"view_scheduled":false,"isAdminOrMod":false,"disabled":0,"tid":"138029","uid":-1},"topicStaleDays":60,"reputation:disabled":0,"downvote:disabled":1,"feeds:disableRSS":0,"signatures:hideDuplicates":0,"bookmarkThreshold":5,"necroThreshold":7,"postEditDuration":0,"postDeleteDuration":0,"scrollToMyPost":false,"updateUrlWithPostIndex":false,"allowMultipleBadges":true,"privateUploads":true,"showPostPreviewsOnHover":true,"sortOptionLabel":"[[topic:oldest-to-newest]]","rssFeedUrl":"/topic/138029.rss","postIndex":1,"breadcrumbs":[{"text":"Home","url":"https://forum.netgate.com"},{"text":"pfSense Packages","url":"https://forum.netgate.com/category/16/pfsense-packages","cid":16},{"text":"pfBlockerNG","url":"https://forum.netgate.com/category/62/pfblockerng","cid":62},{"text":"ACL&#x27;s support?"}],"author":{"username":"periko","userslug":"periko","uid":1603,"displayname":"periko"},"pagination":{"prev":{"page":1,"active":false},"next":{"page":1,"active":false},"first":{"page":1,"active":true},"last":{"page":1,"active":true},"rel":[],"pages":[],"currentPage":1,"pageCount":1},"loggedIn":false,"loggedInUser":{"uid":0,"username":"[[global:guest]]","picture":"","icon:text":"?","icon:bgColor":"#aaa"},"relative_path":"","template":{"name":"topic","topic":true},"url":"/topic/138029/acl-s-support","bodyClass":"page-topic page-topic-138029 page-topic-acl-s-support template-topic page-topic-category-62 page-topic-category-pfblockerng parent-category-16 parent-category-62 page-status-200 theme-persona user-guest","_header":{"tags":{"meta":[{"name":"viewport","content":"width&#x3D;device-width, initial-scale&#x3D;1.0"},{"name":"content-type","content":"text/html; charset=UTF-8","noEscape":true},{"name":"apple-mobile-web-app-capable","content":"yes"},{"name":"mobile-web-app-capable","content":"yes"},{"property":"og:site_name","content":"Netgate Forum"},{"name":"msapplication-badge","content":"frequency=30; polling-uri=https://forum.netgate.com/sitemap.xml","noEscape":true},{"name":"theme-color","content":"#ffffff"},{"name":"keywords","content":"pfSense,Netgate,TNSR,SCLR,Firewall,Router"},{"name":"msapplication-square150x150logo","content":"/assets/uploads/system/site-logo.png","noEscape":true},{"name":"title","content":"ACL&#x27;s support?"},{"property":"og:title","content":"ACL&#x27;s support?"},{"property":"og:type","content":"article"},{"property":"article:published_time","content":"2018-11-24T00:44:15.751Z"},{"property":"article:modified_time","content":"2018-11-27T04:37:06.414Z"},{"property":"article:section","content":"pfBlockerNG"},{"name":"description","content":"Does pfblocker support ACL, example to have some cliente running some strict  DNSBL others others less restricted? Thanks."},{"property":"og:description","content":"Does pfblocker support ACL, example to have some cliente running some strict  DNSBL others others less restricted? Thanks."},{"property":"og:image","content":"https://forum.netgate.com/assets/uploads/profile/1603-profileavatar-1676343391040.jpeg","noEscape":true},{"property":"og:image:url","content":"https://forum.netgate.com/assets/uploads/profile/1603-profileavatar-1676343391040.jpeg","noEscape":true},{"property":"og:image","content":"https://forum.netgate.com/assets/uploads/system/site-logo.png","noEscape":true},{"property":"og:image:url","content":"https://forum.netgate.com/assets/uploads/system/site-logo.png","noEscape":true},{"property":"og:image:width","content":"undefined"},{"property":"og:image:height","content":"undefined"},{"content":"https://forum.netgate.com/topic/138029/acl-s-support","property":"og:url"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/assets/uploads/system/favicon.ico?v&#x3D;797m7udd4uq"},{"rel":"manifest","href":"/manifest.webmanifest","crossorigin":"use-credentials"},{"rel":"search","type":"application/opensearchdescription+xml","title":"Netgate Forum","href":"/osd.xml"},{"rel":"apple-touch-icon","href":"/assets/uploads/system/touchicon-orig.png"},{"rel":"icon","sizes":"36x36","href":"/assets/uploads/system/touchicon-36.png"},{"rel":"icon","sizes":"48x48","href":"/assets/uploads/system/touchicon-48.png"},{"rel":"icon","sizes":"72x72","href":"/assets/uploads/system/touchicon-72.png"},{"rel":"icon","sizes":"96x96","href":"/assets/uploads/system/touchicon-96.png"},{"rel":"icon","sizes":"144x144","href":"/assets/uploads/system/touchicon-144.png"},{"rel":"icon","sizes":"192x192","href":"/assets/uploads/system/touchicon-192.png"},{"rel":"prefetch","href":"/assets/src/modules/composer.js?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/src/modules/composer/uploads.js?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/src/modules/composer/drafts.js?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/src/modules/composer/tags.js?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/src/modules/composer/categoryList.js?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/src/modules/composer/resize.js?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/src/modules/composer/autocomplete.js?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/templates/composer.tpl?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/language/en-US/topic.json?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/language/en-US/modules.json?v&#x3D;797m7udd4uq"},{"rel":"prefetch","href":"/assets/language/en-US/tags.json?v&#x3D;797m7udd4uq"},{"rel":"prefetch stylesheet","type":"","href":"/assets/plugins/nodebb-plugin-markdown/styles/default.css"},{"rel":"prefetch","href":"/assets/language/en-US/markdown.json?v&#x3D;797m7udd4uq"},{"rel":"stylesheet","href":"https://forum.netgate.com/assets/plugins/nodebb-plugin-emoji/emoji/styles.css?v&#x3D;797m7udd4uq"},{"rel":"canonical","href":"https://forum.netgate.com/topic/138029/acl-s-support","noEscape":true},{"rel":"alternate","type":"application/rss+xml","href":"/topic/138029.rss"},{"rel":"up","href":"https://forum.netgate.com/category/62/pfblockerng"},{"rel":"author","href":"https://forum.netgate.com/user/periko"}]}},"widgets":{}}</script>		</div><!-- /.container#content -->
+	</main>
+	
+	<div id="taskbar" component="taskbar" class="taskbar fixed-bottom">
+	<div class="navbar-inner"><ul class="nav navbar-nav"></ul></div>
+</div>
+	<script defer src="/assets/nodebb.min.js?v=797m7udd4uq"></script>
+
+
+
+<script>
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', prepareFooter);
+    } else {
+        prepareFooter();
+    }
+
+    function prepareFooter() {
+        
+
+        $(document).ready(function () {
+            app.coldLoad();
+        });
+    }
+</script>
+</body>
+</html>
